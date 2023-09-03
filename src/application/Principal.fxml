@@ -37,7 +37,7 @@
             <Font name="Berlin Sans FB" size="28.0" />
          </font>
       </Label>
-      <Button fx:id="btnCadastrar" layoutX="383.0" layoutY="406.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-border-color: transparent;" text="Cadastre-se" textFill="#0075ff" underline="true">
+      <Button fx:id="btnCadastrar" layoutX="383.0" layoutY="406.0" mnemonicParsing="false" onAction="#irParaCadastro" style="-fx-background-color: transparent; -fx-border-color: transparent;" text="Cadastre-se" textFill="#0075ff" underline="true">
          <font>
             <Font name="Berlin Sans FB" size="28.0" />
          </font>
