@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="application.controller.PrincipalController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.PrincipalController">
 	<children>
 		<Label fx:id="labelCadastro" layoutX="578.0" layoutY="49.0" text="Cadastro" textFill="RED">
 			<font>
@@ -29,7 +29,7 @@
             <Font name="Berlin Sans FB" size="33.0" />
          </font>
       </Label>
-      <Button fx:id="btnLogin" layoutX="588.0" layoutY="661.0" mnemonicParsing="false" onAction="#irParaLogin" style="-fx-background-color: transparent; -fx-border-color: transparent;" text="Login" textFill="#0075ff" underline="true">
+      <Button fx:id="btnLogin" layoutX="588.0" layoutY="659.0" mnemonicParsing="false" onAction="#irParaLogin" style="-fx-background-color: transparent; -fx-border-color: transparent;" text="Login" textFill="#0075ff" underline="true">
          <font>
             <Font name="Berlin Sans FB" size="28.0" />
          </font>
