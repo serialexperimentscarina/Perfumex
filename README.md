@@ -16,7 +16,7 @@ A data de entrega, em Banco de Dados, está definida como a mesma data da P2 e n
 ## TO DO
 - [ ] Documentação
   - [X] Engenharia de requisitos baseada na observação de um sistema de venda online com marketplace
-  - [ ] Modelagem do banco de dados
+  - [X] Modelagem do banco de dados
   - [ ] Modelagem do sistema
   - [ ] Javadoc
   - [ ] Testes de funcionalidades
@@ -32,8 +32,6 @@ A data de entrega, em Banco de Dados, está definida como a mesma data da P2 e n
   - [ ] Acima de 5 campos por entidade
   - [ ] Campos validados com mensagens individuais sobre os erros em cada um dos campos
 - [ ] Gerar jar do projeto para ser executado
-- [ ] Vídeo de 2 minutos mostrando o funcionamento do software
-- [ ] Banner de propaganda do sistema em PDF
 - [ ] Apresentação do sistema dia 28/11/23
 
 ## Autores
