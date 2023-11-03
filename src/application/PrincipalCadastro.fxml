@@ -43,7 +43,7 @@
             </ImageInput>
          </effect>
       </Button>
-      <Button fx:id="btnCadastroLojista" layoutX="826.0" layoutY="288.0" mnemonicParsing="false" prefHeight="247.0" prefWidth="285.0">
+      <Button fx:id="btnCadastroLojista" layoutX="826.0" layoutY="288.0" mnemonicParsing="false" onAction="#irParaCadastroLojista" prefHeight="247.0" prefWidth="285.0">
          <effect>
             <ImageInput>
                <source>
