@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="582.0" prefWidth="821.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.PrincipalController">
+   <children>
+      <Text fill="#0d49ff" layoutX="280.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastro Cliente" textAlignment="CENTER">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="65.0" fitWidth="79.0" layoutX="532.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../Pictures/Cliente.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="357.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sobrenome: " wrappingWidth="146.38932418823242">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Text>
+      <TextField layoutX="104.0" layoutY="141.0" prefHeight="26.0" prefWidth="214.0" />
+      <Text layoutX="27.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome: " wrappingWidth="122.38932418823242">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <TextField layoutX="541.0" layoutY="141.0" prefHeight="26.0" prefWidth="232.0" />
+      <Text layoutX="27.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CPF:  ">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <TextField layoutX="95.0" layoutY="202.0" prefHeight="26.0" prefWidth="165.0" />
+      <Text layoutX="341.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefone:">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <TextField layoutX="453.0" layoutY="205.0" prefHeight="26.0" prefWidth="279.0" />
+      <Text layoutX="27.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CEP:">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <TextField layoutX="95.0" layoutY="276.0" prefHeight="26.0" prefWidth="108.0" />
+      <Text layoutX="235.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Endereço">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <TextField layoutX="337.0" layoutY="278.0" prefHeight="26.0" prefWidth="232.0" />
+      <Text layoutX="593.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estado:" wrappingWidth="73.15789794921875">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <ComboBox layoutX="682.0" layoutY="278.0" prefHeight="26.0" prefWidth="100.0" />
+      <Text layoutX="38.0" layoutY="364.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cidade:">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <ComboBox layoutX="128.0" layoutY="342.0" prefWidth="150.0" />
+      <Text layoutX="341.0" layoutY="363.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bairro: ">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <TextField layoutX="434.0" layoutY="342.0" prefHeight="26.0" prefWidth="319.0" />
+      <Text layoutX="22.0" layoutY="448.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email: ">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <TextField layoutX="95.0" layoutY="428.0" prefHeight="26.0" prefWidth="319.0" />
+      <Text layoutX="453.0" layoutY="452.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha:">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <TextField layoutX="540.0" layoutY="414.0" prefHeight="26.0" prefWidth="246.0" />
+      <Button layoutX="384.0" layoutY="500.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="100.0" style="-fx-background-color: greeb; -fx-background-color: red;" text="Cadastrar" textFill="WHITE" />
+      <Button layoutX="178.0" layoutY="500.0" mnemonicParsing="false" onAction="#irParaLogin" prefHeight="43.0" prefWidth="100.0" style="-fx-background-color: blue;" text="Voltar" textFill="WHITE" />
+   </children>
+</AnchorPane>
