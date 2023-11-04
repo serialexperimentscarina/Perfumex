@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="582.0" prefWidth="821.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.PrincipalController">
+<AnchorPane prefHeight="582.0" prefWidth="821.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="application.controller.PrincipalController">
    <children>
       <Text fill="#0d49ff" layoutX="280.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastro Cliente" textAlignment="CENTER">
          <font>
