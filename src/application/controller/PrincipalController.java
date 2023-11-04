@@ -38,9 +38,6 @@ public class PrincipalController {
 		stage.show();
 	}
 	
-   
-	
-	
 	
 	public void irParaCadastrarLojista(ActionEvent event) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("/application/Lojista.fxml"));
