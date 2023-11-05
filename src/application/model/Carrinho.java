@@ -1,12 +1,14 @@
 package application.model;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Carrinho {
 	
 	private int id;
 	private int quantidadeItens;
 	private double total;
+	private ArrayList<Produto> produtos;
 	private LocalDate dataCriacao;
 	private LocalDate dataUltimaModificacao;
 	
@@ -57,6 +59,14 @@ public class Carrinho {
 
 	public void setDataUltimaModificacao(LocalDate dataUltimaModificacao) {
 		this.dataUltimaModificacao = dataUltimaModificacao;
+	}
+
+	public ArrayList<Produto> getProdutos() {
+		return produtos;
+	}
+
+	public void setProdutos(ArrayList<Produto> produtos) {
+		this.produtos = produtos;
 	}
 
 }
