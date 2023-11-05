@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="582.0" prefWidth="821.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="application.controller.PrincipalController">
+<AnchorPane prefHeight="582.0" prefWidth="821.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="application.controller.ClienteController">
    <children>
       <Text fill="#0d49ff" layoutX="280.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastro Cliente" textAlignment="CENTER">
          <font>
@@ -26,68 +26,68 @@
             <Font size="23.0" />
          </font>
       </Text>
-      <TextField layoutX="104.0" layoutY="141.0" prefHeight="26.0" prefWidth="214.0" />
-      <Text layoutX="27.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome: " wrappingWidth="122.38932418823242">
+      <TextField fx:id="tFieldNome" layoutX="96.0" layoutY="141.0" prefHeight="26.0" prefWidth="214.0" />
+      <Text layoutX="17.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome: " wrappingWidth="122.38932418823242">
          <font>
             <Font size="22.0" />
          </font>
       </Text>
-      <TextField layoutX="541.0" layoutY="141.0" prefHeight="26.0" prefWidth="232.0" />
-      <Text layoutX="27.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CPF:  ">
+      <TextField fx:id="tFieldSobrenome" layoutX="541.0" layoutY="141.0" prefHeight="26.0" prefWidth="232.0" />
+      <Text layoutX="17.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CPF:  ">
          <font>
             <Font size="22.0" />
          </font>
       </Text>
-      <TextField layoutX="95.0" layoutY="202.0" prefHeight="26.0" prefWidth="165.0" />
+      <TextField fx:id="tFieldCpf" layoutX="95.0" layoutY="202.0" prefHeight="26.0" prefWidth="165.0" />
       <Text layoutX="341.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefone:">
          <font>
             <Font size="22.0" />
          </font>
       </Text>
-      <TextField layoutX="453.0" layoutY="205.0" prefHeight="26.0" prefWidth="279.0" />
-      <Text layoutX="27.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CEP:">
+      <TextField fx:id="tFieldTelefone" layoutX="453.0" layoutY="205.0" prefHeight="26.0" prefWidth="279.0" />
+      <Text layoutX="17.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CEP:">
          <font>
             <Font size="22.0" />
          </font>
       </Text>
-      <TextField layoutX="95.0" layoutY="276.0" prefHeight="26.0" prefWidth="108.0" />
-      <Text layoutX="235.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Endereço">
+      <TextField fx:id="tFieldCep" layoutX="98.0" layoutY="276.0" prefHeight="26.0" prefWidth="146.0" />
+      <Text layoutX="278.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rua:">
          <font>
             <Font size="22.0" />
          </font>
       </Text>
-      <TextField layoutX="337.0" layoutY="278.0" prefHeight="26.0" prefWidth="232.0" />
+      <TextField fx:id="tFieldRua" layoutX="337.0" layoutY="278.0" prefHeight="26.0" prefWidth="232.0" />
       <Text layoutX="593.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estado:" wrappingWidth="73.15789794921875">
          <font>
             <Font size="22.0" />
          </font>
       </Text>
-      <ComboBox layoutX="682.0" layoutY="278.0" prefHeight="26.0" prefWidth="100.0" />
-      <Text layoutX="38.0" layoutY="364.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cidade:">
+      <ComboBox fx:id="cBoxEstado" layoutX="682.0" layoutY="278.0" prefHeight="26.0" prefWidth="100.0" />
+      <Text layoutX="17.0" layoutY="364.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cidade:">
          <font>
             <Font size="22.0" />
          </font>
       </Text>
-      <ComboBox layoutX="128.0" layoutY="342.0" prefWidth="150.0" />
-      <Text layoutX="341.0" layoutY="363.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bairro: ">
+      <Text layoutX="278.0" layoutY="364.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Complemento: ">
          <font>
             <Font size="22.0" />
          </font>
       </Text>
-      <TextField layoutX="434.0" layoutY="342.0" prefHeight="26.0" prefWidth="319.0" />
+      <TextField fx:id="tFieldComplemento" layoutX="452.0" layoutY="342.0" prefHeight="26.0" prefWidth="319.0" />
       <Text layoutX="22.0" layoutY="448.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email: ">
          <font>
             <Font size="22.0" />
          </font>
       </Text>
-      <TextField layoutX="95.0" layoutY="428.0" prefHeight="26.0" prefWidth="319.0" />
+      <TextField fx:id="tFieldEmail" layoutX="95.0" layoutY="428.0" prefHeight="26.0" prefWidth="319.0" />
       <Text layoutX="453.0" layoutY="452.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha:">
          <font>
             <Font size="22.0" />
          </font>
       </Text>
-      <TextField layoutX="540.0" layoutY="414.0" prefHeight="26.0" prefWidth="246.0" />
-      <Button layoutX="384.0" layoutY="500.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="100.0" style="-fx-background-color: greeb; -fx-background-color: red;" text="Cadastrar" textFill="WHITE" />
-      <Button layoutX="178.0" layoutY="500.0" mnemonicParsing="false" onAction="#irParaLogin" prefHeight="43.0" prefWidth="100.0" style="-fx-background-color: blue;" text="Voltar" textFill="WHITE" />
+      <TextField fx:id="tFieldSenha" layoutX="543.0" layoutY="430.0" prefHeight="26.0" prefWidth="246.0" />
+      <Button fx:id="btnCadastrar" layoutX="384.0" layoutY="500.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="100.0" style="-fx-background-color: greeb; -fx-background-color: red;" text="Cadastrar" textFill="WHITE" />
+      <Button fx:id="btnVoltar" layoutX="178.0" layoutY="500.0" mnemonicParsing="false" onAction="#irParaLogin" prefHeight="43.0" prefWidth="100.0" style="-fx-background-color: blue;" text="Voltar" textFill="WHITE" />
+      <TextField fx:id="tFieldCidade" layoutX="102.0" layoutY="344.0" prefHeight="26.0" prefWidth="146.0" />
    </children>
 </AnchorPane>
