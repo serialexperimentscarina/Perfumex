@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="687.0" prefWidth="943.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="application.controller.PrincipalController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="687.0" prefWidth="943.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.PrincipalController">
    <children>
       <Text fill="#ff7504" layoutX="273.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastro de Lojista " textAlignment="CENTER">
          <font>
@@ -26,66 +26,66 @@
             <Font size="24.0" />
          </font>
       </Text>
-      <TextField layoutX="132.0" layoutY="158.0" prefHeight="25.0" prefWidth="200.0" />
+      <TextField fx:id="tFieldnomelojista" layoutX="132.0" layoutY="158.0" prefHeight="25.0" prefWidth="200.0" />
       <Text layoutX="394.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sobrenome:" wrappingWidth="159.619140625">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <TextField layoutX="554.0" layoutY="158.0" prefHeight="25.0" prefWidth="351.0" />
+      <TextField fx:id="tFieldsobrenomelojista" layoutX="554.0" layoutY="158.0" prefHeight="25.0" prefWidth="351.0" />
       <Text layoutX="24.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CNPJ:" wrappingWidth="100.619140625">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <TextField layoutX="132.0" layoutY="261.0" prefHeight="25.0" prefWidth="259.0" />
+      <TextField fx:id="tFieldCNPJ" layoutX="132.0" layoutY="261.0" prefHeight="25.0" prefWidth="259.0" />
       <Text layoutX="452.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefone:" wrappingWidth="109.49397277832031">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <TextField layoutX="589.0" layoutY="261.0" prefHeight="25.0" prefWidth="308.0" />
+      <TextField fx:id="tFieldTlefone" layoutX="589.0" layoutY="261.0" prefHeight="25.0" prefWidth="308.0" />
       <Text layoutX="7.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CEP:" wrappingWidth="100.619140625">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <TextField layoutX="74.0" layoutY="365.0" prefHeight="25.0" prefWidth="117.0" />
+      <TextField fx:id="tFieldCEPLojista" layoutX="74.0" layoutY="365.0" prefHeight="25.0" prefWidth="117.0" />
       <Text layoutX="215.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Endereço:" wrappingWidth="117.0">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <TextField layoutX="339.0" layoutY="365.0" prefHeight="25.0" prefWidth="250.0" />
+      <TextField fx:id="tFieldEndLojista" layoutX="339.0" layoutY="365.0" prefHeight="25.0" prefWidth="250.0" />
       <Text layoutX="637.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estado: " wrappingWidth="117.0">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <ComboBox layoutX="761.0" layoutY="365.0" prefWidth="150.0" />
       <Text layoutX="16.0" layoutY="494.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cidade: " wrappingWidth="117.0">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <ComboBox layoutX="125.0" layoutY="472.0" prefHeight="25.0" prefWidth="71.0" />
-      <Text layoutX="240.0" layoutY="482.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bairro:" wrappingWidth="117.0">
+      <Text layoutX="399.0" layoutY="482.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bairro:" wrappingWidth="74.0">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <TextField layoutX="365.0" layoutY="460.0" prefHeight="25.0" prefWidth="250.0" />
-      <Button layoutX="116.0" layoutY="572.0" mnemonicParsing="false" onAction="#irParaCadastro" prefHeight="44.0" prefWidth="117.0" style="-fx-background-color: #87CEEB;" text="&lt; Voltar" textFill="WHITE">
+      <TextField fx:id="tFieldBairroLojista" layoutX="493.0" layoutY="461.0" prefHeight="25.0" prefWidth="433.0" />
+      <Button fx:id="btnVoltar" layoutX="116.0" layoutY="572.0" mnemonicParsing="false" onAction="#irParaCadastro" prefHeight="44.0" prefWidth="117.0" style="-fx-background-color: blue;" text="&lt; Voltar" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font></Button>
-      <Button layoutX="365.0" layoutY="572.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="141.0" style="-fx-background-color: #87CEFA;" text="Salvar dados" textFill="WHITE">
+      <Button fx:id="btnSalvarDados" layoutX="365.0" layoutY="572.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="141.0" style="-fx-background-color: green;" text="Salvar dados" textFill="WHITE">
          <font>
             <Font size="17.0" />
          </font></Button>
-      <Button layoutX="615.0" layoutY="572.0" mnemonicParsing="false" onAction="#irParaLoja" prefHeight="44.0" prefWidth="141.0" style="-fx-background-color: #87CEFA;" text="Cadastrar Loja" textFill="WHITE">
+      <Button fx:id="btnCadastrarLoja" layoutX="615.0" layoutY="572.0" mnemonicParsing="false" onAction="#irParaLoja" prefHeight="44.0" prefWidth="141.0" style="-fx-background-color: red;" text="Cadastrar Loja" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font></Button>
+      <TextField fx:id="txtCidadeLojista" layoutX="116.0" layoutY="474.0" prefHeight="25.0" prefWidth="225.0" />
+      <ComboBox fx:id="cBoxEstado" layoutX="723.0" layoutY="364.0" prefWidth="150.0" />
    </children>
 </AnchorPane>

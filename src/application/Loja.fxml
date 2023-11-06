@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.TextArea?>
@@ -11,12 +12,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="application.controller.PrincipalController">
+<AnchorPane xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.LojaController">
    <children>
-      <Pane layoutX="-7.0" layoutY="-14.0" prefHeight="722.0" prefWidth="896.0">
+      <Pane layoutX="14.0" layoutY="2.0" prefHeight="722.0" prefWidth="896.0">
          <children>
-            <TextField fx:id="txtNomeLoja" layoutX="130.0" layoutY="115.0" prefHeight="26.0" prefWidth="257.0" />
+            <TextField fx:id="tFieldNomeLoja" layoutX="131.0" layoutY="128.0" prefHeight="26.0" prefWidth="257.0" />
             <Text fill="RED" layoutX="239.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastro Loja " textAlignment="CENTER">
                <font>
                   <Font size="47.0" />
@@ -24,74 +24,89 @@
             </Text>
             <ImageView fitHeight="86.0" fitWidth="111.0" layoutX="545.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../Pictures/Captura%20de%20tela%202023-11-03%20152006.png" />
+                  <Image url="@../../../../../Pictures/Loja.png" />
                </image>
             </ImageView>
-            <Text layoutX="31.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome: " textAlignment="CENTER" wrappingWidth="77.38932418823242">
+            <Text layoutX="19.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome: " textAlignment="CENTER" wrappingWidth="77.38932418823242">
                <font>
                   <Font size="24.0" />
                </font>
             </Text>
-            <TextField fx:id="TxtRamo" layoutX="516.0" layoutY="128.0" prefHeight="26.0" prefWidth="257.0" />
-            <TextField accessibleRole="TREE_TABLE_CELL" layoutX="142.0" layoutY="200.0" prefHeight="26.0" prefWidth="257.0" />
+            <TextField fx:id="tFieldRamo" layoutX="516.0" layoutY="128.0" prefHeight="26.0" prefWidth="257.0" />
+            <TextField fx:id="tFieldTelefoneLoja" accessibleRole="TREE_TABLE_CELL" layoutX="142.0" layoutY="200.0" prefHeight="26.0" prefWidth="257.0" />
             <Text layoutX="427.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ramo:" wrappingWidth="77.38932418823242">
                <font>
                   <Font size="24.0" />
                </font>
             </Text>
-            <Text layoutX="-3.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefone" textAlignment="CENTER" wrappingWidth="145.38932418823242">
+            <Text layoutX="-3.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefone:" textAlignment="CENTER" wrappingWidth="145.38932418823242">
                <font>
                   <Font size="24.0" />
                </font>
             </Text>
-            <DatePicker layoutX="623.0" layoutY="204.0" />
-            <Text layoutX="427.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data de Criação" textAlignment="CENTER" wrappingWidth="179.59823989868164">
+            <DatePicker fx:id="dDataCriacao" layoutX="623.0" layoutY="204.0" />
+            <Text layoutX="427.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data de Criação:" textAlignment="CENTER" wrappingWidth="179.59823989868164">
                <font>
                   <Font size="24.0" />
                </font>
             </Text>
-            <Text layoutX="21.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CEP" textAlignment="JUSTIFY" wrappingWidth="145.38932418823242">
+            <Text layoutX="21.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CEP:" textAlignment="JUSTIFY" wrappingWidth="145.38932418823242">
                <font>
                   <Font size="24.0" />
                </font>
             </Text>
-            <Text layoutX="259.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Endereço" textAlignment="CENTER" wrappingWidth="111.0">
+            <Text layoutX="259.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Endereço:" textAlignment="CENTER" wrappingWidth="111.0">
                <font>
                   <Font size="24.0" />
                </font>
             </Text>
-            <Text layoutX="309.0" layoutY="396.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bairro" textAlignment="CENTER" wrappingWidth="77.38932418823242">
+            <Text layoutX="309.0" layoutY="396.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bairro:" textAlignment="CENTER" wrappingWidth="77.38932418823242">
                <font>
                   <Font size="24.0" />
                </font>
             </Text>
-            <Text layoutX="14.0" layoutY="396.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cidade" textAlignment="CENTER" wrappingWidth="88.38932418823242">
+            <Text layoutX="14.0" layoutY="395.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cidade:" textAlignment="CENTER" wrappingWidth="88.38932418823242">
                <font>
                   <Font size="24.0" />
                </font>
             </Text>
-            <Text layoutX="593.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estado" textAlignment="CENTER" wrappingWidth="77.38932418823242">
+            <Text layoutX="593.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estado:" textAlignment="CENTER" wrappingWidth="77.38932418823242">
                <font>
                   <Font size="24.0" />
                </font>
             </Text>
-            <TextField accessibleRole="TREE_TABLE_CELL" layoutX="70.0" layoutY="284.0" prefHeight="26.0" prefWidth="165.0" />
-            <TextField accessibleRole="TREE_TABLE_CELL" layoutX="374.0" layoutY="285.0" prefHeight="26.0" prefWidth="165.0" />
-            <ComboBox layoutX="683.0" layoutY="285.0" prefWidth="150.0" />
-            <ComboBox layoutX="108.0" layoutY="376.0" prefWidth="150.0" />
-            <TextField accessibleRole="TREE_TABLE_CELL" layoutX="399.0" layoutY="375.0" prefHeight="26.0" prefWidth="459.0" />
-            <Text layoutX="14.0" layoutY="480.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" textAlignment="CENTER" wrappingWidth="88.38932418823242">
+            <TextField fx:id="tFieldCep" accessibleRole="TREE_TABLE_CELL" layoutX="70.0" layoutY="284.0" prefHeight="26.0" prefWidth="165.0" />
+            <TextField fx:id="tFieldEndereco" accessibleRole="TREE_TABLE_CELL" layoutX="374.0" layoutY="285.0" prefHeight="26.0" prefWidth="165.0" />
+            <ComboBox fx:id="cBoxEstado" layoutX="683.0" layoutY="285.0" prefWidth="150.0" />
+            <TextField fx:id="tfieldBairroLoja" accessibleRole="TREE_TABLE_CELL" layoutX="399.0" layoutY="375.0" prefHeight="26.0" prefWidth="459.0" />
+            <Text layoutX="14.0" layoutY="480.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" textAlignment="CENTER" wrappingWidth="88.38932418823242">
                <font>
                   <Font size="24.0" />
                </font>
             </Text>
-            <TextField accessibleRole="TREE_TABLE_CELL" layoutX="117.0" layoutY="459.0" prefHeight="26.0" prefWidth="264.0" />
-            <Text layoutX="427.0" layoutY="494.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descrição" textAlignment="CENTER" wrappingWidth="111.0">
+            <TextField fx:id="tfieldemail" accessibleRole="TREE_TABLE_CELL" layoutX="117.0" layoutY="459.0" prefHeight="26.0" prefWidth="264.0" />
+            <Text layoutX="427.0" layoutY="468.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descrição:" textAlignment="CENTER" wrappingWidth="127.0">
                <font>
                   <Font size="24.0" />
                </font>
             </Text>
-            <TextArea layoutX="560.0" layoutY="448.0" prefHeight="200.0" prefWidth="287.0" />
+            <TextArea fx:id="ttextoDescricao" layoutX="560.0" layoutY="448.0" prefHeight="200.0" prefWidth="287.0" />
+            <TextField fx:id="tFieldCidadeLoja" accessibleRole="TREE_TABLE_CELL" layoutX="107.0" layoutY="373.0" prefHeight="26.0" prefWidth="186.0" />
+            <Button fx:id="btnCadastrar" layoutX="194.0" layoutY="548.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="111.0" style="-fx-background-color: green;" text="Salvar" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnVoltar" layoutX="41.0" layoutY="548.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="111.0" style="-fx-background-color: red;" text="Voltar" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnCadastrarProduto" layoutX="328.0" layoutY="548.0" mnemonicParsing="false"  prefHeight="46.0" prefWidth="198.0" style="-fx-background-color: blue;" text="Cadastrar Produtos" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
          </children>
       </Pane>
    </children>
