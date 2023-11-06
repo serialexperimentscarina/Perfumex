@@ -63,5 +63,13 @@ public class PrincipalController {
 		stage.setScene(scene);
 		stage.show();
 	}
+	
+	public void irParaProduto(ActionEvent event) throws IOException {
+		Parent root = FXMLLoader.load(getClass().getResource("/application/Produto.fxml"));
+		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+	}
 }
 

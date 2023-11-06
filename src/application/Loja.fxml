@@ -97,12 +97,12 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button fx:id="btnVoltar" layoutX="41.0" layoutY="548.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="111.0" style="-fx-background-color: red;" text="Voltar" textFill="WHITE">
+            <Button fx:id="btnVoltar" layoutX="41.0" layoutY="548.0" mnemonicParsing="false" onAction="#irParaCadastroLojista"  prefHeight="46.0" prefWidth="111.0" style="-fx-background-color: red;" text="Voltar" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button fx:id="btnCadastrarProduto" layoutX="328.0" layoutY="548.0" mnemonicParsing="false"  prefHeight="46.0" prefWidth="198.0" style="-fx-background-color: blue;" text="Cadastrar Produtos" textFill="WHITE">
+            <Button fx:id="btnCadastrarProduto" layoutX="328.0" layoutY="548.0" mnemonicParsing="false" onAction="#irParaProduto" prefHeight="46.0" prefWidth="198.0" style="-fx-background-color: blue;" text="Cadastrar Produtos" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>

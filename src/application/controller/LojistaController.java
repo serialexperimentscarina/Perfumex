@@ -52,7 +52,14 @@ public class LojistaController {
 	}
 
 
-	public void irParaLogin(ActionEvent event) throws IOException {
+	public void irParaLoja(ActionEvent event) throws IOException {
+		Parent root = FXMLLoader.load(getClass().getResource("/application/Loja.FXML"));
+		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		Scene scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+	}
+	public void irParaCadastro(ActionEvent event) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("/application/PrincipalCadastro.FXML"));
 		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		Scene scene = new Scene(root);

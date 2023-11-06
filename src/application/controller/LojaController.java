@@ -50,13 +50,22 @@ public class LojaController {
 	}
 
 
-	public void irParaLogin(ActionEvent event) throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("/application/PrincipalCadastro.FXML"));
+	public void irParaCadastroLojista(ActionEvent event) throws IOException {
+		Parent root = FXMLLoader.load(getClass().getResource("/application/Lojista.FXML"));
 		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		Scene scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
 	}
-}
+	public void irParaProduto(ActionEvent event) throws IOException {
+		Parent root = FXMLLoader.load(getClass().getResource("/application/Produto.FXML"));
+		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		Scene scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+	}
+	
+	}
+
 
 
