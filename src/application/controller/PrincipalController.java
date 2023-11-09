@@ -71,5 +71,12 @@ public class PrincipalController {
 		stage.setScene(scene);
 		stage.show();
 	}
+	public void irADM(ActionEvent event) throws IOException {
+		Parent root = FXMLLoader.load(getClass().getResource("/application/DashbordADM.fxml"));
+		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		Scene scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+	}
 }
 
