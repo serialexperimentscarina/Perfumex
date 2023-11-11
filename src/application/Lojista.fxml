@@ -21,71 +21,85 @@
             <Image url="@../../../../../Pictures/Lojista.png" />
          </image>
       </ImageView>
-      <Text layoutX="7.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome: " wrappingWidth="100.619140625">
+      <Text layoutX="16.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome: " wrappingWidth="100.619140625">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <TextField fx:id="tFieldnomelojista" layoutX="132.0" layoutY="158.0" prefHeight="25.0" prefWidth="200.0" />
+      <TextField fx:id="tFieldNome" layoutX="132.0" layoutY="158.0" prefHeight="25.0" prefWidth="200.0" />
       <Text layoutX="394.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sobrenome:" wrappingWidth="159.619140625">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <TextField fx:id="tFieldsobrenomelojista" layoutX="554.0" layoutY="158.0" prefHeight="25.0" prefWidth="351.0" />
-      <Text layoutX="24.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CNPJ:" wrappingWidth="100.619140625">
+      <TextField fx:id="tFieldSobrenome" layoutX="554.0" layoutY="158.0" prefHeight="25.0" prefWidth="370.0" />
+      <Text layoutX="16.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CNPJ:" wrappingWidth="100.619140625">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <TextField fx:id="tFieldCNPJ" layoutX="132.0" layoutY="261.0" prefHeight="25.0" prefWidth="259.0" />
-      <Text layoutX="452.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefone:" wrappingWidth="109.49397277832031">
+      <TextField fx:id="tFieldCNPJ" layoutX="133.0" layoutY="222.0" prefHeight="25.0" prefWidth="259.0" />
+      <Text layoutX="453.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefone:" wrappingWidth="109.49397277832031">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <TextField fx:id="tFieldTlefone" layoutX="589.0" layoutY="261.0" prefHeight="25.0" prefWidth="308.0" />
-      <Text layoutX="7.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CEP:" wrappingWidth="100.619140625">
+      <TextField fx:id="tFieldTelefone" layoutX="590.0" layoutY="222.0" prefHeight="25.0" prefWidth="330.0" />
+      <Text layoutX="16.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CEP:" wrappingWidth="100.619140625">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <TextField fx:id="tFieldCEPLojista" layoutX="74.0" layoutY="365.0" prefHeight="25.0" prefWidth="117.0" />
-      <Text layoutX="215.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Endereço:" wrappingWidth="117.0">
+      <TextField fx:id="tFieldCEP" layoutX="74.0" layoutY="365.0" prefHeight="25.0" prefWidth="117.0" />
+      <Text layoutX="215.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rua:" wrappingWidth="117.0">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <TextField fx:id="tFieldEndLojista" layoutX="339.0" layoutY="365.0" prefHeight="25.0" prefWidth="250.0" />
-      <Text layoutX="637.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estado: " wrappingWidth="117.0">
+      <TextField fx:id="tFieldRua" layoutX="281.0" layoutY="365.0" prefHeight="25.0" prefWidth="208.0" />
+      <Text layoutX="704.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estado: " wrappingWidth="117.0">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <Text layoutX="16.0" layoutY="494.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cidade: " wrappingWidth="117.0">
+      <Text layoutX="16.0" layoutY="460.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cidade: " wrappingWidth="117.0">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <Text layoutX="399.0" layoutY="482.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bairro:" wrappingWidth="74.0">
+      <Text layoutX="382.0" layoutY="459.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Complemento:" wrappingWidth="159.619140625">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <TextField fx:id="tFieldBairroLojista" layoutX="493.0" layoutY="461.0" prefHeight="25.0" prefWidth="433.0" />
+      <TextField fx:id="tFieldComplemento" layoutX="551.0" layoutY="438.0" prefHeight="25.0" prefWidth="344.0" />
       <Button fx:id="btnVoltar" layoutX="116.0" layoutY="572.0" mnemonicParsing="false" onAction="#irParaCadastro" prefHeight="44.0" prefWidth="117.0" style="-fx-background-color: blue;" text="&lt; Voltar" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font></Button>
-      <Button fx:id="btnSalvarDados" layoutX="365.0" layoutY="572.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="141.0" style="-fx-background-color: green;" text="Salvar dados" textFill="WHITE">
+      <Button fx:id="btnCadastrar" layoutX="713.0" layoutY="572.0" mnemonicParsing="false" onAction="#cadastrarLojista" prefHeight="44.0" prefWidth="141.0" style="-fx-background-color: green;" text="Cadastrar" textFill="WHITE">
          <font>
             <Font size="17.0" />
          </font></Button>
-      <Button fx:id="btnCadastrarLoja" layoutX="615.0" layoutY="572.0" mnemonicParsing="false" onAction="#irParaLoja" prefHeight="44.0" prefWidth="141.0" style="-fx-background-color: red;" text="Cadastrar Loja" textFill="WHITE">
+      <TextField fx:id="tFieldCidade" layoutX="133.0" layoutY="438.0" prefHeight="25.0" prefWidth="225.0" />
+      <ComboBox id="cBoxEstado" fx:id="cBoxEstado" layoutX="791.0" layoutY="363.0" prefHeight="25.0" prefWidth="126.0" />
+      <Text layoutX="16.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" wrappingWidth="100.619140625">
          <font>
-            <Font size="18.0" />
-         </font></Button>
-      <TextField fx:id="txtCidadeLojista" layoutX="116.0" layoutY="474.0" prefHeight="25.0" prefWidth="225.0" />
-      <ComboBox id="cBoxEstado" fx:id="cBoxEstado" layoutX="723.0" layoutY="364.0" prefWidth="150.0" />
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <TextField fx:id="tFieldEmail" layoutX="116.0" layoutY="284.0" prefHeight="25.0" prefWidth="351.0" />
+      <Text layoutX="501.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha:" wrappingWidth="100.619140625">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <TextField fx:id="tFieldSenha" layoutX="602.0" layoutY="284.0" prefHeight="25.0" prefWidth="320.0" />
+      <Text layoutX="496.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Número: " wrappingWidth="117.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <TextField fx:id="tFieldNum" layoutX="602.0" layoutY="365.0" prefHeight="25.0" prefWidth="84.0" />
    </children>
 </AnchorPane>

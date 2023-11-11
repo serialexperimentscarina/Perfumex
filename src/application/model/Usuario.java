@@ -119,6 +119,10 @@ public class Usuario {
 		this.dataUltimaModificacao = dataUltimaModificacao;
 	}
 	
+	public static int geraId() {
+		//TBA: Verificar se ID já existe no banco
+		return (int) (Math.random() * 10000);
+	}
 	
 	
 }

@@ -12,7 +12,6 @@ import application.model.Usuario;
 public class UsuarioDao {
 	
 	private Connection c;
-	private static int usuarioCont;
 	
 	public UsuarioDao() throws ClassNotFoundException, SQLException {
 		GenericDao gDao = new GenericDao();
@@ -24,13 +23,11 @@ public class UsuarioDao {
 		String sql = "INSERT INTO cliente VALUES (?, ?)";
 		
 		PreparedStatement ps = c.prepareStatement(sql);
-		ps.setInt(1, (usuarioCont + 1));
+		ps.setInt(1, cli.getId());
 		ps.setString(2, cli.getCpf());
 	
 		ps.execute();
 		ps.close();
-		
-		usuarioCont++;
 	}
 	
 	public void insereLojista(Lojista l) throws SQLException {
@@ -38,20 +35,18 @@ public class UsuarioDao {
 		String sql = "INSERT INTO lojista VALUES (?, ?)";
 		
 		PreparedStatement ps = c.prepareStatement(sql);
-		ps.setInt(1, (usuarioCont + 1));
+		ps.setInt(1, l.getId());
 		ps.setString(2, l.getCnpj());
 	
 		ps.execute();
 		ps.close();
-		
-		usuarioCont++;
 	}
 	
 	private void insereUsuario(Usuario u) throws SQLException {
 		String sql = "INSERT INTO usuario VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		
 		PreparedStatement ps = c.prepareStatement(sql);
-		ps.setInt(1, (usuarioCont + 1));
+		ps.setInt(1, u.getId());
 		ps.setString(2, u.getNome());
 		ps.setString(3, u.getSobrenome());
 		ps.setString(4, u.getEmail());

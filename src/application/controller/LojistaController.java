@@ -1,13 +1,23 @@
 package application.controller;
 
 import java.io.IOException;
+import java.sql.Date;
+import java.sql.SQLException;
+import java.time.LocalDate;
 
+import application.model.Endereco;
+import application.model.Lojista;
+import application.model.Usuario;
+import application.persistence.EnderecoDao;
+import application.persistence.UsuarioDao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
@@ -15,23 +25,25 @@ import javafx.stage.Stage;
 
 public class LojistaController {
 	@FXML
-	private TextField tFieldnomelojista;
+	private TextField tFieldNome;
 	@FXML
-	private TextField tFieldsobrenomelojista;
+	private TextField tFieldSobrenome;
 	@FXML
 	private TextField tFieldCNPJ;
 	@FXML
-	private TextField tFieldTlefone;
+	private TextField tFieldTelefone;
 	@FXML
-	private TextField tFieldCEPLojista;
+	private TextField tFieldCEP;
 	@FXML
-	private TextField tFieldEndLojista;
+	private TextField tFieldRua;
+	@FXML
+	private TextField tFieldNum;
 	@FXML
 	private ComboBox<String> cBoxEstado;
 	@FXML
-	private TextField txtCidadeLojista;
+	private TextField tFieldCidade;
 	@FXML
-	private TextField tFieldBairroLojista;
+	private TextField tFieldComplemento;
 	@FXML
 	private TextField tFieldEmail;
 	@FXML
@@ -65,6 +77,29 @@ public class LojistaController {
 		Scene scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
+	}
+	
+	public void cadastrarLojista(ActionEvent event) {
+		//TBA: Validações, verificar campos vazios, ou campos que violam tamanho máximo em banco
+		Lojista lojista = new Lojista(Usuario.geraId(), tFieldNome.getText(), tFieldSobrenome.getText(), tFieldEmail.getText(),
+				tFieldSenha.getText(), tFieldTelefone.getText(), "Ativo", LocalDate.now(), LocalDate.now(), tFieldCNPJ.getText());
+		Endereco endereco = new Endereco(lojista, tFieldRua.getText(), Integer.parseInt(tFieldNum.getText()), tFieldCEP.getText(),
+			tFieldComplemento.getText(), cBoxEstado.getValue(), tFieldCidade.getText(), LocalDate.now(), LocalDate.now());
+		
+		try {
+			UsuarioDao uDao = new UsuarioDao();
+			uDao.insereLojista(lojista);
+			
+			EnderecoDao eDao = new EnderecoDao();
+			eDao.insererEndereco(endereco);
+			
+			Alert alert = new Alert(AlertType.CONFIRMATION, "Lojista Cadastrado");
+			alert.show();
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+		}
+		
+
 	}
 }
 
