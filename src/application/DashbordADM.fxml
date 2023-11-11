@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -13,13 +14,14 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="654.0" prefWidth="1030.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.PrincipalController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="654.0" prefWidth="1030.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.ADMController">
    <children>
-      <VBox layoutX="-4.0" layoutY="-6.0" prefHeight="665.0" prefWidth="336.0" style="-fx-background-color: #84b6f4;">
+      <VBox layoutX="-4.0" layoutY="-6.0" prefHeight="662.0" prefWidth="331.0" style="-fx-background-color: #84b6f4;">
          <children>
             <Pane prefHeight="113.0" prefWidth="332.0">
                <children>
@@ -40,7 +42,7 @@
                   </ImageView>
                </children>
             </Pane>
-            <Button fx:id="btnusuarios" alignment="BASELINE_LEFT" graphicTextGap="15.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="332.0" style="-fx-background-color: #6a9eda;" text="Usuários" textFill="WHITE">
+            <Button fx:id="btnusuarios" alignment="BASELINE_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onAction="#hendleClicks" prefHeight="76.0" prefWidth="332.0" style="-fx-background-color: #6a9eda;" text="Usuários" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="28.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -49,7 +51,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="btnloja" alignment="BASELINE_LEFT" graphicTextGap="15.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="332.0" style="-fx-background-color: #6a9eda;" text="Lojas" textFill="WHITE">
+            <Button fx:id="btnloja" alignment="BASELINE_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onAction="#hendleClicks" prefHeight="76.0" prefWidth="344.0" style="-fx-background-color: #6a9eda;" text="Lojas" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -58,7 +60,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="btnredimentos" alignment="BASELINE_LEFT" graphicTextGap="15.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="332.0" style="-fx-background-color: #6a9eda;" text="Rendimentos" textFill="WHITE">
+            <Button fx:id="btnredimentos" alignment="BASELINE_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onAction="#hendleClicks" prefHeight="76.0" prefWidth="349.0" style="-fx-background-color: #6a9eda;" text="Rendimentos" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -67,7 +69,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="btnconfig" alignment="BASELINE_LEFT" graphicTextGap="15.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="332.0" style="-fx-background-color: #6a9eda;" text="Configurações" textFill="WHITE">
+            <Button fx:id="btnconfig" alignment="BASELINE_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onAction="#hendleClicks" prefHeight="76.0" prefWidth="332.0" style="-fx-background-color: #6a9eda;" text="Configurações" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="28.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -78,48 +80,118 @@
             </Button>
          </children>
       </VBox>
-      <Pane layoutX="332.0" layoutY="107.0" prefHeight="142.0" prefWidth="698.0" style="-fx-background-color: #b2dafa;">
+      <Pane fx:id="paneview" layoutX="326.0" layoutY="107.0" prefHeight="142.0" prefWidth="704.0" style="-fx-background-color: #b2dafa;">
          <children>
-            <Text fx:id="labelstatus" fill="#0090ff" layoutX="14.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuários" textAlignment="CENTER" wrappingWidth="192.15042114257812">
+            <Label fx:id="labelstatus" layoutX="28.0" layoutY="33.0" prefHeight="30.0" prefWidth="485.0" style="-fx-text-fill: #fff;" text="Usuários" textFill="WHITE">
                <font>
-                  <Font name="Mongolian Baiti" size="36.0" />
+                  <Font name="Consolas" size="24.0" />
                </font>
-            </Text>
-            <Text fx:id="labelstatus2" fill="#657072" layoutX="22.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="/home/usuarios" textAlignment="CENTER" wrappingWidth="130.150390625">
+            </Label>
+            <Label fx:id="labelstatus2" layoutX="37.0" layoutY="72.0" prefHeight="30.0" prefWidth="178.0" style="-fx-text-fill: #777e8d;" text="/home/Usuários" textFill="#777e8d">
                <font>
-                  <Font name="Mongolian Baiti" size="18.0" />
+                  <Font name="Footlight MT Light" size="20.0" />
                </font>
-            </Text>
+            </Label>
          </children></Pane>
-      <GridPane layoutX="335.0" layoutY="288.0" prefHeight="370.0" prefWidth="692.0">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints maxHeight="199.0" minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="347.0" minHeight="10.0" prefHeight="290.0" vgrow="SOMETIMES" />
-        </rowConstraints>
+      <StackPane layoutX="329.0" layoutY="248.0" prefHeight="407.0" prefWidth="698.0">
          <children>
-            <TableView prefHeight="313.0" prefWidth="692.0" GridPane.rowIndex="1">
-              <columns>
-                <TableColumn prefWidth="75.0" style="-fx-background-color: #87CEFA;" text="ID" />
-                <TableColumn prefWidth="75.0" style="-fx-background-color: #87CEFA;" text="Nome" />
-                  <TableColumn prefWidth="75.0" style="-fx-background-color: #87CEFA;" text="Email" />
-                  <TableColumn prefWidth="75.0" style="-fx-background-color: #87CEFA;" text="Telefone" />
-              </columns>
-               <columnResizePolicy>
-                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-               </columnResizePolicy>
-            </TableView>
-            <HBox prefHeight="0.0" prefWidth="692.0">
+            <GridPane fx:id="pnredimentos" prefHeight="329.0" prefWidth="692.0" style="-fx-background-color: #fff;">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="199.0" minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+               </rowConstraints>
                <children>
-                  <Button contentDisplay="TOP" layoutX="25.0" layoutY="45.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="49.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="77.0" text="Pesquisar" textAlignment="CENTER" translateX="15.0" translateY="23.0" />
-                  <TextField alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="308.0" style="-fx-background-color: #D6DEE2;" translateX="35.0" translateY="25.0" />
-                  <ComboBox prefHeight="28.0" prefWidth="139.0" style="-fx-border-color: #b2dafa; -fx-background-color: #fff;" translateX="55.0" translateY="25.0" />
-                  <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="99.0" text="ADD Usuários" translateX="65.0" translateY="23.0" />
+                  <Label fx:id="labelstatus1" prefHeight="30.0" prefWidth="215.0" text="Redimentos" translateX="225.0" translateY="-77.0">
+                     <font>
+                        <Font name="Consolas" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelstatus11" prefHeight="30.0" prefWidth="43.0" text="R$:" translateX="125.0">
+                     <font>
+                        <Font name="Consolas" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelstatus111" prefHeight="30.0" prefWidth="43.0" text="0" translateX="256.0">
+                     <font>
+                        <Font name="Consolas" size="24.0" />
+                     </font>
+                  </Label>
                </children>
-            </HBox>
+            </GridPane>
+            <GridPane fx:id="pnconfingurações" prefHeight="330.0" prefWidth="692.0" style="-fx-background-color: #fff;">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="199.0" minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="52.0" prefWidth="135.0" style="-fx-background-color: green;" text="Sair" translateX="255.0" />
+               </children>
+            </GridPane>
+            <GridPane fx:id="pnlojas" prefHeight="383.0" prefWidth="680.0" style="-fx-background-color: #fff;">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="199.0" minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="347.0" minHeight="10.0" prefHeight="290.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <TableView prefHeight="313.0" prefWidth="692.0" GridPane.rowIndex="1">
+                     <columns>
+                        <TableColumn prefWidth="75.0" style="-fx-background-color: #FF6961; -fx-text-fill: #ffff;" text="ID" />
+                        <TableColumn prefWidth="75.0" style="-fx-background-color: #FF6961;" text="Nome" />
+                        <TableColumn prefWidth="75.0" style="-fx-background-color: #FF6961;" text="ID_Lojista" />
+                        <TableColumn prefWidth="75.0" style="-fx-background-color: #FF6961;" text="Telefone" />
+                     </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+                  <HBox prefHeight="88.0" prefWidth="683.0">
+                     <children>
+                        <Button contentDisplay="TOP" layoutX="25.0" layoutY="45.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="49.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="77.0" style="-fx-background-color: #FF6961;" text="Pesquisar" textAlignment="CENTER" textFill="WHITE" translateX="15.0" translateY="23.0" />
+                        <TextField alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="308.0" style="-fx-background-color: #D6DEE2;" translateX="35.0" translateY="25.0" />
+                        <ComboBox prefHeight="28.0" prefWidth="139.0" style="-fx-border-color: #FF6961; -fx-background-color: #fff;" translateX="55.0" translateY="25.0" />
+                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="99.0" style="-fx-background-color: #FF6961;" text="ADD Loja" textFill="WHITE" translateX="65.0" translateY="23.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </GridPane>
+            <GridPane fx:id="pnusuarios" prefHeight="404.0" prefWidth="692.0" style="-fx-background-color: #fff;">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="199.0" minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="347.0" minHeight="10.0" prefHeight="290.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TableView prefHeight="313.0" prefWidth="692.0" GridPane.rowIndex="1">
+                    <columns>
+                      <TableColumn prefWidth="75.0" style="-fx-background-color: #87CEFA; -fx-text-fill: #ffff;" text="ID" />
+                      <TableColumn prefWidth="75.0" style="-fx-background-color: #87CEFA;" text="Nome" />
+                        <TableColumn prefWidth="75.0" style="-fx-background-color: #87CEFA;" text="Email" />
+                        <TableColumn prefWidth="75.0" style="-fx-background-color: #87CEFA;" text="Telefone" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+                  <HBox prefHeight="0.0" prefWidth="692.0">
+                     <children>
+                        <Button contentDisplay="TOP" layoutX="25.0" layoutY="45.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="49.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="77.0" style="-fx-background-color: #87CEFA;" text="Pesquisar" textAlignment="CENTER" textFill="WHITE" translateX="15.0" translateY="23.0" />
+                        <TextField alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="308.0" style="-fx-background-color: #D6DEE2;" translateX="35.0" translateY="25.0" />
+                        <ComboBox prefHeight="28.0" prefWidth="139.0" style="-fx-border-color: #b2dafa; -fx-background-color: #fff;" translateX="55.0" translateY="25.0" />
+                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="99.0" style="-fx-background-color: #87CEFA;" text="ADD Usuários" textFill="#fcfcfc" translateX="65.0" translateY="23.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </GridPane>
          </children>
-      </GridPane>
+      </StackPane>
    </children>
 </AnchorPane>
