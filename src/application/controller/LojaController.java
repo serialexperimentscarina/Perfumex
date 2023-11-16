@@ -65,7 +65,6 @@ public class LojaController {
 		stage.show();
 	}
 	
-	}
-
+}
 
 
