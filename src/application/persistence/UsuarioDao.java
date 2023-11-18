@@ -2,6 +2,7 @@ package application.persistence;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
@@ -40,6 +41,37 @@ public class UsuarioDao {
 	
 		ps.execute();
 		ps.close();
+	}
+	
+	public Usuario buscaUsuarioLogin(String email, String senha) throws SQLException{
+		String sql = "SELECT * FROM usuario WHERE email = ? AND senha = ?";
+		
+		PreparedStatement ps = c.prepareStatement(sql);
+		ps.setString(1, email);
+		ps.setString(2, senha);
+		ResultSet rs = ps.executeQuery();
+		
+		if (rs.next()) {
+			Usuario u = new Usuario(rs.getInt("id"), rs.getString("nome"), rs.getString("sobrenome"), email, senha, rs.getString("telefone"), rs.getString("status"), rs.getDate("data_criacao").toLocalDate(), rs.getDate("data_ultima_modificacao").toLocalDate());
+			return u;
+		}
+		return null;
+	
+	}
+	
+	public String buscarTipoUsuario(Usuario u) throws SQLException{
+		String sql = "SELECT * FROM cliente WHERE usuarioid = ?";
+		
+		PreparedStatement ps = c.prepareStatement(sql);
+		ps.setInt(1, u.getId());
+		ResultSet rs = ps.executeQuery();
+		
+		if (rs.next()) {
+			return "cliente";
+		} else {
+			return "lojista";
+		}
+	
 	}
 	
 	private void insereUsuario(Usuario u) throws SQLException {

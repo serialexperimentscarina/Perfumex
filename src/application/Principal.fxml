@@ -42,7 +42,7 @@
             <Font name="Berlin Sans FB" size="28.0" />
          </font>
       </Button>
-      <Button fx:id="btnEntrar" layoutX="247.0" layoutY="528.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="169.0" style="-fx-background-color: #ff0000;" text="Entrar" textFill="WHITE">
+      <Button fx:id="btnEntrar" layoutX="247.0" layoutY="528.0" mnemonicParsing="false" onAction="#logar" prefHeight="60.0" prefWidth="169.0" style="-fx-background-color: #ff0000;" text="Entrar" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB" size="36.0" />
          </font>
