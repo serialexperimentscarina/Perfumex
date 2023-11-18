@@ -77,12 +77,12 @@ public class PrincipalController {
 			} else
 			{
 				SessaoController c = new SessaoController(u);
+				System.out.println(SessaoController.tipo);
+
 				if (SessaoController.tipo == "cliente") {
-					Alert alert = new Alert(AlertType.INFORMATION, "Logado como cliente");
-					alert.show();	
+					irParaProdutoListagem(event);
 				} else {
-					Alert alert = new Alert(AlertType.INFORMATION, "Logado como lojista");
-					alert.show();
+					irparaDashboardLojista(event);
 				}
 			}
 		} catch (Exception e) {
@@ -124,6 +124,14 @@ public class PrincipalController {
 	}
 	public void irparaDashboardLojista(ActionEvent event) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("/application/DashboardLojista.fxml"));
+		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		Scene scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+	}
+	
+	public void irParaProdutoListagem(ActionEvent event) throws IOException {
+		Parent root = FXMLLoader.load(getClass().getResource("/application/ProdutoListagem.fxml"));
 		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		Scene scene = new Scene(root);
 		stage.setScene(scene);
