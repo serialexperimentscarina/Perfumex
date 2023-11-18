@@ -31,10 +31,6 @@ public class PrincipalController {
 	@FXML
 	private TextField tFieldSenha;
 	
-	public void initialize() {
-		System.out.println("TESTE");
-	}
-	
 	@FXML
 	public void irParaLogin(ActionEvent event) throws IOException {
 		root = FXMLLoader.load(getClass().getResource("/application/Principal.FXML"));
@@ -77,7 +73,6 @@ public class PrincipalController {
 			} else
 			{
 				SessaoController c = new SessaoController(u);
-				System.out.println(SessaoController.tipo);
 
 				if (SessaoController.tipo == "cliente") {
 					irParaProdutoListagem(event);
