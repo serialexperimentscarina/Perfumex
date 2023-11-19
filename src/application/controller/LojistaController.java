@@ -71,6 +71,7 @@ public class LojistaController {
 		stage.setScene(scene);
 		stage.show();
 	}
+	
 	public void irParaCadastro(ActionEvent event) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("/application/PrincipalCadastro.FXML"));
 		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -100,8 +101,6 @@ public class LojistaController {
 		} catch (Exception e) {
 			System.err.println(e.getMessage());
 		}
-		
-
 	}
 	
 	public void limparCampos() {

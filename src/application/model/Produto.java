@@ -16,11 +16,10 @@ public class Produto {
 	private int quantidadeMinima;
 	private LocalDate dataCriacao;
 	private LocalDate dataUltimaModificacao;
-	private Categoria categoria;
 
 	public Produto(int id, String nome, double preco, double percentualDesconto, String descricao, String marca,
 			String fornecedor, int quantidadeAtual, int quantidadeMinima, LocalDate dataCriacao,
-			LocalDate dataUltimaModificacao, Categoria categoria, ArrayList<Produto> produtos) {
+			LocalDate dataUltimaModificacao) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -33,7 +32,6 @@ public class Produto {
 		this.quantidadeMinima = quantidadeMinima;
 		this.dataCriacao = dataCriacao;
 		this.dataUltimaModificacao = dataUltimaModificacao;
-		this.categoria = categoria;
 	}
 
 	public int getId() {
@@ -115,14 +113,6 @@ public class Produto {
 	public void setDataUltimaModificacao(LocalDate dataUltimaModificacao) {
 		this.dataUltimaModificacao = dataUltimaModificacao;
 	}
-
-	public Categoria getCategoria() {
-		return categoria;
-	}
-
-	public void setCategoria(Categoria categoria) {
-		this.categoria = categoria;
-	}
 	
 	public String getFornecedor() {
 		return fornecedor;
@@ -131,5 +121,11 @@ public class Produto {
 	public void setFornecedor(String fornecedor) {
 		this.fornecedor = fornecedor;
 	}
+	
+	public static int geraId() {
+		//TBA: Verificar se ID já existe no banco
+		return (int) (Math.random() * 10000);
+	}
+	
 
 }
