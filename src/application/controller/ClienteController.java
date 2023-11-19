@@ -86,10 +86,26 @@ public class ClienteController {
 			
 			Alert alert = new Alert(AlertType.CONFIRMATION, "Cliente Cadastrado");
 			alert.show();
+			
+			limparCampos();
 		} catch (Exception e) {
 			System.err.println(e.getMessage());
 		}
 		
-
+	}
+	
+	public void limparCampos() {
+		tFieldNome.setText("");
+		tFieldSobrenome.setText("");
+		tFieldEmail.setText("");
+		tFieldSenha.setText("");
+		tFieldTelefone.setText("");
+		tFieldCpf.setText("");
+		tFieldRua.setText("");
+		tFieldNum.setText("");
+		tFieldCep.setText("");
+		tFieldComplemento.setText("");
+		tFieldCidade.setText("");
+		cBoxEstado.getSelectionModel().select("SP");
 	}
 }

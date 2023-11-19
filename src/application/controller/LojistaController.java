@@ -95,11 +95,28 @@ public class LojistaController {
 			
 			Alert alert = new Alert(AlertType.CONFIRMATION, "Lojista Cadastrado");
 			alert.show();
+			
+			limparCampos();
 		} catch (Exception e) {
 			System.err.println(e.getMessage());
 		}
 		
 
+	}
+	
+	public void limparCampos() {
+		tFieldNome.setText("");
+		tFieldSobrenome.setText("");
+		tFieldEmail.setText("");
+		tFieldSenha.setText("");
+		tFieldTelefone.setText("");
+		tFieldCNPJ.setText("");
+		tFieldRua.setText("");
+		tFieldNum.setText("");
+		tFieldCEP.setText("");
+		tFieldComplemento.setText("");
+		tFieldCidade.setText("");
+		cBoxEstado.getSelectionModel().select("SP");
 	}
 }
 
