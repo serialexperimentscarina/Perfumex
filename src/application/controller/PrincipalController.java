@@ -60,7 +60,6 @@ public class PrincipalController {
 	
 	@FXML
 	public void logar(ActionEvent event) {
-		System.out.println("TESTE");
 		String email = tFieldEmail.getText();
 		String senha = tFieldSenha.getText();
 		
@@ -72,7 +71,8 @@ public class PrincipalController {
 				alert.show();
 			} else
 			{
-				SessaoController c = new SessaoController(u);
+				SessaoController c = new SessaoController();
+				c.logar(u);
 
 				if (SessaoController.tipo == "cliente") {
 					irParaProdutoListagem(event);

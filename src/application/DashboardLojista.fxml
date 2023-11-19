@@ -60,7 +60,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="btnprodutos" alignment="BASELINE_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onAction="#irParaProduto" prefHeight="76.0" prefWidth="332.0" style="-fx-background-color: #6a9eda;" text="Cadastar_Produto" textFill="WHITE">
+            <Button fx:id="btnprodutos" alignment="BASELINE_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onAction="#irParaProduto" prefHeight="76.0" prefWidth="332.0" style="-fx-background-color: #6a9eda;" text="Cadastar Produto" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="28.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -137,12 +137,13 @@
                         <Button contentDisplay="TOP" layoutX="25.0" layoutY="45.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="49.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="77.0" style="-fx-background-color: #87CEFA;" text="Pesquisar" textAlignment="CENTER" textFill="WHITE" translateX="15.0" translateY="23.0" />
                         <TextField alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="308.0" style="-fx-background-color: #D6DEE2;" translateX="35.0" translateY="25.0" />
                         <ComboBox prefHeight="28.0" prefWidth="110.0" style="-fx-border-color: #b2dafa; -fx-background-color: #fff;" translateX="55.0" translateY="25.0" />
-                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="127.0" style="-fx-background-color: #87CEFA;" text=" Verificar_produto" textFill="#fcfcfc" translateX="65.0" translateY="23.0" />
+                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="127.0" style="-fx-background-color: #87CEFA;" text=" Verificar Produto" textFill="#fcfcfc" translateX="65.0" translateY="23.0" />
                      </children>
                   </HBox>
                </children>
             </GridPane>
          </children>
       </StackPane>
+      <Button fx:id="btnDeslogar" layoutX="889.0" layoutY="14.0" mnemonicParsing="false" onAction="#deslogar" prefHeight="30.0" prefWidth="127.0" style="-fx-background-color: #87CEFA;" text="Deslogar" textFill="#fcfcfc" />
    </children>
 </AnchorPane>

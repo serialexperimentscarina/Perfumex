@@ -54,6 +54,9 @@ public class DashLojistaController {
 
     @FXML
     private GridPane pnusuarios;
+    
+    @FXML
+    private Button btnDeslogar;
 
 	public void irParaCadastroLojista(ActionEvent event) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("/application/Lojista.FXML"));
@@ -70,9 +73,6 @@ public class DashLojistaController {
 		stage.show();
 	}
 	
-	public  void initialize(URL location,ResourceBundle resources) {
-
-	}
 	@FXML
 	private void hendleClicks(ActionEvent event) {
 		if(event.getSource()==btnestoque) {
@@ -89,6 +89,17 @@ public class DashLojistaController {
 				pnredimentos.toFront();
 				}
 				
+	}
+	
+	public void deslogar(ActionEvent event) throws IOException {
+		SessaoController sessao = new SessaoController();
+		sessao.deslogar();
+		
+		Parent root = FXMLLoader.load(getClass().getResource("/application/Principal.FXML"));
+		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		Scene scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
 	}
 
 }
