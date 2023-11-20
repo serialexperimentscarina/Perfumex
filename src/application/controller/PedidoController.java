@@ -9,10 +9,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class CarrinhoController {
+public class PedidoController {
 	
 	public void voltar(ActionEvent event) throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("/application/ProdutoListagem.FXML"));
+		Parent root = FXMLLoader.load(getClass().getResource("/application/Carrinho.FXML"));
 		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		Scene scene = new Scene(root);
 		stage.setScene(scene);
@@ -20,7 +20,7 @@ public class CarrinhoController {
 	}
 	
 	public void finalizar(ActionEvent event) throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("/application/Pedido.FXML"));
+		Parent root = FXMLLoader.load(getClass().getResource("/application/PedidoFinalizado.FXML"));
 		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		Scene scene = new Scene(root);
 		stage.setScene(scene);
