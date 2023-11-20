@@ -33,7 +33,7 @@
             <Font name="Berlin Sans FB" size="20.0" />
          </font>
       </Button>
-      <Button fx:id="btnCarrinho" layoutX="1006.0" layoutY="28.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="119.0" style="-fx-background-color: #ffffff;" text="Carrinho">
+      <Button fx:id="btnCarrinho" layoutX="1006.0" layoutY="28.0" mnemonicParsing="false" onAction="#irParaCarrinho" prefHeight="42.0" prefWidth="119.0" style="-fx-background-color: #ffffff;" text="Carrinho">
          <font>
             <Font name="Berlin Sans FB" size="20.0" />
          </font>
