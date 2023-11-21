@@ -17,10 +17,11 @@ public class Produto {
 	private LocalDate dataCriacao;
 	private LocalDate dataUltimaModificacao;
 	private Categoria categoria;
+	private String Status;
 
 	public Produto(int id, String nome, double preco, double percentualDesconto, String descricao, String marca,
-			String fornecedor, int quantidadeAtual, int quantidadeMinima, LocalDate dataCriacao,
-			LocalDate dataUltimaModificacao, Categoria categoria, ArrayList<Produto> produtos) {
+			String fornecedor, int quantidadeAtual, int quantidadeMinima, LocalDate dataCriacao, String status,
+			LocalDate dataUltimaModificacao, Categoria categoria,  ArrayList<Produto> produtos) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -33,7 +34,7 @@ public class Produto {
 		this.quantidadeMinima = quantidadeMinima;
 		this.dataCriacao = dataCriacao;
 		this.dataUltimaModificacao = dataUltimaModificacao;
-		this.categoria = categoria;
+		this.Status=status;
 	}
 
 	public int getId() {
@@ -116,20 +117,20 @@ public class Produto {
 		this.dataUltimaModificacao = dataUltimaModificacao;
 	}
 
-	public Categoria getCategoria() {
-		return categoria;
-	}
-
-	public void setCategoria(Categoria categoria) {
-		this.categoria = categoria;
-	}
-	
 	public String getFornecedor() {
 		return fornecedor;
 	}
 
 	public void setFornecedor(String fornecedor) {
 		this.fornecedor = fornecedor;
+	}
+	
+	public String getStatus() {
+		return Status;
+	}
+
+	public void setStatus(String status) {
+		this.Status = status;
 	}
 
 }
