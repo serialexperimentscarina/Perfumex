@@ -86,15 +86,6 @@ public class DashboardController implements Initializable{
 	    private TextField buscar_produto;
 
 	    @FXML
-	    private ComboBox<String> categoria;
-
-	    @FXML
-	    private ComboBox<String> comboStatus;
-
-	    @FXML
-	    private DatePicker data_modificacao;
-
-	    @FXML
 	    private DatePicker datepiker;
 
 	    @FXML
@@ -160,8 +151,6 @@ public class DashboardController implements Initializable{
 	    @FXML
 	    private TableColumn<?, ?> idProduto_col_categoria;
 
-	    @FXML
-	    private TextField id_produto;
 
 	    @FXML
 	    private Label marcaUpddate;
@@ -223,18 +212,7 @@ public class DashboardController implements Initializable{
         desconto.getItems().addAll(0, 5, 10, 15, 20, 25, 30, 35, 50);
         desconto.getSelectionModel().select(0); 
     }
-	    public void status() {
-	    	comboStatus.getItems().clear();
-	    	comboStatus.getItems().addAll("Inativo","Ativo");
-	    	comboStatus.getSelectionModel().select("Ativo");
-		}
-	    
-	    public void categoria() {
-	    	categoria.getItems().clear();
-	    	categoria.getItems().addAll("-","Masculino","Feminino","KIDS");
-	    	categoria.getSelectionModel().select("-");
-		}
-	    
+
 	   public void telamuda(ActionEvent event) {
 		   System.out.println("TESTE");
 		   if(event.getSource()== Home_btn) {
@@ -293,8 +271,6 @@ public class DashboardController implements Initializable{
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
 		desconto();
-        status();
-        categoria();
         SpinnerValueFactory<Integer> valueFactoryMinima = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 100, 0);
         SpinnerValueFactory<Integer> valueFactoryMaxima = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 100, 0);
 
@@ -313,21 +289,10 @@ public class DashboardController implements Initializable{
 	
 	public void handleAddProduto(ActionEvent event) {
 	    if (camposValidos()) {
-	        Produto produto = new Produto(0, null, 0, 0, null, null, null, 0, 0, null, null, null, null, null);
-	        produto.setId(Integer.parseInt(id_produto.getText()));
-	        produto.setNome(nome_produto.getText());
-	        produto.setPreco(Double.parseDouble(valor_produto.getText()));
-	        produto.setPercentualDesconto(desconto.getValue()); 
-	        produto.setDescricao(descricao_produto.getText());
-	        produto.setMarca(marca_produto.getText());
-	        produto.setFornecedor(fornecedor_produto.getText());
-	        produto.setQuantidadeAtual(spinerqtdmaxima.getValue()); 
-	        produto.setQuantidadeMinima(spinerqtdMinima.getValue()); 
-	        produto.setDataCriacao(LocalDate.now());
-	        produto.setDataUltimaModificacao(LocalDate.now());
-	        produto.setStatus(comboStatus.getValue()); 
+	        Produto produto = new Produto(Produto.geraId(), nome_produto.getText(), Double.parseDouble(valor_produto.getText()), 
+	        		desconto.getValue(), descricao_produto.getText(), marca_produto.getText(), fornecedor_produto.getText(),
+	        		spinerqtdmaxima.getValue(), spinerqtdMinima.getValue(), LocalDate.now(), LocalDate.now());
 	        try {
-	            // Assuming you have a ProdutoDAO class with a method inserirProduto(Produto produto)
 	            produtoDao.inserirProduto(produto);
 	            exibirAlerta("Produto adicionado com sucesso!", Alert.AlertType.INFORMATION);
 	            limparCampos();
@@ -341,11 +306,10 @@ public class DashboardController implements Initializable{
 	}
 
     private boolean camposValidos() {
-        return !id_produto.getText().isEmpty() && !nome_produto.getText().isEmpty() && !valor_produto.getText().isEmpty();
+        return !nome_produto.getText().isEmpty() && !valor_produto.getText().isEmpty();
     }
 
     public void limparCampos() {
-        id_produto.clear();
         nome_produto.clear();
         valor_produto.clear();
         descricao_produto.clear();

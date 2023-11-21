@@ -119,7 +119,7 @@ public class PrincipalController {
 		stage.show();
 	}
 	public void irparaDashboardLojista(ActionEvent event) throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("/application/DashboardLojista.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("/application/dashboard.fxml"));
 		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		Scene scene = new Scene(root);
 		stage.setScene(scene);
@@ -128,14 +128,6 @@ public class PrincipalController {
 	
 	public void irParaProdutoListagem(ActionEvent event) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("/application/ProdutoListagem.fxml"));
-		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		Scene scene = new Scene(root);
-		stage.setScene(scene);
-		stage.show();
-	}
-	
-	public void irdashboard(ActionEvent event) throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("/application/dashboard.fxml"));
 		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		Scene scene = new Scene(root);
 		stage.setScene(scene);

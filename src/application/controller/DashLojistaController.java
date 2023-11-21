@@ -65,7 +65,7 @@ public class DashLojistaController {
 
     @FXML
     private void adicionarProduto() {
-        Produto novoProduto = new Produto(0, null, 0, 0, null, null, null, 0, 0, null, null, null, null, null, null);
+        Produto novoProduto = new Produto(0, null, 0, 0, null, null, null, 0, 0, null, null);
         tableViewProdutos.getItems().add(novoProduto);
     }
 
