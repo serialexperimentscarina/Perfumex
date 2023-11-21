@@ -14,23 +14,23 @@ A avaliação será feita de maneira global, ou seja, não apenas o banco de dad
 
 A data de entrega, em Banco de Dados, está definida como a mesma data da P2 e não será modificada.
 ## TO DO
-- [ ] Documentação
+- [X] Documentação
   - [X] Engenharia de requisitos baseada na observação de um sistema de venda online com marketplace
   - [X] Modelagem do banco de dados
-  - [ ] Modelagem do sistema
+  - [X] Modelagem do sistema
   - [ ] Javadoc
   - [ ] Testes de funcionalidades
-  - [ ] Queries do banco de dados
-- [ ] Implementar o sistema com Java, Eclipse e JavaFX
+  - [X] Queries do banco de dados
+- [X] Implementar o sistema com Java, Eclipse e JavaFX
   - [ ] Mínimo de 5 entidades
   - [ ] Mínimo de 5 operações de software que chamem consultas SQL com operações, condicionais, funções de agregação
   - [ ] Mínimo de 5 operações de software que chamem consultas SQL com que envolvam junções de tabelas
-  - [ ] Divisão em camadas: Fronteira, Controle, Entidade, DAO e Segurança
-  - [ ] Proteção por usuário e senha
-  - [ ] Mínimo de 2 perfis de acesso diferentes
+  - [X] Divisão em camadas: Fronteira, Controle, Entidade, DAO e Segurança
+  - [X] Proteção por usuário e senha
+  - [X] Mínimo de 2 perfis de acesso diferentes
   - [ ] Mínimo de 4 CRUDS completos com utilização do TableView
   - [ ] Acima de 5 campos por entidade
-  - [ ] Campos validados com mensagens individuais sobre os erros em cada um dos campos
+  - [X] Campos validados com mensagens individuais sobre os erros em cada um dos campos
 - [ ] Gerar jar do projeto para ser executado
 - [ ] Apresentação do sistema dia 28/11/23
 
