@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Lojista extends Usuario{
 	
 	private String cnpj;
-	private ArrayList<Loja> lojas;
+	private ArrayList<Produto> produtos;
 
 	public Lojista(int id, String nome, String sobrenome, String email, String senha, String telefone, String status,
 			LocalDate dataCriacao, LocalDate dataUltimaModificacao, String cnpj) {
@@ -22,12 +22,12 @@ public class Lojista extends Usuario{
 		this.cnpj = cnpj;
 	}
 
-	public ArrayList<Loja> getLojas() {
-		return lojas;
+	public ArrayList<Produto> getProdutos() {
+		return produtos;
 	}
 
-	public void setLojas(ArrayList<Loja> lojas) {
-		this.lojas = lojas;
+	public void setProdutos(ArrayList<Produto> produtos) {
+		this.produtos = produtos;
 	}
 
 }

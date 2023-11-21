@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.PasswordField;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
@@ -29,7 +30,7 @@ public class PrincipalController {
 	@FXML
 	private TextField tFieldEmail;
 	@FXML
-	private TextField tFieldSenha;
+	private PasswordField tFieldSenha;
 	
 	@FXML
 	public void irParaLogin(ActionEvent event) throws IOException {

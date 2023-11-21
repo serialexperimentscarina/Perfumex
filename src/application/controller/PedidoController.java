@@ -9,21 +9,18 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class ProdutoListagemController {
+public class PedidoController {
 	
-	public void deslogar(ActionEvent event) throws IOException {
-		SessaoController sessao = new SessaoController();
-		sessao.deslogar();
-		
-		Parent root = FXMLLoader.load(getClass().getResource("/application/Principal.FXML"));
+	public void voltar(ActionEvent event) throws IOException {
+		Parent root = FXMLLoader.load(getClass().getResource("/application/Carrinho.FXML"));
 		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		Scene scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
 	}
 	
-	public void irParaCarrinho(ActionEvent event) throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("/application/Carrinho.FXML"));
+	public void finalizar(ActionEvent event) throws IOException {
+		Parent root = FXMLLoader.load(getClass().getResource("/application/PedidoFinalizado.FXML"));
 		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		Scene scene = new Scene(root);
 		stage.setScene(scene);

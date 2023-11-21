@@ -16,12 +16,19 @@ public class Produto {
 	private int quantidadeMinima;
 	private LocalDate dataCriacao;
 	private LocalDate dataUltimaModificacao;
+<<<<<<< HEAD
 	private Categoria categoria;
 	private String Status;
 
 	public Produto(int id, String nome, double preco, double percentualDesconto, String descricao, String marca,
 			String fornecedor, int quantidadeAtual, int quantidadeMinima, LocalDate dataCriacao, String status,
 			LocalDate dataUltimaModificacao, Categoria categoria,  ArrayList<Produto> produtos) {
+=======
+
+	public Produto(int id, String nome, double preco, double percentualDesconto, String descricao, String marca,
+			String fornecedor, int quantidadeAtual, int quantidadeMinima, LocalDate dataCriacao,
+			LocalDate dataUltimaModificacao) {
+>>>>>>> 3df9ffaa50cd54621bb257f0bcc302ee31e0ea02
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -34,7 +41,10 @@ public class Produto {
 		this.quantidadeMinima = quantidadeMinima;
 		this.dataCriacao = dataCriacao;
 		this.dataUltimaModificacao = dataUltimaModificacao;
+<<<<<<< HEAD
 		this.Status=status;
+=======
+>>>>>>> 3df9ffaa50cd54621bb257f0bcc302ee31e0ea02
 	}
 
 	public int getId() {
@@ -116,7 +126,11 @@ public class Produto {
 	public void setDataUltimaModificacao(LocalDate dataUltimaModificacao) {
 		this.dataUltimaModificacao = dataUltimaModificacao;
 	}
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> 3df9ffaa50cd54621bb257f0bcc302ee31e0ea02
 	public String getFornecedor() {
 		return fornecedor;
 	}
@@ -125,6 +139,7 @@ public class Produto {
 		this.fornecedor = fornecedor;
 	}
 	
+<<<<<<< HEAD
 	public String getStatus() {
 		return Status;
 	}
@@ -132,5 +147,12 @@ public class Produto {
 	public void setStatus(String status) {
 		this.Status = status;
 	}
+=======
+	public static int geraId() {
+		//TBA: Verificar se ID já existe no banco
+		return (int) (Math.random() * 10000);
+	}
+	
+>>>>>>> 3df9ffaa50cd54621bb257f0bcc302ee31e0ea02
 
 }

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.CarrinhoController">
+   <children>
+      <Button fx:id="btnVoltar" layoutX="43.0" layoutY="35.0" mnemonicParsing="false" onAction="#voltar" prefHeight="42.0" prefWidth="119.0" style="-fx-background-color: #ffffff;" text="Voltar">
+         <font>
+            <Font name="Berlin Sans FB" size="20.0" />
+         </font>
+      </Button>
+      <TableView layoutX="42.0" layoutY="118.0" prefHeight="603.0" prefWidth="691.0">
+         <columns>
+            <TableColumn prefWidth="375.0" text="Produto" />
+            <TableColumn prefWidth="139.0" text="Quantidade" />
+            <TableColumn prefWidth="176.0" text="Subtotal" />
+         </columns>
+      </TableView>
+      <Label layoutX="847.0" layoutY="248.0" text="Total:">
+         <font>
+            <Font name="Berlin Sans FB" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTotalValor" layoutX="993.0" layoutY="248.0" text="R$ 0,00">
+         <font>
+            <Font name="Berlin Sans FB" size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnFinalizar" layoutX="1114.0" layoutY="679.0" mnemonicParsing="false" onAction="#finalizar" prefHeight="42.0" prefWidth="119.0" style="-fx-background-color: #ffffff;" text="Finalizar">
+         <font>
+            <Font name="Berlin Sans FB" size="20.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
