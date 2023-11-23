@@ -187,21 +187,19 @@
                                     <String fx:value="shadown" />
                                  </styleClass>
                                  <children>
-                                    <TableView id="produtos_tableView" fx:id="tablevie" layoutX="7.0" layoutY="73.0" prefHeight="200.0" prefWidth="914.0">
+                                    <TableView id="produtos_tableView" fx:id="tViewProduto" layoutX="7.0" layoutY="73.0" prefHeight="200.0" prefWidth="914.0">
                                       <columns>
                                         <TableColumn fx:id="idProduto_col_ID" prefWidth="51.0" text="ID_Prod" />
-                                        <TableColumn fx:id="nomeprod_col_prod" prefWidth="46.0" text="Nome" />
-                                          <TableColumn fx:id="idProduto_col_Preco" prefWidth="45.0" text="Preco" />
-                                          <TableColumn fx:id="idProduto_col_Desconto" prefWidth="63.0" text="Desconto" />
-                                          <TableColumn fx:id="idProduto_col_Descricao" prefWidth="103.0" text="Descrição" />
-                                          <TableColumn fx:id="idProduto_col_Marca" prefWidth="56.0" text="Marca" />
-                                          <TableColumn fx:id="idProduto_col_Fornecedor" prefWidth="89.0" text="Fornecedor" />
-                                          <TableColumn fx:id="idProduto_col_QTDAtual" prefWidth="65.0" text="QTD_Atual" />
-                                          <TableColumn fx:id="idProduto_col_SQTDMinima" prefWidth="81.0" text="QTD_Minima" />
-                                          <TableColumn fx:id="idProduto_col_DataCriacao" minWidth="0.0" prefWidth="91.0" text="Data_Criacao" />
-                                          <TableColumn fx:id="idProduto_col_DataMOD" minWidth="0.0" prefWidth="76.0" text="Data_Mod" />
-                                          <TableColumn fx:id="idProduto_col_Status" minWidth="0.0" prefWidth="56.0" text="Status" />
-                                          <TableColumn fx:id="idProduto_col_categoria" minWidth="0.0" prefWidth="91.0" text="Categoria" />
+                                        <TableColumn fx:id="nomeprod_col_prod" prefWidth="107.0" text="Nome" />
+                                          <TableColumn fx:id="idProduto_col_Preco" minWidth="0.0" prefWidth="43.0" text="Preco" />
+                                          <TableColumn fx:id="idProduto_col_Desconto" prefWidth="118.0" text="Desconto" />
+                                          <TableColumn fx:id="idProduto_col_Descricao" prefWidth="74.0" text="Descrição" />
+                                          <TableColumn fx:id="idProduto_col_Marca" prefWidth="93.0" text="Marca" />
+                                          <TableColumn fx:id="idProduto_col_Fornecedor" prefWidth="86.0" text="Fornecedor" />
+                                          <TableColumn fx:id="idProduto_col_QTDAtual" prefWidth="89.0" text="QTD_Atual" />
+                                          <TableColumn fx:id="idProduto_col_SQTDMinima" prefWidth="82.0" text="QTD_Minima" />
+                                          <TableColumn fx:id="idProduto_col_DataCriacao" minWidth="0.0" prefWidth="97.0" text="Data_Criacao" />
+                                          <TableColumn fx:id="idProduto_col_DataMOD" minWidth="0.0" prefWidth="73.0" text="Data_Mod" />
                                       </columns>
                                     </TableView>
                                     <TextField fx:id="buscar_produto" layoutX="14.0" layoutY="32.0" prefHeight="30.0" prefWidth="277.0" promptText="Buscar" />

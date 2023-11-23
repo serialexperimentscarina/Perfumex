@@ -1,6 +1,7 @@
 package application.persistence;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import application.controller.SessaoController;
@@ -34,6 +35,17 @@ private Connection c;
 	
 		ps.execute();
 		ps.close();
+	}
+	
+	public ResultSet buscarProdutosLojista() throws SQLException {
+		String sql = "SELECT * FROM produto WHERE lojistaid = ?";
+		
+		PreparedStatement ps = c.prepareStatement(sql);
+		ps.setInt(1, SessaoController.usuario.getId());
+		
+		ResultSet rs = ps.executeQuery();
+		
+		return rs;
 	}
 
 }
