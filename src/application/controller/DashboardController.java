@@ -294,9 +294,6 @@ public class DashboardController implements Initializable{
     	idProduto_col_DataCriacao.setCellValueFactory( new PropertyValueFactory<Produto, LocalDate>("dataCriacao"));
     	idProduto_col_DataMOD.setCellValueFactory( new PropertyValueFactory<Produto, LocalDate>("dataUltimaModificacao"));
     	tViewProduto.setItems(lista);
-    	
-    	System.out.println(lista);
-    	System.out.println(tViewProduto.getItems());
     }
 }
         
