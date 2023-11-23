@@ -275,6 +275,7 @@ public class DashboardController implements Initializable{
     private void popularTabela() throws SQLException {
     	ResultSet rs = produtoDao.buscarProdutosLojista();
     	
+    	// Popula lista com resultados do SQL
     	while(rs.next()){
     		Produto produto = new Produto(rs.getInt("id"), rs.getString("nome"), rs.getFloat("preco"), rs.getFloat("percentual_desconto"),
     				rs.getString("descricao"), rs.getString("marca"), rs.getString("fornecedor"), rs.getInt("quantidade_atual"), 
@@ -282,6 +283,7 @@ public class DashboardController implements Initializable{
     		lista.add(produto);
     	}  
 
+    	// Ligar as colunas com atributos dos objetos
     	idProduto_col_ID.setCellValueFactory( new PropertyValueFactory<Produto, Integer>("id"));
     	nomeprod_col_prod.setCellValueFactory( new PropertyValueFactory<Produto, String>("nome"));
     	idProduto_col_Preco.setCellValueFactory( new PropertyValueFactory<Produto, Float>("preco"));
