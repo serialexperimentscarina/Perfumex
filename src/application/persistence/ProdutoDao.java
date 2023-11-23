@@ -37,6 +37,14 @@ private Connection c;
 		ps.close();
 	}
 	
+	public ResultSet buscarProdutosCliente() throws SQLException {
+		String sql = "SELECT * FROM produto WHERE quantidade_atual >= quantidade_minima";		
+		PreparedStatement ps = c.prepareStatement(sql);		
+		
+		ResultSet rs = ps.executeQuery();
+		return rs;
+	}
+	
 	public ResultSet buscarProdutosLojista() throws SQLException {
 		String sql = "SELECT * FROM produto WHERE lojistaid = ?";
 		
