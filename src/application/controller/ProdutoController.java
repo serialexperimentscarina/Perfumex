@@ -42,12 +42,12 @@ public class ProdutoController {
 	private TextField tFieldDesco;
 	
 	public void cadastrarProduto(ActionEvent event) {
-		//TBA: Validações, verificar campos vazios, ou campos que violam tamanho máximo em banco
-		Produto produto = new Produto(Produto.geraId(), tFieldNome.getText(), Float.parseFloat(tFieldValor.getText()), Float.parseFloat(tFieldDesco.getText()),
-				tAreaDesc.getText(), tFieldMarca.getText(), tFieldForn.getText(), Integer.parseInt(tFieldQAtual.getText()), Integer.parseInt(tFieldQMin.getText()), 
-				LocalDate.now(), LocalDate.now());
-		
 		try {
+			//TBA: Validações, verificar campos vazios, ou campos que violam tamanho máximo em banco
+			Produto produto = new Produto(Produto.geraId(), tFieldNome.getText(), Float.parseFloat(tFieldValor.getText()), Float.parseFloat(tFieldDesco.getText()),
+					tAreaDesc.getText(), tFieldMarca.getText(), tFieldForn.getText(), Integer.parseInt(tFieldQAtual.getText()), Integer.parseInt(tFieldQMin.getText()), 
+					LocalDate.now(), LocalDate.now());
+			
 			ProdutoDao pDao = new ProdutoDao();
 			pDao.inserirProduto(produto);
 			

@@ -234,22 +234,23 @@ public class DashboardController implements Initializable{
 	
 	
 	public void handleAddProduto(ActionEvent event) {
-	    if (camposValidos()) {
+        try {
+        	if (camposValidos()) {
 	        Produto produto = new Produto(Produto.geraId(), nome_produto.getText(), Double.parseDouble(valor_produto.getText()), 
 	        		desconto.getValue(), descricao_produto.getText(), marca_produto.getText(), fornecedor_produto.getText(),
 	        		spinerqtdmaxima.getValue(), spinerqtdMinima.getValue(), LocalDate.now(), LocalDate.now());
-	        try {
+
 	            produtoDao.inserirProduto(produto);
 	            exibirAlerta("Produto adicionado com sucesso!", Alert.AlertType.INFORMATION);
 		        lista.add(produto);
 	            limparCampos();
-	        } catch (SQLException e) {
+        	} else {
+	    	        exibirAlerta("Preencha todos os campos corretamente.", Alert.AlertType.WARNING);
+	    	}
+	   } catch (Exception e) {
 	            e.printStackTrace();
 	            exibirAlerta("Erro ao adicionar produto. Verifique os dados e tente novamente.", Alert.AlertType.ERROR);
-	        }
-	    } else {
-	        exibirAlerta("Preencha todos os campos corretamente.", Alert.AlertType.WARNING);
-	    }
+	    } 
 	}
 
     private boolean camposValidos() {

@@ -1,7 +1,11 @@
 package application.model;
 
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+
+import application.persistence.CarrinhoDao;
+import application.persistence.UsuarioDao;
 
 public class Carrinho {
 	
@@ -68,5 +72,11 @@ public class Carrinho {
 	public void setProdutos(ArrayList<Produto> produtos) {
 		this.produtos = produtos;
 	}
+	
+	public static int geraId() throws ClassNotFoundException, SQLException {
+		CarrinhoDao cDao = new CarrinhoDao();
+		return cDao.contarCarrinho() + 1;
+	}
+	
 
 }

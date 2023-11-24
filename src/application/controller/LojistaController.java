@@ -80,14 +80,14 @@ public class LojistaController {
 		stage.show();
 	}
 	
-	public void cadastrarLojista(ActionEvent event) {
-		//TBA: Validações, verificar campos vazios, ou campos que violam tamanho máximo em banco
-		Lojista lojista = new Lojista(Usuario.geraId(), tFieldNome.getText(), tFieldSobrenome.getText(), tFieldEmail.getText(),
-				tFieldSenha.getText(), tFieldTelefone.getText(), "Ativo", LocalDate.now(), LocalDate.now(), tFieldCNPJ.getText());
-		Endereco endereco = new Endereco(lojista, tFieldRua.getText(), Integer.parseInt(tFieldNum.getText()), tFieldCEP.getText(),
-			tFieldComplemento.getText(), cBoxEstado.getValue(), tFieldCidade.getText(), LocalDate.now(), LocalDate.now());
-		
+	public void cadastrarLojista(ActionEvent event) {		
 		try {
+			//TBA: Validações, verificar campos vazios, ou campos que violam tamanho máximo em banco
+			Lojista lojista = new Lojista(Usuario.geraId(), tFieldNome.getText(), tFieldSobrenome.getText(), tFieldEmail.getText(),
+					tFieldSenha.getText(), tFieldTelefone.getText(), "Ativo", LocalDate.now(), LocalDate.now(), tFieldCNPJ.getText());
+			Endereco endereco = new Endereco(lojista, tFieldRua.getText(), Integer.parseInt(tFieldNum.getText()), tFieldCEP.getText(),
+				tFieldComplemento.getText(), cBoxEstado.getValue(), tFieldCidade.getText(), LocalDate.now(), LocalDate.now());
+			
 			UsuarioDao uDao = new UsuarioDao();
 			uDao.insereLojista(lojista);
 			

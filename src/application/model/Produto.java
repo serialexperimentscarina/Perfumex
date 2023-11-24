@@ -1,7 +1,11 @@
 package application.model;
 
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+
+import application.persistence.ProdutoDao;
+import application.persistence.UsuarioDao;
 
 public class Produto {
 	
@@ -122,9 +126,9 @@ public class Produto {
 		this.fornecedor = fornecedor;
 	}
 
-	public static int geraId() {
-		//TBA: Verificar se ID já existe no banco
-		return (int) (Math.random() * 10000);
+	public static int geraId() throws ClassNotFoundException, SQLException {
+		ProdutoDao pDao = new ProdutoDao();
+		return pDao.contarProduto() + 1;
 	}
 
 }

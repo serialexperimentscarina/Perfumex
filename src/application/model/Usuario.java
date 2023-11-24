@@ -1,6 +1,9 @@
 package application.model;
 
+import java.sql.SQLException;
 import java.time.LocalDate;
+
+import application.persistence.UsuarioDao;
 
 public class Usuario {
 	
@@ -119,9 +122,9 @@ public class Usuario {
 		this.dataUltimaModificacao = dataUltimaModificacao;
 	}
 	
-	public static int geraId() {
-		//TBA: Verificar se ID já existe no banco
-		return (int) (Math.random() * 10000);
+	public static int geraId() throws ClassNotFoundException, SQLException {
+		UsuarioDao uDao = new UsuarioDao();
+		return uDao.contarUsuario() + 1;
 	}
 	
 	

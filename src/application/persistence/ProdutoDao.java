@@ -55,5 +55,17 @@ private Connection c;
 		
 		return rs;
 	}
+	
+	public int contarProduto() throws SQLException{
+		String sql = "SELECT COUNT(id) AS contagem FROM produto";
+		PreparedStatement ps = c.prepareStatement(sql);
+		ResultSet rs = ps.executeQuery();
+		
+		if (rs.next()) {
+			return rs.getInt("contagem");
+		}
+		return 0;
+	
+	}
 
 }

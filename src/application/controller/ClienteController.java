@@ -2,11 +2,14 @@ package application.controller;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
+import application.model.Carrinho;
 import application.model.Cliente;
 import application.model.Endereco;
 import application.model.Lojista;
 import application.model.Usuario;
+import application.persistence.CarrinhoDao;
 import application.persistence.EnderecoDao;
 import application.persistence.UsuarioDao;
 import javafx.event.ActionEvent;
@@ -70,19 +73,27 @@ public class ClienteController {
 	}
 	
 	public void cadastrarCliente(ActionEvent event) {
-		System.out.println("teste");
-		//TBA: Validações, verificar campos vazios, ou campos que violam tamanho máximo em banco
-		Cliente cliente = new Cliente(Usuario.geraId(), tFieldNome.getText(), tFieldSobrenome.getText(), tFieldEmail.getText(),
-				tFieldSenha.getText(), tFieldTelefone.getText(), "Ativo", LocalDate.now(), LocalDate.now(), tFieldCpf.getText());
-		Endereco endereco = new Endereco(cliente, tFieldRua.getText(), Integer.parseInt(tFieldNum.getText()), tFieldCep.getText(),
-			tFieldComplemento.getText(), cBoxEstado.getValue(), tFieldCidade.getText(), LocalDate.now(), LocalDate.now());
-		
 		try {
+			//TBA: Validações, verificar campos vazios, ou campos que violam tamanho máximo em banco
+			Cliente cliente = new Cliente(Usuario.geraId(), tFieldNome.getText(), tFieldSobrenome.getText(), tFieldEmail.getText(),
+					tFieldSenha.getText(), tFieldTelefone.getText(), "Ativo", LocalDate.now(), LocalDate.now(), tFieldCpf.getText());
+			Endereco endereco = new Endereco(cliente, tFieldRua.getText(), Integer.parseInt(tFieldNum.getText()), tFieldCep.getText(),
+				tFieldComplemento.getText(), cBoxEstado.getValue(), tFieldCidade.getText(), LocalDate.now(), LocalDate.now());
+			Carrinho carrinho = new Carrinho(Carrinho.geraId(), 0, 0, LocalDate.now(), LocalDate.now());
+			
+			ArrayList<Carrinho> listaC = new ArrayList<Carrinho>();
+			listaC.add(carrinho);
+			
+			cliente.setCarrinhos(listaC);
+			
 			UsuarioDao uDao = new UsuarioDao();
 			uDao.insereCliente(cliente);
 			
 			EnderecoDao eDao = new EnderecoDao();
 			eDao.insererEndereco(endereco);
+			
+			CarrinhoDao cDao = new CarrinhoDao();
+			cDao.criarNovoCarrinho(carrinho, cliente);
 			
 			Alert alert = new Alert(AlertType.CONFIRMATION, "Cliente Cadastrado");
 			alert.show();
