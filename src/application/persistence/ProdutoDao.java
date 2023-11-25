@@ -6,6 +6,7 @@ import java.sql.SQLException;
 
 import application.controller.SessaoController;
 import application.model.Produto;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class ProdutoDao {
 
@@ -56,4 +57,98 @@ private Connection c;
 		return rs;
 	}
 
+	public void deletarProduto(int id) throws SQLException {
+        String sql = "DELETE FROM produto WHERE id = ?";
+        
+        try (PreparedStatement ps = c.prepareStatement(sql)) {
+            ps.setInt(1, id);
+            int rowsAffected = ps.executeUpdate();
+
+            if (rowsAffected > 0) {
+                System.out.println("Produto deletado com sucesso!");
+            } else {
+                System.out.println("Nenhum produto foi deletado. Verifique o ID e tente novamente.");
+            }
+        }
+	}
+	public void atualizarValorProduto(int idProduto, double novoValor) throws SQLException {
+        String sql = "UPDATE produto SET preco = ? WHERE id = ?";
+
+        try (PreparedStatement ps = c.prepareStatement(sql)) {
+            ps.setDouble(1, novoValor);
+            ps.setInt(2, idProduto);
+
+            int rowsAffected = ps.executeUpdate();
+
+            if (rowsAffected > 0) {
+                System.out.println("Valor do produto atualizado com sucesso!");
+            } else {
+                System.out.println("Nenhum produto teve o valor atualizado. Verifique o ID e tente novamente.");
+            }
+        }
+    }
+	
+	
+
+	public Produto buscarProdutoPorId(int id) throws SQLException {
+		
+		 String sql = "SELECT * FROM produto WHERE id = ?";
+		    try (PreparedStatement ps = c.prepareStatement(sql)) {
+		        ps.setInt(1, id);
+		        ResultSet rs = ps.executeQuery();
+		        if (rs.next()) {
+		            return new Produto(
+		                    rs.getInt("id"),
+		                    rs.getString("nome"),
+		                    rs.getFloat("preco"),
+		                    rs.getFloat("percentual_desconto"),
+		                    rs.getString("descricao"),
+		                    rs.getString("marca"),
+		                    rs.getString("fornecedor"),
+		                    rs.getInt("quantidade_atual"),
+		                    rs.getInt("quantidade_minima"),
+		                    rs.getDate("data_criacao").toLocalDate(),
+		                    rs.getDate("data_ultima_modificacao").toLocalDate()
+		            );
+		        }
+		    }
+		    return null; // Return null if the product is not found
+		}
+
+	public void atualizarProduto(Produto produto) throws SQLException {
+	    String sql = "UPDATE produto SET nome = ?, preco = ?, percentual_desconto = ?, descricao = ?, marca = ?, fornecedor = ?, quantidade_atual = ?, quantidade_minima = ?, data_ultima_modificacao = ? WHERE id = ?";
+	    try (PreparedStatement ps = c.prepareStatement(sql)) {
+	        ps.setString(1, produto.getNome());
+	        ps.setDouble(2, produto.getPreco());
+	        ps.setDouble(3, produto.getPercentualDesconto());
+	        ps.setString(4, produto.getDescricao());
+	        ps.setString(5, produto.getMarca());
+	        ps.setString(6, produto.getFornecedor());
+	        ps.setInt(7, produto.getQuantidadeAtual());
+	        ps.setInt(8, produto.getQuantidadeMinima());
+	        ps.setDate(9, java.sql.Date.valueOf(java.time.LocalDate.now()));
+	        ps.setInt(10, produto.getId());
+
+	        int rowsAffected = ps.executeUpdate();
+
+	        if (rowsAffected > 0) {
+	            System.out.println("Produto atualizado com sucesso!");
+	        } else {
+	            System.out.println("Nenhum produto teve as informações atualizadas. Verifique o ID e tente novamente.");
+	        }
+	    }
+	}
+
+
+
 }
+		
+	
+	
+	
+	
+	
+	
+
+
+

@@ -14,14 +14,14 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.PedidoController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.PedidoController">
    <children>
-      <Button fx:id="btnVoltar" layoutX="43.0" layoutY="35.0" mnemonicParsing="false" onAction="#voltar" prefHeight="42.0" prefWidth="119.0" style="-fx-background-color: #ffffff;" text="Voltar">
+      <Button fx:id="btnVoltar" layoutX="43.0" layoutY="35.0" mnemonicParsing="false" onAction="#voltar" prefHeight="42.0" prefWidth="119.0" style="-fx-background-color: #ffffff; -fx-text-fill: black;" styleClass="clean-btn" stylesheets="@dashboarddesing.css" text="Voltar">
          <font>
             <Font name="Berlin Sans FB" size="20.0" />
          </font>
       </Button>
-      <TableView layoutX="42.0" layoutY="118.0" prefHeight="159.0" prefWidth="640.0">
+      <TableView layoutX="42.0" layoutY="118.0" prefHeight="159.0" prefWidth="640.0" stylesheets="@dashboarddesing.css">
          <columns>
             <TableColumn prefWidth="394.0" text="Produto" />
             <TableColumn prefWidth="127.0" text="Quantidade" />
@@ -38,7 +38,7 @@
             <Font name="Berlin Sans FB" size="20.0" />
          </font>
       </Label>
-      <Button fx:id="btnFinalizar" layoutX="1118.0" layoutY="690.0" mnemonicParsing="false" onAction="#finalizar" prefHeight="42.0" prefWidth="119.0" style="-fx-background-color: #ffffff;" text="Finalizar">
+      <Button fx:id="btnFinalizar" layoutX="1118.0" layoutY="690.0" mnemonicParsing="false" onAction="#finalizar" prefHeight="42.0" prefWidth="119.0" style="-fx-background-color: #ffffff; -fx-text-fill: black;" styleClass="clean-btn" stylesheets="@dashboarddesing.css" text="Finalizar">
          <font>
             <Font name="Berlin Sans FB" size="20.0" />
          </font>
@@ -144,32 +144,32 @@
             <Font name="Berlin Sans FB" size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="tFieldNome" layoutX="977.0" layoutY="157.0" prefHeight="25.0" prefWidth="282.0" />
+      <TextField fx:id="tFieldNome" layoutX="977.0" layoutY="157.0" prefHeight="25.0" prefWidth="282.0" styleClass="textfield" stylesheets="@dashboarddesing.css" />
       <Label layoutX="729.0" layoutY="207.0" text="Número Impresso no Cartão:">
          <font>
             <Font name="Berlin Sans FB" size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="tFieldNum" layoutX="977.0" layoutY="206.0" prefHeight="25.0" prefWidth="282.0" />
+      <TextField fx:id="tFieldNum" layoutX="977.0" layoutY="206.0" prefHeight="25.0" prefWidth="282.0" styleClass="textfield" stylesheets="@dashboarddesing.css" />
       <Label layoutX="729.0" layoutY="255.0" text="Validade:">
          <font>
             <Font name="Berlin Sans FB" size="20.0" />
          </font>
       </Label>
-      <Spinner fx:id="spinMes" layoutX="977.0" layoutY="254.0" prefHeight="25.0" prefWidth="112.0" />
-      <Spinner fx:id="spinAno" layoutX="1154.0" layoutY="254.0" prefHeight="25.0" prefWidth="102.0" />
+      <Spinner fx:id="spinMes" layoutX="977.0" layoutY="254.0" prefHeight="25.0" prefWidth="112.0" styleClass="textfield" stylesheets="@dashboarddesing.css" />
+      <Spinner fx:id="spinAno" layoutX="1154.0" layoutY="254.0" prefHeight="25.0" prefWidth="102.0" styleClass="textfield" stylesheets="@dashboarddesing.css" />
       <Label layoutX="731.0" layoutY="305.0" text="Código de Segurança:">
          <font>
             <Font name="Berlin Sans FB" size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="tFieldCod" layoutX="974.0" layoutY="304.0" prefHeight="25.0" prefWidth="282.0" />
+      <TextField fx:id="tFieldCod" layoutX="974.0" layoutY="304.0" prefHeight="25.0" prefWidth="282.0" styleClass="textfield" stylesheets="@dashboarddesing.css" />
       <Label layoutX="732.0" layoutY="357.0" text="Parcelas:">
          <font>
             <Font name="Berlin Sans FB" size="20.0" />
          </font>
       </Label>
-      <MenuButton fx:id="menuParcelas" layoutX="974.0" layoutY="356.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="282.0" text="Selecione...">
+      <MenuButton fx:id="menuParcelas" layoutX="974.0" layoutY="356.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="282.0" styleClass="textfield" stylesheets="@dashboarddesing.css" text="Selecione...">
         <items>
           <MenuItem mnemonicParsing="false" text="Action 1" />
           <MenuItem mnemonicParsing="false" text="Action 2" />
