@@ -22,6 +22,7 @@ import application.persistence.ProdutoDao;
 import application.persistence.UsuarioDao;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -61,7 +62,7 @@ public class DashboardController implements Initializable{
     @FXML
     private Label Total_produtos;
     @FXML
-    private TableColumn<?, ?> Valor_col_table_update;
+    private TableColumn<Produto, Float> Valor_col_table_update;
     @FXML
     private Button btnUpdute_update;
     @FXML
@@ -79,7 +80,7 @@ public class DashboardController implements Initializable{
     @FXML
     private DatePicker datepiker;
     @FXML
-    private TableColumn<?, ?> decricao_col_table_update;
+    private TableColumn<Produto, String> decricao_col_table_update;
     @FXML
     private ComboBox<Float> desconto;
     @FXML
@@ -121,13 +122,13 @@ public class DashboardController implements Initializable{
     @FXML
     private Label nome_ProdutoUpdate;
     @FXML
-    private TableColumn<?, ?> nome_col_table_update;
+    private TableColumn<Produto, String> nome_col_table_update;
     @FXML
     private TextField nome_produto;
     @FXML
     private TableColumn<Produto, String> nomeprod_col_prod;
     @FXML
-    private TableColumn<?, ?> produtoId_col_table_update;
+    private TableColumn<Produto, Integer> produtoId_col_table_update;
     @FXML
     private Button produtosBTN;
     @FXML
@@ -146,6 +147,21 @@ public class DashboardController implements Initializable{
     private TextField valor_produto;
     
     private ProdutoDao produtoDao;
+    
+    @FXML
+    private TableColumn<Produto, String> marca_col_table_update ;
+    @FXML
+    private TableColumn<Produto, String>  fornecedor_col_table_update;
+    
+    @FXML
+    private TextField ID_update;
+
+    @FXML
+    private TextField valor_update;
+    
+    private FilteredList<Produto> filteredLista;
+    
+
     
 	private ObservableList<Produto> lista = FXCollections.observableArrayList();
 	   
@@ -211,7 +227,15 @@ public class DashboardController implements Initializable{
 					e.printStackTrace();
 				}	
 	    }
-	      
+	   
+	   public void handleUpdateProduct(ActionEvent event) {
+	        // You can add any logic here if needed
+	        updateBtn.fire();
+	    }
+	   
+	   
+	  
+	   //--------------------------------------------------------------------------------------------------------------------------
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
@@ -224,14 +248,35 @@ public class DashboardController implements Initializable{
         
         
         try {
-        	produtoDao = new ProdutoDao();
+            produtoDao = new ProdutoDao();
+            lista = FXCollections.observableArrayList();
+            filteredLista = new FilteredList<>(lista, p -> true);
             popularTabela();
         } catch (Exception e) {
             e.printStackTrace();
-      
         }
+
+       //--------------------------------------Pegando pela label-----------------------------------------------------------------
+        buscar_produto.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredLista.setPredicate(produto -> {
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+
+                String lowerCaseFilter = newValue.toLowerCase();
+                
+                return String.valueOf(produto.getId()).contains(lowerCaseFilter)
+                        || produto.getNome().toLowerCase().contains(lowerCaseFilter)
+                        || produto.getDescricao().toLowerCase().contains(lowerCaseFilter)
+                        || produto.getMarca().toLowerCase().contains(lowerCaseFilter)
+                        || produto.getFornecedor().toLowerCase().contains(lowerCaseFilter);
+                      
+            });
+        });
+
+        tViewProduto.setItems(filteredLista);
     }
-	
+	//---------------------------------ADD PRODUTO----------------------------------------------------------------------------------------
 	
 	public void handleAddProduto(ActionEvent event) {
         try {
@@ -272,7 +317,7 @@ public class DashboardController implements Initializable{
         alerta.setContentText(mensagem);
         alerta.showAndWait();
     }
-    
+    //-----------------Consultando as coisas na tabela-----------------------------------------------------------------------------------------------------------
     private void popularTabela() throws SQLException {
     	ResultSet rs = produtoDao.buscarProdutosLojista();
     	
@@ -298,7 +343,151 @@ public class DashboardController implements Initializable{
     	idProduto_col_DataMOD.setCellValueFactory( new PropertyValueFactory<Produto, LocalDate>("dataUltimaModificacao"));
     	tViewProduto.setItems(lista);
     }
+    
+    //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+   
+    
+    //---------DELETE PRODUTO---------------------------------------------------------------------------------------   
+	   @FXML
+	   public void handleDeleteProduto(ActionEvent event) {
+	       // Get the selected products
+	       ObservableList<Produto> selectedProdutos = tViewProduto.getSelectionModel().getSelectedItems();
+
+	       if (!selectedProdutos.isEmpty()) {
+	           Alert alert = new Alert(AlertType.CONFIRMATION);
+	           alert.setTitle("Confirmação de Exclusão");
+	           alert.setHeaderText(null);
+	           alert.setContentText("Você tem certeza que deseja excluir os produtos selecionados?");
+
+	           Optional<ButtonType> result = alert.showAndWait();
+
+	           if (result.isPresent() && result.get() == ButtonType.OK) {
+	               try {
+	                   // Delete the selected products from the database
+	                   for (Produto selectedProduto : selectedProdutos) {
+	                       produtoDao.deletarProduto(selectedProduto.getId());
+	                   }
+
+	                   // Remove the selected products from the TableView
+	                   lista.removeAll(selectedProdutos);
+
+	                   // Clear the selection
+	                   tViewProduto.getSelectionModel().clearSelection();
+
+	                   // Display success message
+	                   exibirAlerta("Produtos excluídos com sucesso!", Alert.AlertType.INFORMATION);
+	               } catch (SQLException e) {
+	                   e.printStackTrace();
+	                   exibirAlerta("Erro ao excluir produtos. Verifique e tente novamente.", Alert.AlertType.ERROR);
+	               }
+	           }
+	       } else {
+	           exibirAlerta("Selecione pelo menos um produto para excluir.", Alert.AlertType.WARNING);
+	       }
+	   }
+	   //--------------------------------------------------------------------------------------------------------------------------
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+   //---------------------------------UPDATE------------------------------------------------------------------------------------------ 
+   public void populateFields(ActionEvent event) {
+        try {
+            int productId = Integer.parseInt(ID_update.getText());
+            Produto produto = produtoDao.buscarProdutoPorId(productId);
+
+            if (produto != null) {
+                nome_ProdutoUpdate.setText(produto.getNome());
+                marcaUpddate.setText(produto.getMarca());
+                forcedorUpdate.setText(produto.getFornecedor());
+                descricaoUpdate.setText(produto.getDescricao());
+                valor_update.setText(String.valueOf(produto.getPreco()));
+            } else {
+                // Handle the case when the product is not found
+                exibirAlerta("Produto não encontrado.", Alert.AlertType.WARNING);
+            }
+        } catch (NumberFormatException | SQLException e) {
+            // Handle the case when the ID is not a valid number or an SQL exception occurs
+            exibirAlerta("Erro ao buscar produto. Verifique o ID e tente novamente.", Alert.AlertType.ERROR);
+        }
+    }
+
+    @FXML
+    public void updateProduct(ActionEvent event) {
+        try {
+            int productId = Integer.parseInt(ID_update.getText());
+            Produto produto = produtoDao.buscarProdutoPorId(productId);
+
+            if (produto != null) {
+                // Update the product details based on the UI fields
+                produto.setNome(nome_ProdutoUpdate.getText());
+                produto.setMarca(marcaUpddate.getText());
+                produto.setFornecedor(forcedorUpdate.getText());
+                produto.setDescricao(descricaoUpdate.getText());
+                produto.setPreco(Double.parseDouble(valor_update.getText()));
+
+                // Update the product in the database
+                produtoDao.atualizarProduto(produto);
+
+                // Refresh the TableView
+                lista.clear();
+                popularTabela();
+
+                // Display success message
+                exibirAlerta("Produto atualizado com sucesso!", Alert.AlertType.INFORMATION);
+            } else {
+                // Handle the case when the product is not found
+                exibirAlerta("Produto não encontrado.", Alert.AlertType.WARNING);
+            }
+        } catch (NumberFormatException | SQLException e) {
+            // Handle the case when the ID is not a valid number or an SQL exception occurs
+            exibirAlerta("Erro ao atualizar produto. Verifique os dados e tente novamente.", Alert.AlertType.ERROR);
+        }
+    }
+    
+    public void limparCampos(ActionEvent event) {
+        // Limpa os campos
+        nome_ProdutoUpdate.setText("");
+        marcaUpddate.setText("");
+        forcedorUpdate.setText("");
+        descricaoUpdate.setText("");
+        valor_update.setText("");
+        ID_update.setText("");
+    }
+
+    
+
+
 }
+    
+    
+
         
         
 	

@@ -9,14 +9,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="582.0" prefWidth="821.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.ClienteController">
+<AnchorPane prefHeight="582.0" prefWidth="821.0" stylesheets="@dashboarddesing.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.ClienteController">
    <children>
       <Text fill="#0d49ff" layoutX="280.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastro de Cliente" textAlignment="CENTER">
          <font>
             <Font size="32.0" />
          </font>
       </Text>
-      <ImageView fitHeight="65.0" fitWidth="79.0" layoutX="532.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="65.0" fitWidth="79.0" layoutX="572.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../Pictures/Cliente.png" />
          </image>
@@ -26,43 +26,43 @@
             <Font size="23.0" />
          </font>
       </Text>
-      <TextField fx:id="tFieldNome" layoutX="84.0" layoutY="156.0" prefHeight="26.0" prefWidth="226.0" />
+      <TextField fx:id="tFieldNome" layoutX="84.0" layoutY="156.0" prefHeight="26.0" prefWidth="226.0" styleClass="textfield" stylesheets="@dashboarddesing.css" />
       <Text layoutX="13.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome: " wrappingWidth="122.38932418823242">
          <font>
             <Font size="22.0" />
          </font>
       </Text>
-      <TextField fx:id="tFieldSobrenome" layoutX="492.0" layoutY="156.0" prefHeight="26.0" prefWidth="312.0" />
+      <TextField fx:id="tFieldSobrenome" layoutX="492.0" layoutY="156.0" prefHeight="26.0" prefWidth="312.0" styleClass="textfield" stylesheets="@dashboarddesing.css" />
       <Text layoutX="8.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CPF:  ">
          <font>
             <Font size="22.0" />
          </font>
       </Text>
-      <TextField fx:id="tFieldCpf" layoutX="84.0" layoutY="202.0" prefHeight="26.0" prefWidth="226.0" />
+      <TextField fx:id="tFieldCpf" layoutX="84.0" layoutY="202.0" prefHeight="26.0" prefWidth="226.0" styleClass="textfield" stylesheets="@dashboarddesing.css" />
       <Text layoutX="341.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefone:">
          <font>
             <Font size="22.0" />
          </font>
       </Text>
-      <TextField fx:id="tFieldTelefone" layoutX="453.0" layoutY="205.0" prefHeight="26.0" prefWidth="355.0" />
+      <TextField fx:id="tFieldTelefone" layoutX="453.0" layoutY="205.0" prefHeight="26.0" prefWidth="355.0" styleClass="textfield" stylesheets="@dashboarddesing.css" />
       <Text layoutX="14.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CEP:">
          <font>
             <Font size="22.0" />
          </font>
       </Text>
-      <TextField fx:id="tFieldCep" layoutX="67.0" layoutY="304.0" prefHeight="26.0" prefWidth="108.0" />
+      <TextField fx:id="tFieldCep" layoutX="67.0" layoutY="304.0" prefHeight="26.0" prefWidth="108.0" styleClass="textfield" stylesheets="@dashboarddesing.css" />
       <Text layoutX="186.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rua:">
          <font>
             <Font size="22.0" />
          </font>
       </Text>
-      <TextField fx:id="tFieldRua" layoutX="234.0" layoutY="303.0" prefHeight="26.0" prefWidth="183.0" />
+      <TextField fx:id="tFieldRua" layoutX="234.0" layoutY="303.0" prefHeight="26.0" prefWidth="183.0" styleClass="textfield" stylesheets="@dashboarddesing.css" />
       <Text layoutX="626.0" layoutY="326.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estado:" wrappingWidth="73.15789794921875">
          <font>
             <Font size="22.0" />
          </font>
       </Text>
-      <ComboBox fx:id="cBoxEstado" layoutX="707.0" layoutY="304.0" prefHeight="26.0" prefWidth="100.0" />
+      <ComboBox fx:id="cBoxEstado" layoutX="707.0" layoutY="304.0" prefHeight="26.0" prefWidth="100.0" styleClass="textfield" stylesheets="@dashboarddesing.css" />
       <Text layoutX="14.0" layoutY="390.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cidade:">
          <font>
             <Font size="22.0" />
@@ -73,27 +73,27 @@
             <Font size="22.0" />
          </font>
       </Text>
-      <TextField fx:id="tFieldComplemento" layoutX="449.0" layoutY="368.0" prefHeight="26.0" prefWidth="319.0" />
+      <TextField fx:id="tFieldComplemento" layoutX="449.0" layoutY="368.0" prefHeight="26.0" prefWidth="319.0" styleClass="textfield" stylesheets="@dashboarddesing.css" />
       <Text layoutX="12.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email: ">
          <font>
             <Font size="22.0" />
          </font>
       </Text>
-      <TextField fx:id="tFieldEmail" layoutX="85.0" layoutY="253.0" prefHeight="26.0" prefWidth="335.0" />
+      <TextField fx:id="tFieldEmail" layoutX="85.0" layoutY="253.0" prefHeight="26.0" prefWidth="335.0" styleClass="textfield" stylesheets="@dashboarddesing.css" />
       <Text layoutX="447.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha:">
          <font>
             <Font size="22.0" />
          </font>
       </Text>
-      <TextField fx:id="tFieldSenha" layoutX="532.0" layoutY="253.0" prefHeight="26.0" prefWidth="276.0" />
-      <Button fx:id="btnCadastrar" layoutX="594.0" layoutY="500.0" mnemonicParsing="false" onAction="#cadastrarCliente" prefHeight="43.0" prefWidth="108.0" style="-fx-background-color: green;" text="Cadastrar" textFill="WHITE" />
-      <Button fx:id="btnVoltar" layoutX="178.0" layoutY="500.0" mnemonicParsing="false" onAction="#irParaLogin" prefHeight="43.0" prefWidth="100.0" style="-fx-background-color: blue;" text="Voltar" textFill="WHITE" />
-      <TextField fx:id="tFieldCidade" layoutX="99.0" layoutY="370.0" prefHeight="26.0" prefWidth="146.0" />
+      <TextField fx:id="tFieldSenha" layoutX="532.0" layoutY="253.0" prefHeight="26.0" prefWidth="276.0" styleClass="textfield" stylesheets="@dashboarddesing.css" />
+      <Button fx:id="btnCadastrar" layoutX="455.0" layoutY="500.0" mnemonicParsing="false" onAction="#cadastrarCliente" prefHeight="43.0" prefWidth="108.0" style="-fx-background-color: green;" styleClass="clean-btn" stylesheets="@dashboarddesing.css" text="Cadastrar" textFill="WHITE" />
+      <Button fx:id="btnVoltar" layoutX="178.0" layoutY="500.0" mnemonicParsing="false" onAction="#irParaLogin" prefHeight="43.0" prefWidth="100.0" style="-fx-background-color: blue;" styleClass="clean-btn" stylesheets="@dashboarddesing.css" text="Voltar" textFill="WHITE" />
+      <TextField fx:id="tFieldCidade" layoutX="99.0" layoutY="370.0" prefHeight="26.0" prefWidth="146.0" styleClass="textfield" stylesheets="@dashboarddesing.css" />
       <Text layoutX="424.0" layoutY="323.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Número:">
          <font>
             <Font size="22.0" />
          </font>
       </Text>
-      <TextField fx:id="tFieldNum" layoutX="528.0" layoutY="305.0" prefHeight="26.0" prefWidth="88.0" />
+      <TextField fx:id="tFieldNum" layoutX="528.0" layoutY="305.0" prefHeight="26.0" prefWidth="88.0" styleClass="textfield" stylesheets="@dashboarddesing.css" />
    </children>
 </AnchorPane>
