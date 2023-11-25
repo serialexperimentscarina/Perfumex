@@ -81,11 +81,6 @@ public class ClienteController {
 				tFieldComplemento.getText(), cBoxEstado.getValue(), tFieldCidade.getText(), LocalDate.now(), LocalDate.now());
 			Carrinho carrinho = new Carrinho(Carrinho.geraId(), 0, 0, LocalDate.now(), LocalDate.now());
 			
-			ArrayList<Carrinho> listaC = new ArrayList<Carrinho>();
-			listaC.add(carrinho);
-			
-			cliente.setCarrinhos(listaC);
-			
 			UsuarioDao uDao = new UsuarioDao();
 			uDao.insereCliente(cliente);
 			

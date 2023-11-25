@@ -6,7 +6,6 @@ import java.util.ArrayList;
 public class Cliente extends Usuario{
 
 	private String cpf;
-	private ArrayList<Carrinho> carrinhos;
 
 	public Cliente(int id, String nome, String sobrenome, String email, String senha, String telefone, String status,
 			LocalDate dataCriacao, LocalDate dataUltimaModificacao, String cpf) {
@@ -20,14 +19,6 @@ public class Cliente extends Usuario{
 
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
-	}
-
-	public ArrayList<Carrinho> getCarrinhos() {
-		return carrinhos;
-	}
-
-	public void setCarrinhos(ArrayList<Carrinho> carrinhos) {
-		this.carrinhos = carrinhos;
 	}
 
 	
