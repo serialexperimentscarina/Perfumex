@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.String?>
-<?import javafx.scene.chart.BarChart?>
-<?import javafx.scene.chart.CategoryAxis?>
-<?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
@@ -19,7 +16,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.DashboardController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.DashboardController">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
@@ -93,7 +90,7 @@
                <center>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane id="telaHome" fx:id="telaHome" layoutX="113.0" layoutY="88.0" prefHeight="553.0" prefWidth="915.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane id="telaHome" fx:id="telaHome" layoutX="113.0" layoutY="88.0" prefHeight="553.0" prefWidth="915.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
                               <AnchorPane layoutX="9.0" layoutY="9.0" prefHeight="529.0" prefWidth="894.0" stylesheets="@dashboarddesing.css">
                                  <styleClass>
@@ -167,14 +164,6 @@
                                           </AnchorPane>
                                        </children>
                                     </AnchorPane>
-                                    <BarChart id="home_chat" fx:id="home_chat" layoutX="119.0" layoutY="222.0" prefHeight="256.0" prefWidth="642.0" title="ESTATISTICA DE PRODUTOS">
-                                      <xAxis>
-                                        <CategoryAxis side="BOTTOM" />
-                                      </xAxis>
-                                      <yAxis>
-                                        <NumberAxis side="LEFT" />
-                                      </yAxis>
-                                    </BarChart>
                                  </children>
                               </AnchorPane>
                            </children>
@@ -217,10 +206,9 @@
                               <Label layoutX="348.0" layoutY="410.0" text="Valor: " />
                               <TextField id="produtoValor" fx:id="valor_produto" layoutX="401.0" layoutY="405.0" prefHeight="29.0" prefWidth="85.0" styleClass="textfield" stylesheets="@dashboarddesing.css" />
                               <TextField id="ProdutoDescricao" fx:id="descricao_produto" layoutX="80.0" layoutY="406.0" prefHeight="26.0" prefWidth="250.0" styleClass="textfield" stylesheets="@dashboarddesing.css" />
-                              <Button fx:id="btn_updateProd" layoutX="724.0" layoutY="488.0" mnemonicParsing="false" onAction="#handleUpdateProduct" prefHeight="42.0" prefWidth="68.0" style="-fx-background-color: blue;" styleClass="clean-btn" stylesheets="@dashboarddesing.css" text="Update" />
                               <Button fx:id="btn_addProd" layoutX="806.0" layoutY="488.0" mnemonicParsing="false" onAction="#handleAddProduto" prefHeight="42.0" prefWidth="68.0" style="-fx-background-color: green;" styleClass="clean-btn" stylesheets="@dashboarddesing.css" text="ADD" />
-                              <Button fx:id="btn_clearProd" layoutX="517.0" layoutY="488.0" mnemonicParsing="false" onAction="#limparCampos" prefHeight="42.0" prefWidth="68.0" style="-fx-background-color: grey;" styleClass="clean-btn" stylesheets="@dashboarddesing.css" text="Clear" />
-                              <Button fx:id="btn_deleteProd" layoutX="599.0" layoutY="488.0" mnemonicParsing="false" onAction="#handleDeleteProduto" prefHeight="42.0" prefWidth="68.0" style="-fx-background-color: red;" styleClass="clean-btn" stylesheets="@dashboarddesing.css" text="Delete" />
+                              <Button fx:id="btn_clearProd" layoutX="613.0" layoutY="488.0" mnemonicParsing="false" onAction="#limparCampos" prefHeight="42.0" prefWidth="68.0" style="-fx-background-color: grey;" styleClass="clean-btn" stylesheets="@dashboarddesing.css" text="Clear" />
+                              <Button fx:id="btn_deleteProd" layoutX="711.0" layoutY="488.0" mnemonicParsing="false" onAction="#handleDeleteProduto" prefHeight="42.0" prefWidth="68.0" style="-fx-background-color: red;" styleClass="clean-btn" stylesheets="@dashboarddesing.css" text="Delete" />
                               <Label layoutX="513.0" layoutY="410.0" text="Desconto:" />
                               <Spinner fx:id="spinerqtdMinima" layoutX="395.0" layoutY="356.0" prefHeight="26.0" prefWidth="70.0" styleClass="textfield" stylesheets="@dashboarddesing.css" />
                               <Spinner fx:id="spinerqtdmaxima" layoutX="628.0" layoutY="356.0" prefHeight="30.0" prefWidth="81.0" styleClass="textfield" stylesheets="@dashboarddesing.css" />
@@ -231,7 +219,7 @@
                               <String fx:value="shadown" />
                            </styleClass>
                         </AnchorPane>
-                        <AnchorPane fx:id="TelaUpdate" prefHeight="554.0" prefWidth="923.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane fx:id="TelaUpdate" prefHeight="554.0" prefWidth="923.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
                               <AnchorPane prefHeight="542.0" prefWidth="326.0" stylesheets="@dashboarddesing.css">
                                  <styleClass>
@@ -241,24 +229,18 @@
                                  <children>
                                     <Label layoutX="15.0" layoutY="48.0" text="ID_Produto" />
                                     <Label layoutX="15.0" layoutY="85.0" text="Nome:" />
-                                    <Label fx:id="nome_ProdutoUpdate" layoutX="85.0" layoutY="80.0" prefHeight="28.0" prefWidth="192.0" styleClass="label-info" stylesheets="@dashboarddesing.css" />
-                                    <Label layoutX="14.0" layoutY="120.0" prefHeight="18.0" prefWidth="59.0" text="Marca:" />
-                                    <Label fx:id="marcaUpddate" layoutX="88.0" layoutY="115.0" prefHeight="28.0" prefWidth="190.0" styleClass="label-info" stylesheets="@dashboarddesing.css" />
-                                    <Label layoutX="14.0" layoutY="157.0" text="Fornecedor:" />
-                                    <Label id="forcedorUpdate" fx:id="forcedorUpdate" layoutX="93.0" layoutY="152.0" prefHeight="28.0" prefWidth="185.0" styleClass="label-info" stylesheets="@dashboarddesing.css" />
                                     <TextField fx:id="ID_update" layoutX="85.0" layoutY="43.0" onAction="#populateFields" prefHeight="29.0" prefWidth="193.0" promptText="Digite o ID" styleClass="textfield" stylesheets="@dashboarddesing.css" />
-                                    <Label layoutX="14.0" layoutY="199.0" text="Descrição" />
-                                    <Label id="descricaoUpdate" fx:id="descricaoUpdate" layoutX="95.0" layoutY="194.0" prefHeight="28.0" prefWidth="182.0" styleClass="label-info" stylesheets="@dashboarddesing.css" />
-                                    <Label layoutX="16.0" layoutY="245.0" text="Valor: " />
-                                    <TextField id="ValorUpdate" fx:id="valor_update" layoutX="95.0" layoutY="240.0" onAction="#populateFields" prefHeight="29.0" prefWidth="183.0" promptText="Digite novo valor: " styleClass="textfield" stylesheets="@dashboarddesing.css" />
-                                    <Button id="btn_clear_update" fx:id="btn_clear_update" layoutX="107.0" layoutY="306.0" mnemonicParsing="false" onAction="#populateFields" prefHeight="37.0" prefWidth="116.0" style="-fx-background-color: grey;" styleClass="clean-btn" stylesheets="@dashboarddesing.css" text="Carregar dados" />
-                                    <Button id="btnUpdute_update" fx:id="btnUpdute_update" layoutX="233.0" layoutY="306.0" mnemonicParsing="false" onAction="#updateProduct" prefHeight="39.0" prefWidth="81.0" style="-fx-background-color: blue;" styleClass="clean-btn" stylesheets="@dashboarddesing.css" text="modificar" />
-                                    <Button fx:id="btn_update" layoutX="17.0" layoutY="306.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="77.0" stylesheets="@dashboarddesing.css" text="Limpar">
-                                       <styleClass>
-                                          <String fx:value="clean-btn" />
-                                          <String fx:value="nav-form" />
-                                       </styleClass>
-                                    </Button>
+                                    <Label layoutX="14.0" layoutY="121.0" text="Descrição:" />
+                                    <Label layoutX="16.0" layoutY="160.0" text="Valor: " />
+                                    <TextField id="ValorUpdate" fx:id="valor_update" layoutX="85.0" layoutY="154.0" onAction="#populateFields" prefHeight="29.0" prefWidth="193.0" promptText="Digite novo valor" styleClass="textfield" stylesheets="@dashboarddesing.css" />
+                                    <Button id="btn_clear_update" fx:id="btn_clear_update" layoutX="43.0" layoutY="330.0" mnemonicParsing="false" onAction="#populateFields" prefHeight="37.0" prefWidth="116.0" style="-fx-background-color: grey;" styleClass="clean-btn" stylesheets="@dashboarddesing.css" text="Carregar dados" />
+                                    <Button id="btnUpdute_update" fx:id="btnUpdute_update" layoutX="182.0" layoutY="329.0" mnemonicParsing="false" onAction="#updateProduct" prefHeight="39.0" prefWidth="81.0" style="-fx-background-color: blue;" styleClass="clean-btn" stylesheets="@dashboarddesing.css" text="Modificar" />
+                                    <TextField fx:id="nome_update" layoutX="85.0" layoutY="79.0" onAction="#populateFields" prefHeight="29.0" prefWidth="193.0" promptText="Digite o nome" styleClass="textfield" stylesheets="@dashboarddesing.css" />
+                                    <TextField fx:id="desc_update" layoutX="85.0" layoutY="115.0" onAction="#populateFields" prefHeight="29.0" prefWidth="193.0" promptText="Digite a descrição" styleClass="textfield" stylesheets="@dashboarddesing.css" />
+                                    <ComboBox fx:id="desconto_update" layoutX="85.0" layoutY="198.0" prefHeight="26.0" prefWidth="191.0" styleClass="textfield" stylesheets="@dashboarddesing.css" />
+                                    <Label fx:id="update_desconto" layoutX="16.0" layoutY="203.0" text="Desconto:" />
+                                    <Label layoutX="16.0" layoutY="248.0" text="Q. Atual:" />
+                                    <TextField id="ValorUpdate" fx:id="quant_update" layoutX="85.0" layoutY="242.0" onAction="#populateFields" prefHeight="29.0" prefWidth="193.0" promptText="Digite nova quantidade" styleClass="textfield" stylesheets="@dashboarddesing.css" />
                                  </children>
                               </AnchorPane>
                               <AnchorPane layoutX="343.0" layoutY="4.0" prefHeight="542.0" prefWidth="570.0" stylesheets="@dashboarddesing.css">
@@ -271,10 +253,8 @@
                                       <columns>
                                         <TableColumn fx:id="produtoId_col_table_update" prefWidth="91.0" text="ID_produto" />
                                         <TableColumn fx:id="nome_col_table_update" prefWidth="78.0" text="Nome" />
-                                          <TableColumn fx:id="marca_col_table_update" prefWidth="86.0" text="Marca" />
-                                          <TableColumn fx:id="fornecedor_col_table_update" prefWidth="95.0" text="Fornecedor" />
-                                          <TableColumn fx:id="decricao_col_table_update" prefWidth="96.0" text="Descrição" />
-                                          <TableColumn fx:id="Valor_col_table_update" prefWidth="112.0" text="Valor (R$)" />
+                                          <TableColumn fx:id="decricao_col_table_update" prefWidth="278.0" text="Descrição" />
+                                          <TableColumn fx:id="Valor_col_table_update" prefWidth="114.0" text="Valor (R$)" />
                                       </columns>
                                     </TableView>
                                  </children>

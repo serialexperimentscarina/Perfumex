@@ -6,6 +6,7 @@ import java.sql.SQLException;
 
 import application.controller.SessaoController;
 import application.model.Produto;
+import application.model.Usuario;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 public class ProdutoDao {
@@ -39,7 +40,7 @@ private Connection c;
 	}
 	
 	public ResultSet buscarProdutosCliente() throws SQLException {
-		String sql = "SELECT * FROM produto WHERE quantidade_atual >= quantidade_minima";		
+		String sql = "SELECT * FROM produto WHERE quantidade_atual > quantidade_minima";		
 		PreparedStatement ps = c.prepareStatement(sql);		
 		
 		ResultSet rs = ps.executeQuery();
@@ -51,7 +52,6 @@ private Connection c;
 		
 		PreparedStatement ps = c.prepareStatement(sql);
 		ps.setInt(1, SessaoController.usuario.getId());
-		
 		ResultSet rs = ps.executeQuery();
 		
 		return rs;
@@ -150,6 +150,20 @@ private Connection c;
 	        }
 	    }
 	}
+	
+	public ResultSet estatisticasProduto(Usuario u) throws SQLException {
+		String sql = "SELECT COUNT(id) AS total, \r\n"
+				+ "SUM(CASE WHEN quantidade_atual > quantidade_minima THEN 1 ELSE 0 END) AS ativos, \r\n"
+				+ "SUM(CASE WHEN quantidade_atual <= quantidade_minima THEN 1 ELSE 0 END) AS inativos\r\n"
+				+ "FROM produto\r\n"
+				+ "WHERE lojistaid = ?";
+		
+		PreparedStatement ps = c.prepareStatement(sql);
+		ps.setInt(1, u.getId());
+		ResultSet rs = ps.executeQuery();
+		
+		return rs;
+ 	}
 
 
 

@@ -155,9 +155,16 @@ public class DashboardController implements Initializable{
     
     @FXML
     private TextField ID_update;
-
+    @FXML
+    private TextField nome_update;
+    @FXML
+    private TextField desc_update;
     @FXML
     private TextField valor_update;
+    @FXML
+    private ComboBox<Double> desconto_update;
+    @FXML
+    private TextField quant_update;
     
     private FilteredList<Produto> filteredLista;
     
@@ -172,10 +179,16 @@ public class DashboardController implements Initializable{
         desconto.getItems().add((float) 0.5);
         desconto.getItems().add((float) 0.75);
         desconto.getSelectionModel().select(0); 
+        
+        desconto_update.getItems().clear();
+        desconto_update.getItems().add((Double) 0.0);
+        desconto_update.getItems().add((Double) 0.25);
+        desconto_update.getItems().add((Double) 0.5);
+        desconto_update.getItems().add((Double) 0.75);
+        desconto_update.getSelectionModel().select(0); 
     }
 
 	   public void telamuda(ActionEvent event) {
-		   System.out.println("TESTE");
 		   if(event.getSource()== Home_btn) {
 			  telaHome.setVisible(true);
 			  telacadProduto.setVisible(false);
@@ -229,7 +242,6 @@ public class DashboardController implements Initializable{
 	    }
 	   
 	   public void handleUpdateProduct(ActionEvent event) {
-	        // You can add any logic here if needed
 	        updateBtn.fire();
 	    }
 	   
@@ -252,6 +264,7 @@ public class DashboardController implements Initializable{
             lista = FXCollections.observableArrayList();
             filteredLista = new FilteredList<>(lista, p -> true);
             popularTabela();
+    		gerarEstatisticas();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -276,6 +289,18 @@ public class DashboardController implements Initializable{
 
         tViewProduto.setItems(filteredLista);
     }
+	private void gerarEstatisticas() throws ClassNotFoundException, SQLException {
+		ResultSet estatisticas = produtoDao.estatisticasProduto(SessaoController.usuario);
+		
+		if (estatisticas.next()) {
+			Total_produtos.setText(String.valueOf(estatisticas.getInt("total")));
+			Total_ativos.setText(String.valueOf(estatisticas.getInt("ativos")));
+			ProdutosInativos_home.setText(String.valueOf(estatisticas.getInt("inativos")));
+		}
+		
+		
+	}
+
 	//---------------------------------ADD PRODUTO----------------------------------------------------------------------------------------
 	
 	public void handleAddProduto(ActionEvent event) {
@@ -386,36 +411,6 @@ public class DashboardController implements Initializable{
 	       }
 	   }
 	   //--------------------------------------------------------------------------------------------------------------------------
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
    //---------------------------------UPDATE------------------------------------------------------------------------------------------ 
    public void populateFields(ActionEvent event) {
         try {
@@ -423,17 +418,15 @@ public class DashboardController implements Initializable{
             Produto produto = produtoDao.buscarProdutoPorId(productId);
 
             if (produto != null) {
-                nome_ProdutoUpdate.setText(produto.getNome());
-                marcaUpddate.setText(produto.getMarca());
-                forcedorUpdate.setText(produto.getFornecedor());
-                descricaoUpdate.setText(produto.getDescricao());
-                valor_update.setText(String.valueOf(produto.getPreco()));
+            	nome_update.setText(produto.getNome());
+            	desc_update.setText(produto.getDescricao());
+            	valor_update.setText(String.valueOf(produto.getPreco()));
+            	desconto_update.getSelectionModel().select(produto.getPercentualDesconto());
+            	quant_update.setText(String.valueOf(produto.getQuantidadeAtual()));
             } else {
-                // Handle the case when the product is not found
                 exibirAlerta("Produto não encontrado.", Alert.AlertType.WARNING);
             }
         } catch (NumberFormatException | SQLException e) {
-            // Handle the case when the ID is not a valid number or an SQL exception occurs
             exibirAlerta("Erro ao buscar produto. Verifique o ID e tente novamente.", Alert.AlertType.ERROR);
         }
     }
@@ -445,28 +438,21 @@ public class DashboardController implements Initializable{
             Produto produto = produtoDao.buscarProdutoPorId(productId);
 
             if (produto != null) {
-                // Update the product details based on the UI fields
-                produto.setNome(nome_ProdutoUpdate.getText());
-                produto.setMarca(marcaUpddate.getText());
-                produto.setFornecedor(forcedorUpdate.getText());
-                produto.setDescricao(descricaoUpdate.getText());
+                produto.setNome(nome_update.getText());
+                produto.setDescricao(desc_update.getText());
                 produto.setPreco(Double.parseDouble(valor_update.getText()));
-
-                // Update the product in the database
+                produto.setPercentualDesconto(desconto_update.getValue());
+                produto.setQuantidadeAtual(Integer.parseInt(quant_update.getText()));
                 produtoDao.atualizarProduto(produto);
 
-                // Refresh the TableView
                 lista.clear();
                 popularTabela();
 
-                // Display success message
                 exibirAlerta("Produto atualizado com sucesso!", Alert.AlertType.INFORMATION);
             } else {
-                // Handle the case when the product is not found
                 exibirAlerta("Produto não encontrado.", Alert.AlertType.WARNING);
             }
         } catch (NumberFormatException | SQLException e) {
-            // Handle the case when the ID is not a valid number or an SQL exception occurs
             exibirAlerta("Erro ao atualizar produto. Verifique os dados e tente novamente.", Alert.AlertType.ERROR);
         }
     }
