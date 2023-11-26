@@ -19,7 +19,7 @@ public class CarrinhoDao {
 		c = gDao.getConnection();
 	}
 	
-	public void criarNovoCarrinho(Carrinho car, Cliente cli) throws SQLException {
+	public void criarNovoCarrinho(Carrinho car, Usuario u) throws SQLException {
 		String sql = "INSERT INTO carrinho VALUES (?, ?, ?, ?, ?, ?)";
 		
 		PreparedStatement ps = c.prepareStatement(sql);
@@ -28,7 +28,7 @@ public class CarrinhoDao {
 		ps.setDouble(3, car.getTotal());
 		ps.setDate(4, java.sql.Date.valueOf(java.time.LocalDate.now()));
 		ps.setDate(5, java.sql.Date.valueOf(java.time.LocalDate.now()));
-		ps.setInt(6, cli.getId());
+		ps.setInt(6, u.getId());
 	
 		ps.execute();
 		ps.close();
@@ -87,5 +87,6 @@ public class CarrinhoDao {
 		ps2.setInt(3, carrinhoAtual.getId());
 		ps2.executeQuery();
 	}
+
 
 }

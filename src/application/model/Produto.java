@@ -20,6 +20,11 @@ public class Produto {
 	private int quantidadeMinima;
 	private LocalDate dataCriacao;
 	private LocalDate dataUltimaModificacao;
+	
+	public Produto(String nome) {
+		super();
+		this.nome = nome;
+	}
 
 	public Produto(int id, String nome, double preco, double percentualDesconto, String descricao, String marca,
 			String fornecedor, int quantidadeAtual, int quantidadeMinima, LocalDate dataCriacao,

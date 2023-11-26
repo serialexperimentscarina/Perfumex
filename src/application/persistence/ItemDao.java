@@ -2,13 +2,17 @@ package application.persistence;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import application.model.Carrinho;
 import application.model.Cliente;
 import application.model.Item;
 import application.model.Produto;
 import application.model.Usuario;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class ItemDao {
 	
@@ -33,6 +37,26 @@ public class ItemDao {
 	
 		ps.execute();
 		ps.close();
+	}
+	
+	
+	public ObservableList<Item> listarItems(Carrinho carrinhoAtual) throws SQLException {
+		String sql = "SELECT p.nome, i.quantidade_itens, i.subtotal\r\n"
+				+ "FROM produto p, item i, carrinho c\r\n"
+				+ "WHERE p.id = i.produtoid AND i.carrinhoid = c.id\r\n"
+				+ "AND c.id = ?";
+		PreparedStatement ps = c.prepareStatement(sql);
+		ps.setInt(1, carrinhoAtual.getId());
+		
+		ResultSet rs = ps.executeQuery();
+
+		ObservableList<Item> itens = FXCollections.observableArrayList();
+		while (rs.next()) {
+			Item i = new Item(new Produto(rs.getString("nome")), rs.getInt("quantidade_itens"), rs.getDouble("subtotal"), null, null);
+			itens.add(i);
+		}
+		
+		return itens;
 	}
 
 }

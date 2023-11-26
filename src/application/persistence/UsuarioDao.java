@@ -52,7 +52,9 @@ public class UsuarioDao {
 		ResultSet rs = ps.executeQuery();
 		
 		if (rs.next()) {
-			Usuario u = new Usuario(rs.getInt("id"), rs.getString("nome"), rs.getString("sobrenome"), email, senha, rs.getString("telefone"), rs.getString("status"), rs.getDate("data_criacao").toLocalDate(), rs.getDate("data_ultima_modificacao").toLocalDate());
+			Usuario u = new Usuario(rs.getInt("id"), rs.getString("nome"), rs.getString("sobrenome"), email, senha, 
+					rs.getString("telefone"), rs.getString("status"), rs.getDate("data_criacao").toLocalDate(), 
+					rs.getDate("data_ultima_modificacao").toLocalDate());
 			return u;
 		}
 		return null;
@@ -71,6 +73,20 @@ public class UsuarioDao {
 		} else {
 			return "lojista";
 		}
+	
+	}
+	
+	public String buscarCPF(Usuario u) throws SQLException{
+		String sql = "SELECT cpf FROM cliente WHERE usuarioid = ?";
+		
+		PreparedStatement ps = c.prepareStatement(sql);
+		ps.setInt(1, u.getId());
+		ResultSet rs = ps.executeQuery();
+		
+		if (rs.next()) {
+			return rs.getString("cpf");
+		}
+		return "";
 	
 	}
 	

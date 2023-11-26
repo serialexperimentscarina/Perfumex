@@ -85,6 +85,7 @@ public class ProdutoListagemController {
 	public void irParaCarrinho(ActionEvent event) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("/application/Carrinho.FXML"));
 		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		stage.setUserData(carrinhoAtual);
 		Scene scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
@@ -115,8 +116,6 @@ public class ProdutoListagemController {
 	private void inicializarCarrinho() throws ClassNotFoundException, SQLException {
 		CarrinhoDao cDao = new CarrinhoDao();
 		carrinhoAtual = cDao.buscarCarrinhoAtual(SessaoController.usuario);
-		
-		System.out.println(carrinhoAtual.getId());
 		
 	}
 	

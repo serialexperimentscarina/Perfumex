@@ -5,17 +5,15 @@ import java.time.LocalDate;
 public class Pedido {
 	
 	private Carrinho carrinho;
-	private Endereco enderecoEntrega;
 	private String tipoPagto;
 	private String status;
 	private LocalDate dataCriacao;
 	private LocalDate dataUltimaModificacao;
 	
-	public Pedido(Carrinho carrinho, Endereco enderecoEntrega, String tipoPagto, String status, LocalDate dataCriacao,
+	public Pedido(Carrinho carrinho, String tipoPagto, String status, LocalDate dataCriacao,
 			LocalDate dataUltimaModificacao) {
 		super();
 		this.carrinho = carrinho;
-		this.enderecoEntrega = enderecoEntrega;
 		this.tipoPagto = tipoPagto;
 		this.status = status;
 		this.dataCriacao = dataCriacao;
@@ -28,14 +26,6 @@ public class Pedido {
 
 	public void setCarrinho(Carrinho carrinho) {
 		this.carrinho = carrinho;
-	}
-
-	public Endereco getEnderecoEntrega() {
-		return enderecoEntrega;
-	}
-
-	public void setEnderecoEntrega(Endereco enderecoEntrega) {
-		this.enderecoEntrega = enderecoEntrega;
 	}
 
 	public String getTipoPagto() {
