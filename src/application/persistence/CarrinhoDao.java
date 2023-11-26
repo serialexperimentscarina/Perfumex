@@ -64,7 +64,6 @@ public class CarrinhoDao {
 	}
 
 	public void atualizarCarrinho(Carrinho carrinhoAtual) throws SQLException {
-
 		String sql = "SELECT COUNT(produtoid) AS contagem, SUM(subtotal) AS total FROM\r\n"
 				+ "item WHERE carrinhoid = ?";
 		PreparedStatement ps = c.prepareStatement(sql);
@@ -86,6 +85,24 @@ public class CarrinhoDao {
 		ps2.setDouble(2, total);
 		ps2.setInt(3, carrinhoAtual.getId());
 		ps2.executeQuery();
+	}
+	
+	public String buscarRemetentes(Carrinho car) throws SQLException {
+		String sql = "SELECT DISTINCT(u.nome + ' ' + u.sobrenome) AS remetente\r\n"
+				+ "FROM carrinho c, item i, produto p, lojista l, usuario u\r\n"
+				+ "WHERE i.carrinhoid = c.id AND i.produtoid = p.id AND p.lojistaid = l.usuarioid AND u.id = l.usuarioid \r\n"
+				+ "AND c.id = ?";
+		PreparedStatement ps = c.prepareStatement(sql);
+		ps.setInt(1, car.getId());
+		ResultSet rs = ps.executeQuery();
+
+		String remetente = "";
+		
+		while (rs.next()) {
+			remetente += rs.getString("remetente") + " ,";
+		}
+		
+		return remetente.substring(0, remetente.length() - 1);
 	}
 
 

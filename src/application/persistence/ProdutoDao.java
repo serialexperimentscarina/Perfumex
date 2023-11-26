@@ -177,7 +177,35 @@ private Connection c;
 		return rs;
 	}
 
-
+	public int quantVendidosPorLojista(Usuario u) throws SQLException {
+		String sql = "SELECT SUM(quantidade_itens) AS vendidos\r\n"
+				+ "FROM item i, produto p, lojista l\r\n"
+				+ "WHERE i.produtoid = p.id AND l.usuarioid = p.lojistaid AND l.usuarioid = ?";
+		PreparedStatement ps = c.prepareStatement(sql);
+		ps.setInt(1, u.getId());
+		ResultSet rs = ps.executeQuery();
+		
+		if (rs.next()) {
+			return rs.getInt("vendidos");
+		}
+		
+		return 0;
+	}
+	
+	public int quantNaoVendidosPorLojista(Usuario u) throws SQLException {
+		String sql = "SELECT COUNT(p.id) AS sem_vendas\r\n"
+				+ "FROM produto p LEFT OUTER JOIN item i ON i.produtoid = p.id \r\n"
+				+ "WHERE p.lojistaid = ? AND i.produtoid IS NULL";
+		PreparedStatement ps = c.prepareStatement(sql);
+		ps.setInt(1, u.getId());
+		ResultSet rs = ps.executeQuery();
+		
+		if (rs.next()) {
+			return rs.getInt("sem_vendas");
+		}
+		
+		return 0;
+	}
 
 }
 		

@@ -175,7 +175,11 @@ public class DashboardController implements Initializable{
     private Label minProduto;
     @FXML
     private Label avgProduto;
-
+	@FXML
+	private Label countVendas;
+	@FXML
+	private Label naoVendidos;
+	
     
 	private ObservableList<Produto> lista = FXCollections.observableArrayList();
 	   
@@ -298,6 +302,9 @@ public class DashboardController implements Initializable{
         tViewProduto.setItems(filteredLista);
     }
 	private void gerarEstatisticas() throws ClassNotFoundException, SQLException {
+		countVendas.setText(String.valueOf(produtoDao.quantVendidosPorLojista(SessaoController.usuario)));
+		naoVendidos.setText(String.valueOf(produtoDao.quantNaoVendidosPorLojista(SessaoController.usuario)));
+		
 		ResultSet estatisticas = produtoDao.estatisticasProduto(SessaoController.usuario);
 		
 		if (estatisticas.next()) {

@@ -13,6 +13,7 @@ import application.persistence.CarrinhoDao;
 import application.persistence.EnderecoDao;
 import application.persistence.ItemDao;
 import application.persistence.PedidoDao;
+import application.persistence.ProdutoDao;
 import application.persistence.UsuarioDao;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -63,8 +64,10 @@ public class PedidoController {
 	private Label lblEstado;
 	@FXML
 	private ComboBox<String> cBoxParcelas;
-	 @FXML
-	 ToggleGroup pagamento;
+	@FXML
+	ToggleGroup pagamento;
+	@FXML
+	private Label lblRemet;
 	
 	private Carrinho carrinhoAtual;
 	private ObservableList<Item> itens = FXCollections.observableArrayList();
@@ -97,6 +100,10 @@ public class PedidoController {
 		UsuarioDao uDao = new UsuarioDao();
 		String cpf = uDao.buscarCPF(SessaoController.usuario);
 		
+		CarrinhoDao cDao = new CarrinhoDao();
+		String remetentes = cDao.buscarRemetentes(carrinhoAtual);
+		
+		lblRemet.setText(remetentes);
 		lblDestin.setText(SessaoController.usuario.getNome() + " " + SessaoController.usuario.getSobrenome());
 		lblTelefone.setText(SessaoController.usuario.getTelefone());
 		lblCPF.setText(cpf);

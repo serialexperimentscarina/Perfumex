@@ -164,7 +164,7 @@
                                           </AnchorPane>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane layoutY="265.0" prefHeight="175.0" prefWidth="894.0" stylesheets="@dashboarddesing.css">
+                                    <AnchorPane layoutY="177.0" prefHeight="175.0" prefWidth="894.0" stylesheets="@dashboarddesing.css">
                                        <styleClass>
                                           <String fx:value="white-bg" />
                                           <String fx:value="shadown" />
@@ -221,6 +221,52 @@
                                                 </ImageView>
                                                 <Label layoutX="94.0" layoutY="51.0" style="-fx-text-fill: WHITE;" text="MÉDIA DE VALOR" textFill="WHITE" />
                                                 <Label id="ProdutosInativos_home" fx:id="avgProduto" layoutX="124.0" layoutY="90.0" style="-fx-text-fill: WHITE;" text="0">
+                                                   <font>
+                                                      <Font size="13.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutY="352.0" prefHeight="175.0" prefWidth="894.0" stylesheets="@dashboarddesing.css">
+                                       <styleClass>
+                                          <String fx:value="white-bg" />
+                                          <String fx:value="shadown" />
+                                       </styleClass>
+                                       <children>
+                                          <AnchorPane layoutX="147.0" layoutY="15.0" prefHeight="145.0" prefWidth="236.0" stylesheets="@dashboarddesing.css">
+                                             <styleClass>
+                                                <String fx:value="nav-form" />
+                                                <String fx:value="cards" />
+                                             </styleClass>
+                                             <children>
+                                                <ImageView fitHeight="112.0" fitWidth="78.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../assets/Icon.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Label layoutX="78.0" layoutY="45.0" prefHeight="17.0" prefWidth="166.0" style="-fx-text-fill: WHITE;" text="TOTAL DE VENDAS" textFill="WHITE" />
+                                                <Label id="Total_produtos" fx:id="countVendas" layoutX="118.0" layoutY="83.0" style="-fx-text-fill: WHITE;" text="0">
+                                                   <font>
+                                                      <Font size="13.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane layoutX="477.0" layoutY="15.0" prefHeight="145.0" prefWidth="236.0" stylesheets="@dashboarddesing.css">
+                                             <styleClass>
+                                                <String fx:value="nav-form" />
+                                                <String fx:value="cards" />
+                                             </styleClass>
+                                             <children>
+                                                <ImageView fitHeight="112.0" fitWidth="78.0" layoutX="6.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../assets/Icon.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Label layoutX="94.0" layoutY="51.0" style="-fx-text-fill: WHITE;" text="PRODUTOS SEM VENDAS" textFill="WHITE" />
+                                                <Label id="ProdutosInativos_home" fx:id="naoVendidos" layoutX="124.0" layoutY="90.0" style="-fx-text-fill: WHITE;" text="0">
                                                    <font>
                                                       <Font size="13.0" />
                                                    </font>

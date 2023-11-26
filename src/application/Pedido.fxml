@@ -26,12 +26,12 @@
             <TableColumn fx:id="tColumnSubtotal" prefWidth="118.0" text="Subtotal" />
          </columns>
       </TableView>
-      <Label layoutX="71.0" layoutY="391.0" text="Destinatário:">
+      <Label layoutX="73.0" layoutY="435.0" text="Destinatário:">
          <font>
             <Font name="Berlin Sans FB" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="lblDestin" layoutX="217.0" layoutY="391.0" text="-">
+      <Label fx:id="lblDestin" layoutX="219.0" layoutY="435.0" text="-">
          <font>
             <Font name="Berlin Sans FB" size="20.0" />
          </font>
@@ -41,72 +41,72 @@
             <Font name="Berlin Sans FB" size="20.0" />
          </font>
       </Button>
-      <Label layoutX="71.0" layoutY="429.0" text="Telefone:">
+      <Label layoutX="73.0" layoutY="473.0" text="Telefone:">
          <font>
             <Font name="Berlin Sans FB" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="lblTelefone" layoutX="217.0" layoutY="429.0" text="-">
+      <Label fx:id="lblTelefone" layoutX="219.0" layoutY="473.0" text="-">
          <font>
             <Font name="Berlin Sans FB" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="69.0" layoutY="469.0" text="CPF:">
+      <Label layoutX="71.0" layoutY="513.0" text="CPF:">
          <font>
             <Font name="Berlin Sans FB" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="lblCPF" layoutX="215.0" layoutY="469.0" text="-">
+      <Label fx:id="lblCPF" layoutX="217.0" layoutY="513.0" text="-">
          <font>
             <Font name="Berlin Sans FB" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="69.0" layoutY="506.0" text="Email:">
+      <Label layoutX="71.0" layoutY="550.0" text="Email:">
          <font>
             <Font name="Berlin Sans FB" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="lblEmail" layoutX="215.0" layoutY="506.0" text="-">
+      <Label fx:id="lblEmail" layoutX="217.0" layoutY="550.0" text="-">
          <font>
             <Font name="Berlin Sans FB" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="69.0" layoutY="542.0" text="Logradouro:">
+      <Label layoutX="71.0" layoutY="586.0" text="Logradouro:">
          <font>
             <Font name="Berlin Sans FB" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="lblLogradouro" layoutX="215.0" layoutY="542.0" text="-">
+      <Label fx:id="lblLogradouro" layoutX="217.0" layoutY="586.0" text="-">
          <font>
             <Font name="Berlin Sans FB" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="69.0" layoutY="581.0" text="Número:">
+      <Label layoutX="71.0" layoutY="625.0" text="Número:">
          <font>
             <Font name="Berlin Sans FB" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="lblNum" layoutX="215.0" layoutY="581.0" text="-">
+      <Label fx:id="lblNum" layoutX="217.0" layoutY="625.0" text="-">
          <font>
             <Font name="Berlin Sans FB" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="65.0" layoutY="619.0" text="Complemento:">
+      <Label layoutX="67.0" layoutY="663.0" text="Complemento:">
          <font>
             <Font name="Berlin Sans FB" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="lblComplemento" layoutX="211.0" layoutY="619.0" text="-">
+      <Label fx:id="lblComplemento" layoutX="213.0" layoutY="663.0" text="-">
          <font>
             <Font name="Berlin Sans FB" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="65.0" layoutY="657.0" text="Estado:">
+      <Label layoutX="67.0" layoutY="701.0" text="Estado:">
          <font>
             <Font name="Berlin Sans FB" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="lblEstado" layoutX="211.0" layoutY="657.0" text="-">
+      <Label fx:id="lblEstado" layoutX="213.0" layoutY="701.0" text="-">
          <font>
             <Font name="Berlin Sans FB" size="20.0" />
          </font>
@@ -188,5 +188,15 @@
       </Label>
       <TextField fx:id="tFieldMes" layoutX="977.0" layoutY="255.0" prefHeight="25.0" prefWidth="119.0" styleClass="textfield" stylesheets="@dashboarddesing.css" />
       <TextField fx:id="tFieldAno" layoutX="1175.0" layoutY="255.0" prefHeight="25.0" prefWidth="84.0" styleClass="textfield" stylesheets="@dashboarddesing.css" />
+      <Label layoutX="74.0" layoutY="358.0" text="Remetente(s):">
+         <font>
+            <Font name="Berlin Sans FB" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblRemet" layoutX="220.0" layoutY="358.0" prefHeight="22.0" prefWidth="443.0" text="-">
+         <font>
+            <Font name="Berlin Sans FB" size="20.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

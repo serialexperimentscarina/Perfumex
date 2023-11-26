@@ -136,7 +136,7 @@ public class ProdutoListagemController {
                             td.showAndWait(); 
                             quant = Integer.parseInt(td.getEditor().getText()); 
                             
-                            Item item = new Item(produto, quant, (produto.getPreco() * quant), LocalDate.now(), LocalDate.now());
+                            Item item = new Item(produto, quant, ((produto.getPreco() - (produto.getPreco() * produto.getPercentualDesconto())) * quant), LocalDate.now(), LocalDate.now());
                             try {
 								ItemDao iDao = new ItemDao();
 								iDao.inserirItem(carrinhoAtual, item, SessaoController.usuario, quant);
