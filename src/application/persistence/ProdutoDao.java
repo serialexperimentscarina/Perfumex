@@ -165,6 +165,18 @@ private Connection c;
 		return rs;
  	}
 
+	public ResultSet estatisticasValorProduto(Usuario u) throws SQLException {
+		String sql = "SELECT MAX(preco) AS maximo, MIN(preco) AS minimo, AVG(preco) AS media\r\n"
+				+ "FROM produto\r\n"
+				+ "WHERE lojistaid = ?";
+		
+		PreparedStatement ps = c.prepareStatement(sql);
+		ps.setInt(1, u.getId());
+		ResultSet rs = ps.executeQuery();
+		
+		return rs;
+	}
+
 
 
 }

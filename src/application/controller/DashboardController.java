@@ -169,6 +169,12 @@ public class DashboardController implements Initializable{
     private FilteredList<Produto> filteredLista;
     @FXML
     private TableView<Produto> tableviewProdutos;
+    @FXML
+    private Label maxProduto;
+    @FXML
+    private Label minProduto;
+    @FXML
+    private Label avgProduto;
 
     
 	private ObservableList<Produto> lista = FXCollections.observableArrayList();
@@ -266,6 +272,7 @@ public class DashboardController implements Initializable{
             filteredLista = new FilteredList<>(lista, p -> true);
             popularTabela();
     		gerarEstatisticas();
+    		gerarEstatisticasValor();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -298,7 +305,17 @@ public class DashboardController implements Initializable{
 			Total_ativos.setText(String.valueOf(estatisticas.getInt("ativos")));
 			ProdutosInativos_home.setText(String.valueOf(estatisticas.getInt("inativos")));
 		}
+	}
 		
+	private void gerarEstatisticasValor() throws ClassNotFoundException, SQLException {
+		ResultSet estatisticas = produtoDao.estatisticasValorProduto(SessaoController.usuario);
+		
+		if (estatisticas.next()) {
+			maxProduto.setText("R$" + String.valueOf(estatisticas.getInt("maximo")));
+			minProduto.setText("R$" + String.valueOf(estatisticas.getInt("minimo")));
+			avgProduto.setText("R$" + String.valueOf(estatisticas.getInt("media")));
+		}
+	
 		
 	}
 
