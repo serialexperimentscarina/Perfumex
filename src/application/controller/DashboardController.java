@@ -167,7 +167,8 @@ public class DashboardController implements Initializable{
     private TextField quant_update;
     
     private FilteredList<Produto> filteredLista;
-    
+    @FXML
+    private TableView<Produto> tableviewProdutos;
 
     
 	private ObservableList<Produto> lista = FXCollections.observableArrayList();
@@ -367,6 +368,12 @@ public class DashboardController implements Initializable{
     	idProduto_col_DataCriacao.setCellValueFactory( new PropertyValueFactory<Produto, LocalDate>("dataCriacao"));
     	idProduto_col_DataMOD.setCellValueFactory( new PropertyValueFactory<Produto, LocalDate>("dataUltimaModificacao"));
     	tViewProduto.setItems(lista);
+    	
+    	produtoId_col_table_update.setCellValueFactory( new PropertyValueFactory<Produto, Integer>("id"));
+    	nome_col_table_update.setCellValueFactory( new PropertyValueFactory<Produto, String>("nome"));
+    	Valor_col_table_update.setCellValueFactory( new PropertyValueFactory<Produto, Float>("preco"));
+    	decricao_col_table_update.setCellValueFactory( new PropertyValueFactory<Produto, String>("descricao"));
+    	tableviewProdutos.setItems(lista);
     }
     
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
