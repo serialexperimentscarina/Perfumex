@@ -207,6 +207,14 @@ private Connection c;
 		return 0;
 	}
 
+	public void atualizarEstoque(Produto p, int quant) throws SQLException {
+		String sql = "UPDATE produto SET quantidade_atual ? WHERE id = ?";
+		PreparedStatement ps = c.prepareStatement(sql);
+		ps.setInt(1, quant);
+		ps.setInt(2, p.getId());
+		ResultSet rs = ps.executeQuery();
+	}
+
 }
 		
 	

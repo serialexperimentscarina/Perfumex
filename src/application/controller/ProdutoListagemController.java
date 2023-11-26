@@ -1,5 +1,6 @@
 package application.controller;
 
+import java.awt.TextField;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
@@ -15,10 +16,12 @@ import application.persistence.ItemDao;
 import application.persistence.ProdutoDao;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
@@ -34,37 +37,59 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import javafx.scene.control.TableCell;
+import javafx.scene.control.TextInputControl;
 
-
-public class ProdutoListagemController {
+public class ProdutoListagemController implements Initializable{
 	
+    @FXML
+    private javafx.scene.control.TextField tFieldPesquisar= new javafx.scene.control.TextField();
 	@FXML
-	TableView<Produto> tViewProduto;
+	private TableView<Produto> tViewProduto;
 	@FXML
-	TableColumn<Produto, String> tColumnNome;
+	private TableColumn<Produto, String> tColumnNome;
 	@FXML
-	TableColumn<Produto, Double> tColumPreco;
+	private TableColumn<Produto, Double> tColumPreco;
 	@FXML
-	TableColumn<Produto, Double> tColumnDesconto;
+	private TableColumn<Produto, Double> tColumnDesconto;
 	@FXML
-	TableColumn<Produto, String> tColumnDesc;
+	private TableColumn<Produto, String> tColumnDesc;
 	@FXML
-	TableColumn<Produto, String> tColumnMarca;
+	private TableColumn<Produto, String> tColumnMarca;
 	@FXML
-	TableColumn<Produto, String> tColumnForn;
+	private TableColumn<Produto, String> tColumnForn;
 	@FXML
-	TableColumn<Produto, Void> tColumnActions;
+	private TableColumn<Produto, Void> tColumnActions;
 	
-	private Carrinho carrinhoAtual;
-	
+	private Carrinho carrinhoAtual;	
     
 	private ObservableList<Produto> lista = FXCollections.observableArrayList();
-	
-	public void initialize() {
+    private FilteredList<Produto> filteredLista;
+
+	public void initialize(URL location, ResourceBundle resources) {
         try {
         	inicializarCarrinho();
             popularTabela();
             addToCartButton();
+            
+            filteredLista = new FilteredList<>(lista, p -> true);
+            tFieldPesquisar.textProperty().addListener((observable, oldValue, newValue) -> {
+                filteredLista.setPredicate(produto -> {
+                    if (newValue == null || newValue.isEmpty()) {
+                        return true;
+                    }
+
+                    String lowerCaseFilter = newValue.toLowerCase();
+                    
+                    return String.valueOf(produto.getId()).contains(lowerCaseFilter)
+                            || produto.getNome().toLowerCase().contains(lowerCaseFilter)
+                            || produto.getDescricao().toLowerCase().contains(lowerCaseFilter)
+                            || produto.getMarca().toLowerCase().contains(lowerCaseFilter)
+                            || produto.getFornecedor().toLowerCase().contains(lowerCaseFilter);
+                          
+                });
+            });
+            
+            tViewProduto.setItems(filteredLista);
         } catch (Exception e) {
             e.printStackTrace();
       
@@ -143,6 +168,9 @@ public class ProdutoListagemController {
 								
 								CarrinhoDao cDao = new CarrinhoDao();
 								cDao.atualizarCarrinho(carrinhoAtual);
+								
+								ProdutoDao pDao = new ProdutoDao();
+								pDao.atualizarEstoque(produto, quant);
 								
 								carrinhoAtual = cDao.buscarCarrinhoAtual(SessaoController.usuario);
 							} catch (Exception e) {
