@@ -60,8 +60,7 @@ public class Produto {
 
 	/**
 	 * <p> Constructor </p>
-	 * @param String nome
-	 * @return Void
+	 * @param nome
 	 * @since 1.0
 	 */
 	public Produto(String nome) {
@@ -71,10 +70,9 @@ public class Produto {
 
 	/**
 	 * <p> Constructor </p>
-	 * @param int id, String nome, double preco, double percentualDesconto, String descricao, String marca,
-			String fornecedor, int quantidadeAtual, int quantidadeMinima, LocalDate dataCriacao,
-			LocalDate dataUltimaModificacao
-	 * @return Void
+	 * @param id, nome, preco, percentualDesconto, descricao, marca,
+		 fornecedor, quantidadeAtual, quantidadeMinima, dataCriacao,
+		 dataUltimaModificacao
 	 * @since 1.0
 	 */
 	public Produto(int id, String nome, double preco, double percentualDesconto, String descricao, String marca,
@@ -96,7 +94,6 @@ public class Produto {
 
 	/**
 	 * <p> ID Getter </p>
-	 * @param None
 	 * @return int
 	 * @since 1.0
 	 */
@@ -106,8 +103,7 @@ public class Produto {
 
 	/**
 	 * <p> ID Setter </p>
-	 * @param int id
-	 * @return Void
+	 * @param id
 	 * @since 1.0
 	 */
 	public void setId(int id) {
@@ -116,7 +112,6 @@ public class Produto {
 
 	/**
 	 * <p> Nome Getter </p>
-	 * @param None
 	 * @return String
 	 * @since 1.0
 	 */
@@ -125,8 +120,7 @@ public class Produto {
 	}
 	/**
 	 * <p> nome Setter </p>
-	 * @param String nome
-	 * @return Void
+	 * @param nome
 	 * @since 1.0
 	 */
 	public void setNome(String nome) {
@@ -135,7 +129,6 @@ public class Produto {
 
 	/**
 	 * <p> Preco Getter </p>
-	 * @param None
 	 * @return double
 	 * @since 1.0
 	 */
@@ -145,8 +138,7 @@ public class Produto {
 	
 	/**
 	 * <p> preco Setter </p>
-	 * @param double preco
-	 * @return Void
+	 * @param preco
 	 * @since 1.0
 	 */
 	public void setPreco(double preco) {
@@ -155,7 +147,6 @@ public class Produto {
 
 	/**
 	 * <p> percentualDesconto Getter </p>
-	 * @param None
 	 * @return double
 	 * @since 1.0
 	 */
@@ -165,8 +156,7 @@ public class Produto {
 
 	/**
 	 * <p> percentualDesconto Setter </p>
-	 * @param double percentualDesconto
-	 * @return Void
+	 * @param percentualDesconto
 	 * @since 1.0
 	 */
 	public void setPercentualDesconto(double percentualDesconto) {
@@ -175,7 +165,6 @@ public class Produto {
 
 	/**
 	 * <p> descricao Getter </p>
-	 * @param None
 	 * @return String
 	 * @since 1.0
 	 */
@@ -185,8 +174,7 @@ public class Produto {
 
 	/**
 	 * <p> descricao Setter </p>
-	 * @param double percentualDesconto
-	 * @return Void
+	 * @param descricao
 	 * @since 1.0
 	 */
 	public void setDescricao(String descricao) {
@@ -195,7 +183,6 @@ public class Produto {
 	
 	/**
 	 * <p> marca Getter </p>
-	 * @param None
 	 * @return String
 	 * @since 1.0
 	 */
@@ -205,8 +192,7 @@ public class Produto {
 
 	/**
 	 * <p> marca Setter </p>
-	 * @param String marca
-	 * @return Void
+	 * @param marca
 	 * @since 1.0
 	 */
 	public void setMarca(String marca) {
@@ -215,7 +201,6 @@ public class Produto {
 
 	/**
 	 * <p> quantidadeAtual Getter </p>
-	 * @param None
 	 * @return int
 	 * @since 1.0
 	 */
@@ -225,8 +210,7 @@ public class Produto {
 
 	/**
 	 * <p> quantidadeAtual Setter </p>
-	 * @param int quantidadeAtual
-	 * @return Void
+	 * @param quantidadeAtual
 	 * @since 1.0
 	 */
 	public void setQuantidadeAtual(int quantidadeAtual) {
@@ -235,7 +219,6 @@ public class Produto {
 
 	/**
 	 * <p> quantidadeMinima Getter </p>
-	 * @param None
 	 * @return int
 	 * @since 1.0
 	 */
@@ -245,8 +228,7 @@ public class Produto {
 
 	/**
 	 * <p> quantidadeMinima Setter </p>
-	 * @param int quantidadeMinima
-	 * @return Void
+	 * @param quantidadeMinima
 	 * @since 1.0
 	 */
 	public void setQuantidadeMinima(int quantidadeMinima) {
@@ -255,7 +237,6 @@ public class Produto {
 
 	/**
 	 * <p> DataCriacao Getter </p>
-	 * @param None
 	 * @return LocalDate
 	 * @since 1.0
 	 */
@@ -265,8 +246,7 @@ public class Produto {
 
 	/**
 	 * <p> DataCriacao Setter </p>
-	 * @param LocalDate dataCriacao
-	 * @return Void
+	 * @param dataCriacao
 	 * @since 1.0
 	 */
 	public void setDataCriacao(LocalDate dataCriacao) {
@@ -275,7 +255,6 @@ public class Produto {
 
 	/**
 	 * <p> DataUltimaModificacao Getter </p>
-	 * @param None
 	 * @return LocalDate
 	 * @since 1.0
 	 */
@@ -285,8 +264,7 @@ public class Produto {
 
 	/**
 	 * <p> DataUltimaModificacao Setter </p>
-	 * @param LocalDate dataUltimaModificacao
-	 * @return Void
+	 * @param dataUltimaModificacao
 	 * @since 1.0
 	 */
 	public void setDataUltimaModificacao(LocalDate dataUltimaModificacao) {
@@ -295,21 +273,24 @@ public class Produto {
 
 	/**
 	 * <p> fornecedor Getter </p>
-	 * @param String
-	 * @return int
+	 * @return String
 	 * @since 1.0
 	 */
 	public String getFornecedor() {
 		return fornecedor;
 	}
 
+	/**
+	 * <p> fornecedor Setter </p>
+	 * @param fornecedor
+	 * @since 1.0
+	 */
 	public void setFornecedor(String fornecedor) {
 		this.fornecedor = fornecedor;
 	}
 	
 	/**
 	 * <p> Generate new Produto ID </p>
-	 * @param None
 	 * @return int
 	 * @since 1.0
 	 */

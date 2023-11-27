@@ -82,8 +82,7 @@ public class ProdutoListagemController implements Initializable{
 
 	/**
 	 * <p> Load in essential resources </p>
-	 * @param URL location, ResourceBundle resources
-	 * @return Void
+	 * @param location, resources
 	 * @since 1.0
 	 */
 	public void initialize(URL location, ResourceBundle resources) {
@@ -119,8 +118,7 @@ public class ProdutoListagemController implements Initializable{
 	
 	/**
 	 * <p> Trigger logout </p>
-	 * @param ActionEvent event
-	 * @return Void
+	 * @param event
 	 * @since 1.0
 	 */
 	public void deslogar(ActionEvent event) throws IOException {
@@ -136,8 +134,7 @@ public class ProdutoListagemController implements Initializable{
 	
 	/**
 	 * <p> Go to Carrinho page </p>
-	 * @param ActionEvent event
-	 * @return Void
+	 * @param event
 	 * @since 1.0
 	 */
 	public void irParaCarrinho(ActionEvent event) throws IOException {
@@ -151,8 +148,6 @@ public class ProdutoListagemController implements Initializable{
 
 	/**
 	 * <p> Populate TableView </p>
-	 * @param 
-	 * @return Void
 	 * @since 1.0
 	 */
 	private void popularTabela() throws SQLException, ClassNotFoundException {
@@ -179,8 +174,6 @@ public class ProdutoListagemController implements Initializable{
 	
 	/**
 	 * <p> Load in current user's Carrinho </p>
-	 * @param None
-	 * @return Void
 	 * @since 1.0
 	 */
 	private void inicializarCarrinho() throws ClassNotFoundException, SQLException {
@@ -191,8 +184,6 @@ public class ProdutoListagemController implements Initializable{
 	
 	/**
 	 * <p> Include Button in TableView </p>
-	 * @param None
-	 * @return Void
 	 * @since 1.0
 	 */
 	private void addToCartButton() {

@@ -42,7 +42,6 @@ public class Carrinho {
 	/**
 	 * <p> Constructor </p>
 	 * @param  id, quantidadeItens, total, dataCriacao, dataUltimaModificacao
-	 * @return void
 	 * @since 1.0
 	 */
 	public Carrinho(int id, int quantidadeItens, double total, LocalDate dataCriacao, LocalDate dataUltimaModificacao) {
@@ -66,7 +65,6 @@ public class Carrinho {
 	/**
 	 * <p> id Setter </p>
 	 * @param id
-	 * @return void
 	 * @since 1.0
 	 */
 	public void setId(int id) {
@@ -75,7 +73,6 @@ public class Carrinho {
 
 	/**
 	 * <p> quantidadeItens Getter </p>
-	 * @param None
 	 * @return int
 	 * @since 1.0
 	 */
@@ -85,8 +82,7 @@ public class Carrinho {
 
 	/**
 	 * <p> quantidadeItens Setter </p>
-	 * @param int quantidadeItens
-	 * @return Void
+	 * @param quantidadeItens
 	 * @since 1.0
 	 */
 	public void setQuantidadeItens(int quantidadeItens) {
@@ -95,7 +91,6 @@ public class Carrinho {
 
 	/**
 	 * <p> total Getter </p>
-	 * @param None
 	 * @return double
 	 * @since 1.0
 	 */
@@ -105,8 +100,7 @@ public class Carrinho {
 
 	/**
 	 * <p> total Setter </p>
-	 * @param double total
-	 * @return Void
+	 * @param total
 	 * @since 1.0
 	 */
 	public void setTotal(double total) {
@@ -115,7 +109,6 @@ public class Carrinho {
 
 	/**
 	 * <p> DataCriacao Getter </p>
-	 * @param None
 	 * @return LocalDate
 	 * @since 1.0
 	 */
@@ -125,8 +118,7 @@ public class Carrinho {
 
 	/**
 	 * <p> DataCriacao Setter </p>
-	 * @param LocalDate dataCriacao
-	 * @return Void
+	 * @param dataCriacao
 	 * @since 1.0
 	 */
 	public void setDataCriacao(LocalDate dataCriacao) {
@@ -135,7 +127,6 @@ public class Carrinho {
 
 	/**
 	 * <p> DataUltimaModificacao Getter </p>
-	 * @param None
 	 * @return LocalDate
 	 * @since 1.0
 	 */
@@ -145,8 +136,7 @@ public class Carrinho {
 
 	/**
 	 * <p> DataUltimaModificacao Setter </p>
-	 * @param LocalDate dataUltimaModificacao
-	 * @return Void
+	 * @param dataUltimaModificacao
 	 * @since 1.0
 	 */
 	public void setDataUltimaModificacao(LocalDate dataUltimaModificacao) {
@@ -155,8 +145,7 @@ public class Carrinho {
 
 	/**
 	 * <p> produtos Getter </p>
-	 * @param None
-	 * @return ArrayList<Produto>
+	 * @return ArrayList
 	 * @since 1.0
 	 */
 	public ArrayList<Produto> getProdutos() {
@@ -165,8 +154,7 @@ public class Carrinho {
 
 	/**
 	 * <p> produtos Setter </p>
-	 * @param ArrayList<Produto> produtos
-	 * @return Void
+	 * @param produtos
 	 * @since 1.0
 	 */
 	public void setProdutos(ArrayList<Produto> produtos) {
@@ -175,7 +163,6 @@ public class Carrinho {
 	
 	/**
 	 * <p> Generate new Carrinho ID </p>
-	 * @param None
 	 * @return int
 	 * @since 1.0
 	 */

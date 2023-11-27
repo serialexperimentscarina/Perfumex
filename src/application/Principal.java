@@ -19,8 +19,7 @@ public class Principal extends Application {
 	
 	/**
 	 * <p> Start method </p>
-	 * @param Stage primaryStage
-	 * @return Void
+	 * @param primaryStage the primary stage
 	 * @since 1.0
 	 */
 	@Override
@@ -38,8 +37,7 @@ public class Principal extends Application {
 	
 	/**
 	 * <p> Main method </p>
-	 * @param String[] args
-	 * @return Void
+	 * @param args the command-line arguments
 	 * @since 1.0
 	 */
 	public static void main(String[] args) {

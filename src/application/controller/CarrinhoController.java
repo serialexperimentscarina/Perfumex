@@ -57,8 +57,6 @@ public class CarrinhoController {
 	
 	/**
 	 * <p> Initialize resources </p>
-	 * @param None
-	 * @return Void
 	 * @since 1.0
 	 */
 	public void initialize() {
@@ -74,8 +72,6 @@ public class CarrinhoController {
 	
 	/**
 	 * <p> Load user's current Carrinho </p>
-	 * @param None
-	 * @return Void
 	 * @since 1.0
 	 */
 	private void inicializarCarrinho() throws ClassNotFoundException, SQLException {
@@ -87,8 +83,7 @@ public class CarrinhoController {
 
 	/**
 	 * <p> Go to Marketplace listing page </p>
-	 * @param ActionEvent event
-	 * @return Void
+	 * @param event
 	 * @since 1.0
 	 */
 	public void voltar(ActionEvent event) throws IOException {
@@ -101,8 +96,7 @@ public class CarrinhoController {
 	
 	/**
 	 * <p> Make an order </p>
-	 * @param ActionEvent event
-	 * @return Void
+	 * @param event
 	 * @since 1.0
 	 */
 	public void finalizar(ActionEvent event) throws IOException {
@@ -121,7 +115,6 @@ public class CarrinhoController {
 	/**
 	 * <p> Populate TableView </p>
 	 * @param None
-	 * @return Void
 	 * @since 1.0
 	 */
 	private void popularTabela() throws SQLException, ClassNotFoundException {

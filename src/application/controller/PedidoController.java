@@ -99,8 +99,6 @@ public class PedidoController {
 	
 	/**
 	 * <p> Initialize resources </p>
-	 * @param None
-	 * @return Void
 	 * @since 1.0
 	 */
 	public void initialize() {
@@ -118,8 +116,6 @@ public class PedidoController {
 	
 	/**
 	 * <p> Populate ComboBox </p>
-	 * @param None
-	 * @return Void
 	 * @since 1.0
 	 */
 	private void popularCBox() {
@@ -132,8 +128,6 @@ public class PedidoController {
 
 	/**
 	 * <p> Populate Pedido's data </p>
-	 * @param None
-	 * @return Void
 	 * @since 1.0
 	 */
 	private void popularCampos() throws ClassNotFoundException, SQLException {
@@ -160,8 +154,6 @@ public class PedidoController {
 
 	/**
 	 * <p> Load user's current Carrinho </p>
-	 * @param None
-	 * @return Void
 	 * @since 1.0
 	 */
 	private void inicializarCarrinho() throws ClassNotFoundException, SQLException {
@@ -173,8 +165,6 @@ public class PedidoController {
 
 	/**
 	 * <p> Load in TableView </p>
-	 * @param None
-	 * @return Void
 	 * @since 1.0
 	 */
 	private void popularTabela() throws ClassNotFoundException, SQLException {
@@ -191,8 +181,7 @@ public class PedidoController {
 
 	/**
 	 * <p> Go to Carrinho page </p>
-	 * @param ActionEvent event
-	 * @return Void
+	 * @param event
 	 * @since 1.0
 	 */
 	public void voltar(ActionEvent event) throws IOException {
@@ -205,8 +194,7 @@ public class PedidoController {
 	
 	/**
 	 * <p> Finish Pedido </p>
-	 * @param ActionEvent event
-	 * @return Void
+	 * @param event
 	 * @since 1.0
 	 */
 	public void finalizar(ActionEvent event) throws IOException, SQLException, ClassNotFoundException {
@@ -234,8 +222,7 @@ public class PedidoController {
 
 	/**
 	 * <p> Validate Payment Field </p>
-	 * @param None
-	 * @return Boolean
+	 * @return boolean
 	 * @since 1.0
 	 */
 	private boolean validarCampos() {

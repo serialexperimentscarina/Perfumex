@@ -16,9 +16,8 @@ public class Cliente extends Usuario{
 
 	/**
 	 * <p> Constructor </p>
-	 * @param int id, String nome, String sobrenome, String email, String senha, String telefone, String status,
-			LocalDate dataCriacao, LocalDate dataUltimaModificacao, String cpf
-	 * @return Void
+	 * @param id, nome, sobrenome, email, senha, telefone, status,
+		 dataCriacao, dataUltimaModificacao, cpf
 	 * @since 1.0
 	 */
 	public Cliente(int id, String nome, String sobrenome, String email, String senha, String telefone, String status,
@@ -29,7 +28,6 @@ public class Cliente extends Usuario{
 
 	/**
 	 * <p> cpf Getter </p>
-	 * @param None
 	 * @return String
 	 * @since 1.0
 	 */
@@ -39,8 +37,7 @@ public class Cliente extends Usuario{
 
 	/**
 	 * <p> cpf Setter </p>
-	 * @param String cpf
-	 * @return Void
+	 * @param cpf
 	 * @since 1.0
 	 */
 	public void setCpf(String cpf) {

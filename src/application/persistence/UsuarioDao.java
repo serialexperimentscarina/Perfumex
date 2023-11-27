@@ -23,8 +23,6 @@ public class UsuarioDao {
 	
 	/**
 	 * <p> Constructor </p>
-	 * @param None
-	 * @return Void
 	 * @since 1.0
 	 */
 	public UsuarioDao() throws ClassNotFoundException, SQLException {
@@ -34,8 +32,7 @@ public class UsuarioDao {
 	
 	/**
 	 * <p> Insert Clientes into DB </p>
-	 * @param Cliente cli
-	 * @return Void
+	 * @param cli
 	 * @since 1.0
 	 */
 	public void insereCliente(Cliente cli) throws SQLException {
@@ -52,8 +49,7 @@ public class UsuarioDao {
 	
 	/**
 	 * <p> Insert Lojistas into DB </p>
-	 * @param Lojista l
-	 * @return Void
+	 * @param l
 	 * @since 1.0
 	 */
 	public void insereLojista(Lojista l) throws SQLException {
@@ -70,7 +66,7 @@ public class UsuarioDao {
 	
 	/**
 	 * <p> Search User by login info </p>
-	 * @param String email, String senha
+	 * @param email, senha
 	 * @return Usuario
 	 * @since 1.0
 	 */
@@ -94,7 +90,7 @@ public class UsuarioDao {
 	
 	/**
 	 * <p> Search the type of an user </p>
-	 * @param Usuario u
+	 * @param u
 	 * @return String
 	 * @since 1.0
 	 */
@@ -115,7 +111,7 @@ public class UsuarioDao {
 	
 	/**
 	 * <p> Return a Cliente's CPF </p>
-	 * @param Usuario u
+	 * @param u
 	 * @return String
 	 * @since 1.0
 	 */
@@ -134,8 +130,8 @@ public class UsuarioDao {
 	
 	/**
 	 * <p> Check if email is avaliable </p>
-	 * @param String email
-	 * @return Boolean
+	 * @param email
+	 * @return boolean
 	 * @since 1.0
 	 */
 	public boolean checarDispEmail(String email) throws SQLException{
@@ -153,8 +149,7 @@ public class UsuarioDao {
 	
 	/**
 	 * <p> Insert new Usuario into DB </p>
-	 * @param Usuario U
-	 * @return Void
+	 * @param u
 	 * @since 1.0
 	 */
 	private void insereUsuario(Usuario u) throws SQLException {
@@ -177,7 +172,6 @@ public class UsuarioDao {
 
 	/**
 	 * <p> Count how many users are in the DB </p>
-	 * @param None
 	 * @return int
 	 * @since 1.0
 	 */

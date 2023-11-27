@@ -23,8 +23,6 @@ public class CarrinhoDao {
 	
 	/**
 	 * <p> Constructor </p>
-	 * @param None
-	 * @return Void
 	 * @since 1.0
 	 */
 	public CarrinhoDao() throws ClassNotFoundException, SQLException {
@@ -34,8 +32,7 @@ public class CarrinhoDao {
 	
 	/**
 	 * <p> Insert Carrinho into DB </p>
-	 * @param Carrinho car, Usuario u
-	 * @return Void
+	 * @param car, u
 	 * @since 1.0
 	 */
 	public void criarNovoCarrinho(Carrinho car, Usuario u) throws SQLException {
@@ -56,7 +53,6 @@ public class CarrinhoDao {
 	
 	/**
 	 * <p> Count Carrinhos in DB </p>
-	 * @param None
 	 * @return int
 	 * @since 1.0
 	 */
@@ -74,7 +70,7 @@ public class CarrinhoDao {
 	
 	/**
 	 * <p> Search for a user's current cart </p>
-	 * @param Usuario usuario
+	 * @param usuario
 	 * @return Carrinho
 	 * @since 1.0
 	 */
@@ -99,8 +95,7 @@ public class CarrinhoDao {
 	
 	/**
 	 * <p> Update Carrinho </p>
-	 * @param Carrinho carrinhoAtual
-	 * @return Void
+	 * @param carrinhoAtual
 	 * @since 1.0
 	 */
 	public void atualizarCarrinho(Carrinho carrinhoAtual) throws SQLException {
@@ -130,7 +125,7 @@ public class CarrinhoDao {
 	
 	/**
 	 * <p> Search for the senders of the current card </p>
-	 * @param Carrinho car
+	 * @param car
 	 * @return String
 	 * @since 1.0
 	 */

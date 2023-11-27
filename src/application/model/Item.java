@@ -31,9 +31,8 @@ public class Item {
 
 	/**
 	 * <p> Constructor </p>
-	 * @param Produto produto, int quantidadeItens, double subtotal, LocalDate dataCriacao,
-			LocalDate dataUltimaModificacao
-	 * @return Void
+	 * @param produto, quantidadeItens, subtotal, dataCriacao,
+		 dataUltimaModificacao
 	 * @since 1.0
 	 */
 	public Item(Produto produto, int quantidadeItens, double subtotal, LocalDate dataCriacao,
@@ -48,7 +47,6 @@ public class Item {
 
 	/**
 	 * <p> Produto Getter </p>
-	 * @param None
 	 * @return Produto
 	 * @since 1.0
 	 */
@@ -58,8 +56,7 @@ public class Item {
 
 	/**
 	 * <p> Produto Setter </p>
-	 * @param Produto produto
-	 * @return Void
+	 * @param produto
 	 * @since 1.0
 	 */
 	public void setProduto(Produto produto) {
@@ -68,7 +65,6 @@ public class Item {
 
 	/**
 	 * <p> quantidadeItens Getter </p>
-	 * @param None
 	 * @return int
 	 * @since 1.0
 	 */
@@ -78,8 +74,7 @@ public class Item {
 
 	/**
 	 * <p> quantidadeItens Setter </p>
-	 * @param int quantidadeItens
-	 * @return Void
+	 * @param quantidadeItens
 	 * @since 1.0
 	 */
 	public void setQuantidadeItens(int quantidadeItens) {
@@ -88,7 +83,6 @@ public class Item {
 
 	/**
 	 * <p> subtotal Getter </p>
-	 * @param None
 	 * @return double
 	 * @since 1.0
 	 */
@@ -98,8 +92,7 @@ public class Item {
 
 	/**
 	 * <p> subtotal Setter </p>
-	 * @param double subtotal
-	 * @return Void
+	 * @param subtotal
 	 * @since 1.0
 	 */
 	public void setSubtotal(double subtotal) {
@@ -108,7 +101,6 @@ public class Item {
 
 	/**
 	 * <p> DataCriacao Getter </p>
-	 * @param None
 	 * @return LocalDate
 	 * @since 1.0
 	 */
@@ -118,8 +110,7 @@ public class Item {
 
 	/**
 	 * <p> DataCriacao Setter </p>
-	 * @param LocalDate dataCriacao
-	 * @return Void
+	 * @param dataCriacao
 	 * @since 1.0
 	 */
 	public void setDataCriacao(LocalDate dataCriacao) {
@@ -128,7 +119,6 @@ public class Item {
 
 	/**
 	 * <p> DataUltimaModificacao Getter </p>
-	 * @param None
 	 * @return LocalDate
 	 * @since 1.0
 	 */
@@ -138,8 +128,7 @@ public class Item {
 
 	/**
 	 * <p> DataUltimaModificacao Setter </p>
-	 * @param LocalDate dataUltimaModificacao
-	 * @return Void
+	 * @param dataUltimaModificacao
 	 * @since 1.0
 	 */
 	public void setDataUltimaModificacao(LocalDate dataUltimaModificacao) {

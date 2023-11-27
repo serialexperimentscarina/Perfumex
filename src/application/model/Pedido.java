@@ -31,9 +31,8 @@ public class Pedido {
 	
 	/**
 	 * <p> Constructor </p>
-	 * @param Carrinho carrinho, String tipoPagto, String status, LocalDate dataCriacao,
-			LocalDate dataUltimaModificacao
-	 * @return Void
+	 * @param carrinho, tipoPagto, status, dataCriacao,
+		 dataUltimaModificacao
 	 * @since 1.0
 	 */
 	public Pedido(Carrinho carrinho, String tipoPagto, String status, LocalDate dataCriacao,
@@ -48,7 +47,6 @@ public class Pedido {
 
 	/**
 	 * <p> Carrinho Getter </p>
-	 * @param None
 	 * @return Carrinho
 	 * @since 1.0
 	 */
@@ -58,8 +56,7 @@ public class Pedido {
 
 	/**
 	 * <p> Carrinho Setter </p>
-	 * @param Carrinho carrinho
-	 * @return Void
+	 * @param carrinho
 	 * @since 1.0
 	 */
 	public void setCarrinho(Carrinho carrinho) {
@@ -68,7 +65,6 @@ public class Pedido {
 
 	/**
 	 * <p> tipoPagto Getter </p>
-	 * @param None
 	 * @return String
 	 * @since 1.0
 	 */
@@ -78,8 +74,7 @@ public class Pedido {
 
 	/**
 	 * <p> tipoPagto Setter </p>
-	 * @param String tipoPagto
-	 * @return Void
+	 * @param tipoPagto
 	 * @since 1.0
 	 */
 	public void setTipoPagto(String tipoPagto) {
@@ -88,7 +83,6 @@ public class Pedido {
 
 	/**
 	 * <p> status Getter </p>
-	 * @param None
 	 * @return String
 	 * @since 1.0
 	 */
@@ -98,8 +92,7 @@ public class Pedido {
 
 	/**
 	 * <p> status Setter </p>
-	 * @param String status
-	 * @return Void
+	 * @param status
 	 * @since 1.0
 	 */
 	public void setStatus(String status) {
@@ -109,7 +102,6 @@ public class Pedido {
 
 	/**
 	 * <p> DataCriacao Getter </p>
-	 * @param None
 	 * @return LocalDate
 	 * @since 1.0
 	 */
@@ -119,8 +111,7 @@ public class Pedido {
 
 	/**
 	 * <p> DataCriacao Setter </p>
-	 * @param LocalDate dataCriacao
-	 * @return Void
+	 * @param dataCriacao
 	 * @since 1.0
 	 */
 	public void setDataCriacao(LocalDate dataCriacao) {
@@ -129,7 +120,6 @@ public class Pedido {
 
 	/**
 	 * <p> DataUltimaModificacao Getter </p>
-	 * @param None
 	 * @return LocalDate
 	 * @since 1.0
 	 */
@@ -139,8 +129,7 @@ public class Pedido {
 
 	/**
 	 * <p> DataUltimaModificacao Setter </p>
-	 * @param LocalDate dataUltimaModificacao
-	 * @return Void
+	 * @param dataUltimaModificacao
 	 * @since 1.0
 	 */
 	public void setDataUltimaModificacao(LocalDate dataUltimaModificacao) {

@@ -24,8 +24,6 @@ public class EnderecoDao {
 	
 	/**
 	 * <p> Constructor </p>
-	 * @param None
-	 * @return Void
 	 * @since 1.0
 	 */
 	public EnderecoDao() throws ClassNotFoundException, SQLException {
@@ -36,8 +34,7 @@ public class EnderecoDao {
 	
 	/**
 	 * <p> Insert Endereco into DB </p>
-	 * @param Endereco E
-	 * @return Void
+	 * @param e
 	 * @since 1.0
 	 */
 	public void insererEndereco(Endereco e) throws SQLException {
@@ -61,7 +58,7 @@ public class EnderecoDao {
 	
 	/**
 	 * <p> Search a User's endereco </p>
-	 * @param Usuario u
+	 * @param u
 	 * @return Endereco
 	 * @since 1.0
 	 */

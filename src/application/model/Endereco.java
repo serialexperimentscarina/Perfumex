@@ -47,9 +47,8 @@ public class Endereco {
 	
 	/**
 	 * <p> Constructor </p>
-	 * @param Usuario usuario, String rua, int numero, String cep, String complemento, String estado,
-			String cidade, LocalDate dataCriacao, LocalDate dataUltimaModificacao
-	 * @return Void
+	 * @param usuario, rua, numero, cep, complemento, estado,
+		 cidade, dataCriacao, dataUltimaModificacao
 	 * @since 1.0
 	 */
 	public Endereco(Usuario usuario, String rua, int numero, String cep, String complemento, String estado,
@@ -68,7 +67,6 @@ public class Endereco {
 
 	/**
 	 * <p> Usuario Getter </p>
-	 * @param None
 	 * @return Usuario
 	 * @since 1.0
 	 */
@@ -78,8 +76,7 @@ public class Endereco {
 
 	/**
 	 * <p> usuario Setter </p>
-	 * @param Usuario usuario
-	 * @return Void
+	 * @param usuario
 	 * @since 1.0
 	 */
 	public void setUsuario(Usuario usuario) {
@@ -88,7 +85,6 @@ public class Endereco {
 
 	/**
 	 * <p> rua Getter </p>
-	 * @param None
 	 * @return String
 	 * @since 1.0
 	 */
@@ -98,8 +94,7 @@ public class Endereco {
 
 	/**
 	 * <p> rua Setter </p>
-	 * @param String rua
-	 * @return Void
+	 * @param rua
 	 * @since 1.0
 	 */
 	public void setRua(String rua) {
@@ -108,7 +103,6 @@ public class Endereco {
 
 	/**
 	 * <p> numero Getter </p>
-	 * @param None
 	 * @return int
 	 * @since 1.0
 	 */
@@ -118,8 +112,7 @@ public class Endereco {
 
 	/**
 	 * <p> numero Setter </p>
-	 * @param int numero
-	 * @return Void
+	 * @param numero
 	 * @since 1.0
 	 */
 	public void setNumero(int numero) {
@@ -128,7 +121,6 @@ public class Endereco {
 
 	/**
 	 * <p> cep Getter </p>
-	 * @param None
 	 * @return String
 	 * @since 1.0
 	 */
@@ -138,8 +130,7 @@ public class Endereco {
 
 	/**
 	 * <p> cep Setter </p>
-	 * @param String cep
-	 * @return Void
+	 * @param cep
 	 * @since 1.0
 	 */
 	public void setCep(String cep) {
@@ -148,7 +139,6 @@ public class Endereco {
 
 	/**
 	 * <p> complemento Getter </p>
-	 * @param None
 	 * @return String
 	 * @since 1.0
 	 */
@@ -157,9 +147,8 @@ public class Endereco {
 	}
 
 	/**
-	 * <p> cep Setter </p>
-	 * @param String cep
-	 * @return Void
+	 * <p> complemento Setter </p>
+	 * @param complemento
 	 * @since 1.0
 	 */
 	public void setComplemento(String complemento) {
@@ -168,7 +157,6 @@ public class Endereco {
 
 	/**
 	 * <p> estado Getter </p>
-	 * @param None
 	 * @return String
 	 * @since 1.0
 	 */
@@ -178,8 +166,7 @@ public class Endereco {
 
 	/**
 	 * <p> estado Setter </p>
-	 * @param String estado
-	 * @return Void
+	 * @param estado
 	 * @since 1.0
 	 */
 	public void setEstado(String estado) {
@@ -188,7 +175,6 @@ public class Endereco {
 
 	/**
 	 * <p> cidade Getter </p>
-	 * @param None
 	 * @return String
 	 * @since 1.0
 	 */
@@ -197,8 +183,7 @@ public class Endereco {
 	}
 	/**
 	 * <p> cidade Setter </p>
-	 * @param String cidade
-	 * @return Void
+	 * @param cidade
 	 * @since 1.0
 	 */
 	public void setCidade(String cidade) {
@@ -207,7 +192,6 @@ public class Endereco {
 
 	/**
 	 * <p> DataCriacao Getter </p>
-	 * @param None
 	 * @return LocalDate
 	 * @since 1.0
 	 */
@@ -217,8 +201,7 @@ public class Endereco {
 
 	/**
 	 * <p> DataCriacao Setter </p>
-	 * @param LocalDate dataCriacao
-	 * @return Void
+	 * @param dataCriacao
 	 * @since 1.0
 	 */
 	public void setDataCriacao(LocalDate dataCriacao) {
@@ -227,7 +210,6 @@ public class Endereco {
 
 	/**
 	 * <p> DataUltimaModificacao Getter </p>
-	 * @param None
 	 * @return LocalDate
 	 * @since 1.0
 	 */
@@ -237,8 +219,7 @@ public class Endereco {
 
 	/**
 	 * <p> DataUltimaModificacao Setter </p>
-	 * @param LocalDate dataUltimaModificacao
-	 * @return Void
+	 * @param dataUltimaModificacao
 	 * @since 1.0
 	 */
 	public void setDataUltimaModificacao(LocalDate dataUltimaModificacao) {

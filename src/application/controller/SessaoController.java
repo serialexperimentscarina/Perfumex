@@ -28,8 +28,7 @@ public class SessaoController {
 	
 	/**
 	 * <p> Log in user </p>
-	 * @param Usuario u
-	 * @return Void
+	 * @param u the user to be logged on
 	 * @since 1.0
 	 */
 	public void logar(Usuario u) throws SQLException, ClassNotFoundException {
@@ -41,8 +40,6 @@ public class SessaoController {
 	
 	/**
 	 * <p> Log out user </p>
-	 * @param None
-	 * @return Void
 	 * @since 1.0
 	 */
 	public void deslogar() {

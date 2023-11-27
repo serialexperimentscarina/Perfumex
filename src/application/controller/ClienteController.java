@@ -66,8 +66,6 @@ public class ClienteController {
 	
 	/**
 	 * <p> Initialize resources </p>
-	 * @param None
-	 * @return Void
 	 * @since 1.0
 	 */
 	public void initialize() {
@@ -79,8 +77,7 @@ public class ClienteController {
 
 	/**
 	 * <p> Go to Login page </p>
-	 * @param ActionEvent event
-	 * @return Void
+	 * @param event
 	 * @since 1.0
 	 */
 	public void irParaLogin(ActionEvent event) throws IOException {
@@ -93,8 +90,7 @@ public class ClienteController {
 	
 	/**
 	 * <p> Register Cliente </p>
-	 * @param ActionEvent event
-	 * @return Void
+	 * @param event
 	 * @since 1.0
 	 */
 	public void cadastrarCliente(ActionEvent event) {
@@ -131,7 +127,6 @@ public class ClienteController {
 	
 	/**
 	 * <p> Validate fields </p>
-	 * @param None
 	 * @return boolean
 	 * @since 1.0
 	 */
@@ -240,8 +235,6 @@ public class ClienteController {
 
 	/**
 	 * <p> Clean fields </p>
-	 * @param None
-	 * @return Void
 	 * @since 1.0
 	 */   
 	public void limparCampos() {

@@ -64,8 +64,6 @@ public class LojistaController {
 	
 	/**
 	 * <p> Initialize resources </p>
-	 * @param None
-	 * @return Void
 	 * @since 1.0
 	 */
 	public void initialize() {
@@ -76,8 +74,7 @@ public class LojistaController {
 	}
 	/**
 	 * <p> Go back to Register main page </p>
-	 * @param ActionEvent event
-	 * @return Void
+	 * @param event
 	 * @since 1.0
 	 */
 	public void irParaCadastro(ActionEvent event) throws IOException {
@@ -90,8 +87,7 @@ public class LojistaController {
 	
 	/**
 	 * <p> Register Lojista and Endereco </p>
-	 * @param ActionEvent event
-	 * @return Void
+	 * @param event
 	 * @since 1.0
 	 */
 	public void cadastrarLojista(ActionEvent event) {		
@@ -121,8 +117,6 @@ public class LojistaController {
 	
 	/**
 	 * <p> Clean all fields </p>
-	 * @param None
-	 * @return Void
 	 * @since 1.0
 	 */
 	public void limparCampos() {
@@ -142,7 +136,6 @@ public class LojistaController {
 	
 	/**
 	 * <p> Validate all fields </p>
-	 * @param None
 	 * @return boolean
 	 * @since 1.0
 	 */

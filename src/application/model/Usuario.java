@@ -51,9 +51,8 @@ public class Usuario {
 	
 	/**
 	 * <p> Constructor </p>
-	 * @param int id, String nome, String sobrenome, String email, String senha, String telefone, String status,
-			LocalDate dataCriacao, LocalDate dataUltimaModificacao
-	 * @return Void
+	 * @param id, nome, sobrenome, email, senha, telefone, status,
+		 dataCriacao, dataUltimaModificacao
 	 * @since 1.0
 	 */
 	public Usuario(int id, String nome, String sobrenome, String email, String senha, String telefone, String status,
@@ -72,7 +71,6 @@ public class Usuario {
 
 	/**
 	 * <p> ID Getter </p>
-	 * @param None
 	 * @return int
 	 * @since 1.0
 	 */
@@ -83,8 +81,7 @@ public class Usuario {
 
 	/**
 	 * <p> ID Setter </p>
-	 * @param int id
-	 * @return Void
+	 * @param id
 	 * @since 1.0
 	 */
 	public void setId(int id) {
@@ -93,7 +90,6 @@ public class Usuario {
 
 	/**
 	 * <p> Nome Getter </p>
-	 * @param None
 	 * @return String
 	 * @since 1.0
 	 */
@@ -103,8 +99,7 @@ public class Usuario {
 
 	/**
 	 * <p> Nome Setter </p>
-	 * @param String nome
-	 * @return Void
+	 * @param nome
 	 * @since 1.0
 	 */
 	public void setNome(String nome) {
@@ -113,7 +108,6 @@ public class Usuario {
 
 	/**
 	 * <p> Sobrenome Getter </p>
-	 * @param None
 	 * @return String
 	 * @since 1.0
 	 */
@@ -123,8 +117,7 @@ public class Usuario {
 
 	/**
 	 * <p> Sobrenome Setter </p>
-	 * @param String sobrenome
-	 * @return Void
+	 * @param sobrenome
 	 * @since 1.0
 	 */
 	public void setSobrenome(String sobrenome) {
@@ -133,7 +126,6 @@ public class Usuario {
 
 	/**
 	 * <p> Email Getter </p>
-	 * @param None
 	 * @return String
 	 * @since 1.0
 	 */
@@ -143,8 +135,7 @@ public class Usuario {
 
 	/**
 	 * <p> Email Setter </p>
-	 * @param int id
-	 * @return Void
+	 * @param email
 	 * @since 1.0
 	 */
 	public void setEmail(String email) {
@@ -153,7 +144,6 @@ public class Usuario {
 
 	/**
 	 * <p> Senha Getter </p>
-	 * @param None
 	 * @return String
 	 * @since 1.0
 	 */
@@ -163,8 +153,7 @@ public class Usuario {
 
 	/**
 	 * <p> Senha Setter </p>
-	 * @param String senha
-	 * @return Void
+	 * @param senha
 	 * @since 1.0
 	 */
 	public void setSenha(String senha) {
@@ -173,7 +162,6 @@ public class Usuario {
 
 	/**
 	 * <p> Telefone Getter </p>
-	 * @param None
 	 * @return String
 	 * @since 1.0
 	 */
@@ -183,8 +171,7 @@ public class Usuario {
 
 	/**
 	 * <p> Telefone Setter </p>
-	 * @param String telefone
-	 * @return Void
+	 * @param telefone
 	 * @since 1.0
 	 */
 	public void setTelefone(String telefone) {
@@ -193,7 +180,6 @@ public class Usuario {
 
 	/**
 	 * <p> Status Getter </p>
-	 * @param None
 	 * @return String
 	 * @since 1.0
 	 */
@@ -203,8 +189,7 @@ public class Usuario {
 
 	/**
 	 * <p> Status Setter </p>
-	 * @param String status
-	 * @return Void
+	 * @param status
 	 * @since 1.0
 	 */
 	public void setStatus(String status) {
@@ -213,7 +198,6 @@ public class Usuario {
 
 	/**
 	 * <p> DataCriacao Getter </p>
-	 * @param None
 	 * @return LocalDate
 	 * @since 1.0
 	 */
@@ -223,8 +207,7 @@ public class Usuario {
 
 	/**
 	 * <p> DataCriacao Setter </p>
-	 * @param LocalDate dataCriacao
-	 * @return Void
+	 * @param dataCriacao
 	 * @since 1.0
 	 */
 	public void setDataCriacao(LocalDate dataCriacao) {
@@ -233,7 +216,6 @@ public class Usuario {
 
 	/**
 	 * <p> DataUltimaModificacao Getter </p>
-	 * @param None
 	 * @return LocalDate
 	 * @since 1.0
 	 */
@@ -243,8 +225,7 @@ public class Usuario {
 
 	/**
 	 * <p> DataUltimaModificacao Setter </p>
-	 * @param LocalDate dataUltimaModificacao
-	 * @return Void
+	 * @param dataUltimaModificacao
 	 * @since 1.0
 	 */
 	public void setDataUltimaModificacao(LocalDate dataUltimaModificacao) {
@@ -253,7 +234,6 @@ public class Usuario {
 	
 	/**
 	 * <p> Generate new Usuario ID </p>
-	 * @param None
 	 * @return int
 	 * @since 1.0
 	 */

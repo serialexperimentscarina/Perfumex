@@ -18,8 +18,6 @@ public class GenericDao {
 	
 	/**
 	 * <p> Get connection to DB </p>
-	 * @param None
-	 * @return Connection
 	 * @since 1.0
 	 */
 	public Connection getConnection() throws ClassNotFoundException, SQLException {

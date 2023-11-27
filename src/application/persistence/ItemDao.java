@@ -29,8 +29,6 @@ public class ItemDao {
 	
 	/**
 	 * <p> Constructor </p>
-	 * @param None
-	 * @return Void
 	 * @since 1.0
 	 */
 	public ItemDao() throws ClassNotFoundException, SQLException {
@@ -41,8 +39,7 @@ public class ItemDao {
 	
 	/**
 	 * <p> Insert Item into DB </p>
-	 * @param Carrinho car, Item i, Usuario u, int quant
-	 * @return Void
+	 * @param car, i, u, quant
 	 * @since 1.0
 	 */
 	public void inserirItem(Carrinho car, Item i, Usuario u, int quant) throws SQLException {
@@ -63,8 +60,8 @@ public class ItemDao {
 	
 	/**
 	 * <p> List items on current user's cart </p>
-	 * @param Carrinho carrinhoAtual
-	 * @return ObservableList<Item>
+	 * @param carrinhoAtual
+	 * @return ObservableList
 	 * @since 1.0
 	 */
 	public ObservableList<Item> listarItems(Carrinho carrinhoAtual) throws SQLException {

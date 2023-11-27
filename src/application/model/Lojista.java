@@ -20,9 +20,8 @@ public class Lojista extends Usuario{
 
 	/**
 	 * <p> Constructor </p>
-	 * @param int id, String nome, String sobrenome, String email, String senha, String telefone, String status,
-			LocalDate dataCriacao, LocalDate dataUltimaModificacao, String cnpj
-	 * @return Void
+	 * @param id, nome, sobrenome, email, senha, telefone, status,
+		 dataCriacao, dataUltimaModificacao, cnpj
 	 * @since 1.0
 	 */
 	public Lojista(int id, String nome, String sobrenome, String email, String senha, String telefone, String status,
@@ -33,7 +32,6 @@ public class Lojista extends Usuario{
 
 	/**
 	 * <p> cnpj Getter </p>
-	 * @param None
 	 * @return String
 	 * @since 1.0
 	 */
@@ -43,8 +41,7 @@ public class Lojista extends Usuario{
 
 	/**
 	 * <p> cnpj Setter </p>
-	 * @param String cnpj
-	 * @return Void
+	 * @param cnpj
 	 * @since 1.0
 	 */
 	public void setCnpj(String cnpj) {
@@ -53,8 +50,7 @@ public class Lojista extends Usuario{
 
 	/**
 	 * <p> produtos Getter </p>
-	 * @param None
-	 * @return ArrayList<Produto>
+	 * @return ArrayList
 	 * @since 1.0
 	 */
 	public ArrayList<Produto> getProdutos() {
@@ -63,8 +59,7 @@ public class Lojista extends Usuario{
 
 	/**
 	 * <p> produtos Setter </p>
-	 * @param ArrayList<Produto> produtos
-	 * @return Void
+	 * @param produtos
 	 * @since 1.0
 	 */
 	public void setProdutos(ArrayList<Produto> produtos) {

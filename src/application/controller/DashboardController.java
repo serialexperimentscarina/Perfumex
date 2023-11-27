@@ -192,8 +192,6 @@ public class DashboardController implements Initializable{
 	   
 	/**
 	 * <p> Populate Desconto boxes </p>
-	 * @param None
-	 * @return Void
 	 * @since 1.0
 	 */
     public void desconto() {
@@ -214,8 +212,7 @@ public class DashboardController implements Initializable{
 
 	/**
 	 * <p> Change screens </p>
-	 * @param ActionEvent event
-	 * @return Void
+	 * @param event
 	 * @since 1.0
 	 */
 	   public void telamuda(ActionEvent event) {
@@ -252,8 +249,6 @@ public class DashboardController implements Initializable{
 
 	/**
 	 * <p> Log out user </p>
-	 * @param None
-	 * @return Void
 	 * @since 1.0
 	 */
 	   public void deslogar() {
@@ -280,8 +275,7 @@ public class DashboardController implements Initializable{
 
 		/**
 		 * <p> Update Produto </p>
-		 * @param ActionEvent event
-		 * @return Void
+		 * @param event
 		 * @since 1.0
 		 */
 	   public void handleUpdateProduct(ActionEvent event) {
@@ -293,8 +287,6 @@ public class DashboardController implements Initializable{
 	   //--------------------------------------------------------------------------------------------------------------------------
 	/**
 	 * <p> Initialize resources </p>
-	 * @param None
-	 * @return Void
 	 * @since 1.0
 	 */
 	@Override
@@ -363,8 +355,6 @@ public class DashboardController implements Initializable{
 		
 	/**
 	 * <p> Generate statistics related to price </p>
-	 * @param None
-	 * @return Void
 	 * @since 1.0
 	 */
 	private void gerarEstatisticasValor() throws ClassNotFoundException, SQLException {
@@ -383,8 +373,7 @@ public class DashboardController implements Initializable{
 	
 	/**
 	 * <p> Add new Produto </p>
-	 * @param ActionEvent event
-	 * @return Void
+	 * @param event
 	 * @since 1.0
 	 */
 	public void handleAddProduto(ActionEvent event) {
@@ -407,7 +396,6 @@ public class DashboardController implements Initializable{
 
 	/**
 	 * <p> Validate fields </p>
-	 * @param None
 	 * @return boolean
 	 * @since 1.0
 	 */
@@ -465,8 +453,6 @@ public class DashboardController implements Initializable{
 
 	/**
 	 * <p> Clean fields </p>
-	 * @param None
-	 * @return Void
 	 * @since 1.0
 	 */
     public void limparCampos() {
@@ -479,8 +465,7 @@ public class DashboardController implements Initializable{
 
 	/**
 	 * <p> Display alerts </p>
-	 * @param String mensagem, Alert.AlertType tipo
-	 * @return Void
+	 * @param mensagem the message to be displayed, tipo AlertType for message
 	 * @since 1.0
 	 */
     private void exibirAlerta(String mensagem, Alert.AlertType tipo) {
@@ -493,8 +478,6 @@ public class DashboardController implements Initializable{
     //-----------------Consultando as coisas na tabela-----------------------------------------------------------------------------------------------------------
 	/**
 	 * <p> Populate TableView </p>
-	 * @param None
-	 * @return Void
 	 * @since 1.0
 	 */
     private void popularTabela() throws SQLException {
@@ -535,8 +518,7 @@ public class DashboardController implements Initializable{
     //---------DELETE PRODUTO---------------------------------------------------------------------------------------   
 		/**
 		 * <p> Delete Produto </p>
-		 * @param ActionEvent event
-		 * @return Void
+		 * @param event
 		 * @since 1.0
 		 */   
 	    @FXML
@@ -580,8 +562,7 @@ public class DashboardController implements Initializable{
    //---------------------------------UPDATE------------------------------------------------------------------------------------------ 
 		/**
 		 * <p> Populate fields on update </p>
-		 * @param ActionEvent event
-		 * @return Void
+		 * @param event
 		 * @since 1.0
 		 */   
 	    public void populateFields(ActionEvent event) {
@@ -605,8 +586,7 @@ public class DashboardController implements Initializable{
 
 	/**
 	 * <p> Update Produto </p>
-	 * @param ActionEvent event
-	 * @return Void
+	 * @param event
 	 * @since 1.0
 	 */   
     @FXML
@@ -641,7 +621,6 @@ public class DashboardController implements Initializable{
     
 	/**
 	 * <p> Validate update </p>
-	 * @param None
 	 * @return boolean
 	 * @since 1.0
 	 */   
@@ -680,8 +659,7 @@ public class DashboardController implements Initializable{
 
 	/**
 	 * <p> Clean update fields </p>
-	 * @param ActionEvent event
-	 * @return Void
+	 * @param event
 	 * @since 1.0
 	 */   
 	public void limparCampos(ActionEvent event) {
