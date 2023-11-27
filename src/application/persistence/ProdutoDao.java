@@ -9,15 +9,34 @@ import application.model.Produto;
 import application.model.Usuario;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+/**
+ * Persistence class for the Produto entity
+ */
+
 public class ProdutoDao {
 
-private Connection c;
+	/**
+	 * Connection variable
+	 */
+	private Connection c;
 	
+	/**
+	 * <p> Constructor </p>
+	 * @param None
+	 * @return Void
+	 * @since 1.0
+	 */
 	public ProdutoDao() throws ClassNotFoundException, SQLException {
 		GenericDao gDao = new GenericDao();
 		c = gDao.getConnection();
 	}
 	
+	/**
+	 * <p> Insert product into DB </p>
+	 * @param Produto p
+	 * @return Void
+	 * @since 1.0
+	 */
 	public void inserirProduto(Produto p) throws SQLException {
 		String sql = "INSERT INTO produto VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		
@@ -39,6 +58,12 @@ private Connection c;
 		ps.close();
 	}
 	
+	/**
+	 * <p> Search avaliable products </p>
+	 * @param None
+	 * @return ResultSet
+	 * @since 1.0
+	 */
 	public ResultSet buscarProdutosCliente() throws SQLException {
 		String sql = "SELECT * FROM produto WHERE quantidade_atual > quantidade_minima";		
 		PreparedStatement ps = c.prepareStatement(sql);		
@@ -47,6 +72,12 @@ private Connection c;
 		return rs;
 	}
 	
+	/**
+	 * <p> Search current Lojista's products </p>
+	 * @param None
+	 * @return ResultSet
+	 * @since 1.0
+	 */
 	public ResultSet buscarProdutosLojista() throws SQLException {
 		String sql = "SELECT * FROM produto WHERE lojistaid = ?";
 		
@@ -57,6 +88,12 @@ private Connection c;
 		return rs;
 	}
 	
+	/**
+	 * <p> Count the number of Produtos in DB </p>
+	 * @param None
+	 * @return int
+	 * @since 1.0
+	 */
 	public int contarProduto() throws SQLException{
 		String sql = "SELECT COUNT(id) AS contagem FROM produto";
 		PreparedStatement ps = c.prepareStatement(sql);
@@ -69,6 +106,12 @@ private Connection c;
 	
 	}
 
+	/**
+	 * <p> Delete an specific product by ID </p>
+	 * @param int id
+	 * @return Void
+	 * @since 1.0
+	 */
 	public void deletarProduto(int id) throws SQLException {
         String sql = "DELETE FROM produto WHERE id = ?";
         
@@ -83,25 +126,13 @@ private Connection c;
             }
         }
 	}
-	public void atualizarValorProduto(int idProduto, double novoValor) throws SQLException {
-        String sql = "UPDATE produto SET preco = ? WHERE id = ?";
-
-        try (PreparedStatement ps = c.prepareStatement(sql)) {
-            ps.setDouble(1, novoValor);
-            ps.setInt(2, idProduto);
-
-            int rowsAffected = ps.executeUpdate();
-
-            if (rowsAffected > 0) {
-                System.out.println("Valor do produto atualizado com sucesso!");
-            } else {
-                System.out.println("Nenhum produto teve o valor atualizado. Verifique o ID e tente novamente.");
-            }
-        }
-    }
 	
-	
-
+	/**
+	 * <p> Search a Produto by it's ID </p>
+	 * @param int id
+	 * @return Produto
+	 * @since 1.0
+	 */
 	public Produto buscarProdutoPorId(int id) throws SQLException {
 		
 		 String sql = "SELECT * FROM produto WHERE id = ?";
@@ -127,6 +158,12 @@ private Connection c;
 		    return null; // Return null if the product is not found
 		}
 
+	/**
+	 * <p> Update a Produto's attributes </p>
+	 * @param Produto produto
+	 * @return Void
+	 * @since 1.0
+	 */
 	public void atualizarProduto(Produto produto) throws SQLException {
 	    String sql = "UPDATE produto SET nome = ?, preco = ?, percentual_desconto = ?, descricao = ?, marca = ?, fornecedor = ?, quantidade_atual = ?, quantidade_minima = ?, data_ultima_modificacao = ? WHERE id = ?";
 	    try (PreparedStatement ps = c.prepareStatement(sql)) {
@@ -151,6 +188,12 @@ private Connection c;
 	    }
 	}
 	
+	/**
+	 * <p> Generate statistics of a Lojista's Produtos </p>
+	 * @param Usuario u
+	 * @return ResultSet
+	 * @since 1.0
+	 */
 	public ResultSet estatisticasProduto(Usuario u) throws SQLException {
 		String sql = "SELECT COUNT(id) AS total, \r\n"
 				+ "SUM(CASE WHEN quantidade_atual > quantidade_minima THEN 1 ELSE 0 END) AS ativos, \r\n"
@@ -165,6 +208,12 @@ private Connection c;
 		return rs;
  	}
 
+	/**
+	 * <p> Generate statistics of a Lojista's Produto's values </p>
+	 * @param Usuario u
+	 * @return ResultSet
+	 * @since 1.0
+	 */
 	public ResultSet estatisticasValorProduto(Usuario u) throws SQLException {
 		String sql = "SELECT MAX(preco) AS maximo, MIN(preco) AS minimo, AVG(preco) AS media\r\n"
 				+ "FROM produto\r\n"
@@ -177,6 +226,12 @@ private Connection c;
 		return rs;
 	}
 
+	/**
+	 * <p> Count quantities of sold Produtos </p>
+	 * @param Usuario u
+	 * @return int
+	 * @since 1.0
+	 */
 	public int quantVendidosPorLojista(Usuario u) throws SQLException {
 		String sql = "SELECT SUM(quantidade_itens) AS vendidos\r\n"
 				+ "FROM item i, produto p, lojista l\r\n"
@@ -192,6 +247,12 @@ private Connection c;
 		return 0;
 	}
 	
+	/**
+	 * <p> Count quantities of Produtos not sold </p>
+	 * @param Usuario u
+	 * @return int
+	 * @since 1.0
+	 */
 	public int quantNaoVendidosPorLojista(Usuario u) throws SQLException {
 		String sql = "SELECT COUNT(p.id) AS sem_vendas\r\n"
 				+ "FROM produto p LEFT OUTER JOIN item i ON i.produtoid = p.id \r\n"
@@ -207,6 +268,13 @@ private Connection c;
 		return 0;
 	}
 
+	
+	/**
+	 * <p> Update Produtos quantity </p>
+	 * @param Produto p, int quant
+	 * @return Void
+	 * @since 1.0
+	 */
 	public void atualizarEstoque(Produto p, int quant) throws SQLException {
 		String sql = "UPDATE produto SET quantidade_atual ? WHERE id = ?";
 		PreparedStatement ps = c.prepareStatement(sql);

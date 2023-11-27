@@ -24,6 +24,11 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+/**
+ * Control class for the Lojista registration page
+ */
+
+
 public class LojistaController {
 	@FXML
 	private TextField tFieldNome;
@@ -57,22 +62,24 @@ public class LojistaController {
 	@FXML
 	private Button btnCadastrarLoja;
 	
+	/**
+	 * <p> Initialize resources </p>
+	 * @param None
+	 * @return Void
+	 * @since 1.0
+	 */
 	public void initialize() {
 		cBoxEstado.getItems().clear();
 		cBoxEstado.getItems().addAll("AC", "AL", "AP", "AP", "BA", "CE", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI",
 				"RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO", "DF");
 		cBoxEstado.getSelectionModel().select("SP");
 	}
-
-
-	public void irParaLoja(ActionEvent event) throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("/application/Loja.FXML"));
-		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		Scene scene = new Scene(root);
-		stage.setScene(scene);
-		stage.show();
-	}
-	
+	/**
+	 * <p> Go back to Register main page </p>
+	 * @param ActionEvent event
+	 * @return Void
+	 * @since 1.0
+	 */
 	public void irParaCadastro(ActionEvent event) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("/application/PrincipalCadastro.FXML"));
 		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -81,6 +88,12 @@ public class LojistaController {
 		stage.show();
 	}
 	
+	/**
+	 * <p> Register Lojista and Endereco </p>
+	 * @param ActionEvent event
+	 * @return Void
+	 * @since 1.0
+	 */
 	public void cadastrarLojista(ActionEvent event) {		
 		try {
 			if (!validarCampos()) {
@@ -106,6 +119,12 @@ public class LojistaController {
 		}
 	}
 	
+	/**
+	 * <p> Clean all fields </p>
+	 * @param None
+	 * @return Void
+	 * @since 1.0
+	 */
 	public void limparCampos() {
 		tFieldNome.setText("");
 		tFieldSobrenome.setText("");
@@ -121,6 +140,12 @@ public class LojistaController {
 		cBoxEstado.getSelectionModel().select("SP");
 	}
 	
+	/**
+	 * <p> Validate all fields </p>
+	 * @param None
+	 * @return boolean
+	 * @since 1.0
+	 */
 	private boolean validarCampos() throws ClassNotFoundException, SQLException {
 		if(tFieldNome.getText().length() == 0 || tFieldSobrenome.getText().length() == 0 || tFieldEmail.getText().length() == 0
 				|| tFieldSenha.getText().length() == 0 || tFieldTelefone.getText().length() == 0 || tFieldRua.getText().length() == 0

@@ -49,6 +49,11 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+/**
+ * Control class for the Seller Dashboard page
+ */
+
+
 public class DashboardController implements Initializable{
  
 	@FXML
@@ -180,9 +185,17 @@ public class DashboardController implements Initializable{
 	@FXML
 	private Label naoVendidos;
 	
-    
+	/**
+	 * Current user's products
+	 */
 	private ObservableList<Produto> lista = FXCollections.observableArrayList();
 	   
+	/**
+	 * <p> Populate Desconto boxes </p>
+	 * @param None
+	 * @return Void
+	 * @since 1.0
+	 */
     public void desconto() {
         desconto.getItems().clear();
         desconto.getItems().add((float) 0);
@@ -199,6 +212,12 @@ public class DashboardController implements Initializable{
         desconto_update.getSelectionModel().select(0); 
     }
 
+	/**
+	 * <p> Change screens </p>
+	 * @param ActionEvent event
+	 * @return Void
+	 * @since 1.0
+	 */
 	   public void telamuda(ActionEvent event) {
 		   if(event.getSource()== Home_btn) {
 			  telaHome.setVisible(true);
@@ -230,7 +249,13 @@ public class DashboardController implements Initializable{
 		   }
 	   }
 	    
-	    
+
+	/**
+	 * <p> Log out user </p>
+	 * @param None
+	 * @return Void
+	 * @since 1.0
+	 */
 	   public void deslogar() {
 	    	Alert alert= new Alert(AlertType.CONFIRMATION);
 	    	alert.setTitle("Confirmação de mensagem");
@@ -252,6 +277,13 @@ public class DashboardController implements Initializable{
 				}	
 	    }
 	   
+
+		/**
+		 * <p> Update Produto </p>
+		 * @param ActionEvent event
+		 * @return Void
+		 * @since 1.0
+		 */
 	   public void handleUpdateProduct(ActionEvent event) {
 	        updateBtn.fire();
 	    }
@@ -259,6 +291,12 @@ public class DashboardController implements Initializable{
 	   
 	  
 	   //--------------------------------------------------------------------------------------------------------------------------
+	/**
+	 * <p> Initialize resources </p>
+	 * @param None
+	 * @return Void
+	 * @since 1.0
+	 */
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
@@ -282,6 +320,8 @@ public class DashboardController implements Initializable{
         }
 
        //--------------------------------------Pegando pela label-----------------------------------------------------------------
+        
+        
         buscar_produto.textProperty().addListener((observable, oldValue, newValue) -> {
             filteredLista.setPredicate(produto -> {
                 if (newValue == null || newValue.isEmpty()) {
@@ -301,6 +341,13 @@ public class DashboardController implements Initializable{
 
         tViewProduto.setItems(filteredLista);
     }
+	
+	/**
+	 * <p> Generate statistics </p>
+	 * @param None
+	 * @return Void
+	 * @since 1.0
+	 */
 	private void gerarEstatisticas() throws ClassNotFoundException, SQLException {
 		countVendas.setText(String.valueOf(produtoDao.quantVendidosPorLojista(SessaoController.usuario)));
 		naoVendidos.setText(String.valueOf(produtoDao.quantNaoVendidosPorLojista(SessaoController.usuario)));
@@ -314,6 +361,12 @@ public class DashboardController implements Initializable{
 		}
 	}
 		
+	/**
+	 * <p> Generate statistics related to price </p>
+	 * @param None
+	 * @return Void
+	 * @since 1.0
+	 */
 	private void gerarEstatisticasValor() throws ClassNotFoundException, SQLException {
 		ResultSet estatisticas = produtoDao.estatisticasValorProduto(SessaoController.usuario);
 		
@@ -328,6 +381,12 @@ public class DashboardController implements Initializable{
 
 	//---------------------------------ADD PRODUTO----------------------------------------------------------------------------------------
 	
+	/**
+	 * <p> Add new Produto </p>
+	 * @param ActionEvent event
+	 * @return Void
+	 * @since 1.0
+	 */
 	public void handleAddProduto(ActionEvent event) {
         try {
         	if (camposValidos()) {
@@ -346,6 +405,12 @@ public class DashboardController implements Initializable{
 	    } 
 	}
 
+	/**
+	 * <p> Validate fields </p>
+	 * @param None
+	 * @return boolean
+	 * @since 1.0
+	 */
     private boolean camposValidos() {
         if (nome_produto.getText().isEmpty() || valor_produto.getText().isEmpty() || spinerqtdMinima.getValue() == null || 
         		spinerqtdMinima.getValue() == null || valor_produto.getText().isEmpty()) {
@@ -398,6 +463,12 @@ public class DashboardController implements Initializable{
         return true;
     }
 
+	/**
+	 * <p> Clean fields </p>
+	 * @param None
+	 * @return Void
+	 * @since 1.0
+	 */
     public void limparCampos() {
         nome_produto.clear();
         valor_produto.clear();
@@ -406,6 +477,12 @@ public class DashboardController implements Initializable{
         fornecedor_produto.clear();
     }
 
+	/**
+	 * <p> Display alerts </p>
+	 * @param String mensagem, Alert.AlertType tipo
+	 * @return Void
+	 * @since 1.0
+	 */
     private void exibirAlerta(String mensagem, Alert.AlertType tipo) {
         Alert alerta = new Alert(tipo);
         alerta.setTitle("Alerta");
@@ -414,6 +491,12 @@ public class DashboardController implements Initializable{
         alerta.showAndWait();
     }
     //-----------------Consultando as coisas na tabela-----------------------------------------------------------------------------------------------------------
+	/**
+	 * <p> Populate TableView </p>
+	 * @param None
+	 * @return Void
+	 * @since 1.0
+	 */
     private void popularTabela() throws SQLException {
     	ResultSet rs = produtoDao.buscarProdutosLojista();
     	
@@ -450,7 +533,13 @@ public class DashboardController implements Initializable{
    
     
     //---------DELETE PRODUTO---------------------------------------------------------------------------------------   
-	   @FXML
+		/**
+		 * <p> Delete Produto </p>
+		 * @param ActionEvent event
+		 * @return Void
+		 * @since 1.0
+		 */   
+	    @FXML
 	   public void handleDeleteProduto(ActionEvent event) {
 	       // Get the selected products
 	       ObservableList<Produto> selectedProdutos = tViewProduto.getSelectionModel().getSelectedItems();
@@ -489,7 +578,13 @@ public class DashboardController implements Initializable{
 	   }
 	   //--------------------------------------------------------------------------------------------------------------------------
    //---------------------------------UPDATE------------------------------------------------------------------------------------------ 
-   public void populateFields(ActionEvent event) {
+		/**
+		 * <p> Populate fields on update </p>
+		 * @param ActionEvent event
+		 * @return Void
+		 * @since 1.0
+		 */   
+	    public void populateFields(ActionEvent event) {
         try {
             int productId = Integer.parseInt(ID_update.getText());
             Produto produto = produtoDao.buscarProdutoPorId(productId);
@@ -508,6 +603,12 @@ public class DashboardController implements Initializable{
         }
     }
 
+	/**
+	 * <p> Update Produto </p>
+	 * @param ActionEvent event
+	 * @return Void
+	 * @since 1.0
+	 */   
     @FXML
     public void updateProduct(ActionEvent event) {
         try {
@@ -538,6 +639,12 @@ public class DashboardController implements Initializable{
         }
     }
     
+	/**
+	 * <p> Validate update </p>
+	 * @param None
+	 * @return boolean
+	 * @since 1.0
+	 */   
     private boolean validarUpdate() {
 		if (nome_update.getText().isEmpty() || valor_update.getText().isEmpty() || quant_update.getText().isEmpty()) {
 			exibirAlerta("Um ou mais campos obrigatórios estão vazios", Alert.AlertType.ERROR);
@@ -571,6 +678,12 @@ public class DashboardController implements Initializable{
 		return true;
 	}
 
+	/**
+	 * <p> Clean update fields </p>
+	 * @param ActionEvent event
+	 * @return Void
+	 * @since 1.0
+	 */   
 	public void limparCampos(ActionEvent event) {
         // Limpa os campos
         nome_ProdutoUpdate.setText("");

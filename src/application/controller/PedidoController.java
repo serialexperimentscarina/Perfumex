@@ -38,6 +38,11 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
+/**
+ * Control class for the finalize order page
+ */
+
+
 public class PedidoController {
 	
 	@FXML
@@ -83,9 +88,21 @@ public class PedidoController {
 	@FXML
 	private TextField tFieldCod;
 	
+	/**
+	 * Current user's cart
+	 */
 	private Carrinho carrinhoAtual;
+	/**
+	 * List of itens in cart
+	 */
 	private ObservableList<Item> itens = FXCollections.observableArrayList();
 	
+	/**
+	 * <p> Initialize resources </p>
+	 * @param None
+	 * @return Void
+	 * @since 1.0
+	 */
 	public void initialize() {
         try {
         	popularCBox();
@@ -99,7 +116,12 @@ public class PedidoController {
         }
     }
 	
-	
+	/**
+	 * <p> Populate ComboBox </p>
+	 * @param None
+	 * @return Void
+	 * @since 1.0
+	 */
 	private void popularCBox() {
 		cBoxParcelas.getItems().clear();
 		cBoxParcelas.getItems().addAll("1x", "2x", "3x", "4x", "5x", "6x", "7x", "8x", "9x", "10x", "11x", "12x");
@@ -108,6 +130,12 @@ public class PedidoController {
 	}
 
 
+	/**
+	 * <p> Populate Pedido's data </p>
+	 * @param None
+	 * @return Void
+	 * @since 1.0
+	 */
 	private void popularCampos() throws ClassNotFoundException, SQLException {
 		EnderecoDao eDao = new EnderecoDao();
 		Endereco end = eDao.buscarEndereco(SessaoController.usuario);
@@ -130,6 +158,12 @@ public class PedidoController {
 	}
 
 
+	/**
+	 * <p> Load user's current Carrinho </p>
+	 * @param None
+	 * @return Void
+	 * @since 1.0
+	 */
 	private void inicializarCarrinho() throws ClassNotFoundException, SQLException {
 		CarrinhoDao cDao = new CarrinhoDao();
 		carrinhoAtual = cDao.buscarCarrinhoAtual(SessaoController.usuario);
@@ -137,7 +171,12 @@ public class PedidoController {
 		lblTotalValor.setText("R$ " + carrinhoAtual.getTotal());
 	}
 
-
+	/**
+	 * <p> Load in TableView </p>
+	 * @param None
+	 * @return Void
+	 * @since 1.0
+	 */
 	private void popularTabela() throws ClassNotFoundException, SQLException {
 		ItemDao iDao = new ItemDao();
 		itens = iDao.listarItems(carrinhoAtual);
@@ -150,7 +189,12 @@ public class PedidoController {
 		
 	}
 
-
+	/**
+	 * <p> Go to Carrinho page </p>
+	 * @param ActionEvent event
+	 * @return Void
+	 * @since 1.0
+	 */
 	public void voltar(ActionEvent event) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("/application/Carrinho.FXML"));
 		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -159,6 +203,12 @@ public class PedidoController {
 		stage.show();
 	}
 	
+	/**
+	 * <p> Finish Pedido </p>
+	 * @param ActionEvent event
+	 * @return Void
+	 * @since 1.0
+	 */
 	public void finalizar(ActionEvent event) throws IOException, SQLException, ClassNotFoundException {
 		if (!validarCampos()) {
 			return;
@@ -182,7 +232,12 @@ public class PedidoController {
 		stage.show();
 	}
 
-
+	/**
+	 * <p> Validate Payment Field </p>
+	 * @param None
+	 * @return Boolean
+	 * @since 1.0
+	 */
 	private boolean validarCampos() {
 		RadioButton selectedRadioButton = (RadioButton) pagamento.getSelectedToggle();
 		String pagto = selectedRadioButton.getText();

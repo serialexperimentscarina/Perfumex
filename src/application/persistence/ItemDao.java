@@ -14,16 +14,37 @@ import application.model.Usuario;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+/**
+ * Persistence class for the Item entity
+ */
+
+
 public class ItemDao {
 	
+	/**
+	 * Connection variable
+	 */
 	private Connection c;
 	
+	
+	/**
+	 * <p> Constructor </p>
+	 * @param None
+	 * @return Void
+	 * @since 1.0
+	 */
 	public ItemDao() throws ClassNotFoundException, SQLException {
 		GenericDao gDao = new GenericDao();
 		c = gDao.getConnection();
 	}
 	
 	
+	/**
+	 * <p> Insert Item into DB </p>
+	 * @param Carrinho car, Item i, Usuario u, int quant
+	 * @return Void
+	 * @since 1.0
+	 */
 	public void inserirItem(Carrinho car, Item i, Usuario u, int quant) throws SQLException {
 		String sql = "INSERT INTO item VALUES (?, ?, ?, ?, ?, ?)";
 		
@@ -40,6 +61,12 @@ public class ItemDao {
 	}
 	
 	
+	/**
+	 * <p> List items on current user's cart </p>
+	 * @param Carrinho carrinhoAtual
+	 * @return ObservableList<Item>
+	 * @since 1.0
+	 */
 	public ObservableList<Item> listarItems(Carrinho carrinhoAtual) throws SQLException {
 		String sql = "SELECT p.nome, i.quantidade_itens, i.subtotal\r\n"
 				+ "FROM produto p, item i, carrinho c\r\n"

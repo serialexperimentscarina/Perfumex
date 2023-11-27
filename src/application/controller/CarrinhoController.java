@@ -29,6 +29,10 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
+/**
+ * Control class for the Carrinho page
+ */
+
 public class CarrinhoController {
 	
 	@FXML
@@ -42,9 +46,21 @@ public class CarrinhoController {
 	@FXML
 	private Label lblTotalValor;
 	
+	/**
+	 * Current user's cart
+	 */
 	private Carrinho carrinhoAtual;
+	/**
+	 * List of itens in cart
+	 */
 	private ObservableList<Item> itens = FXCollections.observableArrayList();
 	
+	/**
+	 * <p> Initialize resources </p>
+	 * @param None
+	 * @return Void
+	 * @since 1.0
+	 */
 	public void initialize() {
         try {
         	inicializarCarrinho();
@@ -56,6 +72,12 @@ public class CarrinhoController {
         }
     }
 	
+	/**
+	 * <p> Load user's current Carrinho </p>
+	 * @param None
+	 * @return Void
+	 * @since 1.0
+	 */
 	private void inicializarCarrinho() throws ClassNotFoundException, SQLException {
 		CarrinhoDao cDao = new CarrinhoDao();
 		carrinhoAtual = cDao.buscarCarrinhoAtual(SessaoController.usuario);
@@ -63,6 +85,12 @@ public class CarrinhoController {
 		lblTotalValor.setText("R$ " + carrinhoAtual.getTotal());
 	}
 
+	/**
+	 * <p> Go to Marketplace listing page </p>
+	 * @param ActionEvent event
+	 * @return Void
+	 * @since 1.0
+	 */
 	public void voltar(ActionEvent event) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("/application/ProdutoListagem.FXML"));
 		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -71,6 +99,12 @@ public class CarrinhoController {
 		stage.show();
 	}
 	
+	/**
+	 * <p> Make an order </p>
+	 * @param ActionEvent event
+	 * @return Void
+	 * @since 1.0
+	 */
 	public void finalizar(ActionEvent event) throws IOException {
 		if (itens.size() == 0) {
 			Alert alert= new Alert(AlertType.ERROR, "Não é possível finalizar um pedido sem itens");
@@ -84,6 +118,12 @@ public class CarrinhoController {
 		stage.show();
 	}
 	
+	/**
+	 * <p> Populate TableView </p>
+	 * @param None
+	 * @return Void
+	 * @since 1.0
+	 */
 	private void popularTabela() throws SQLException, ClassNotFoundException {
 		ItemDao iDao = new ItemDao();
 		itens = iDao.listarItems(carrinhoAtual);

@@ -9,15 +9,37 @@ import application.controller.SessaoController;
 import application.model.Endereco;
 import application.model.Usuario;
 
+/**
+ * Persistence class for the Endereco entity
+ */
+
+
 public class EnderecoDao {
 	
+	/**
+	 * Connection variable
+	 */
 	private Connection c;
 	
+	
+	/**
+	 * <p> Constructor </p>
+	 * @param None
+	 * @return Void
+	 * @since 1.0
+	 */
 	public EnderecoDao() throws ClassNotFoundException, SQLException {
 		GenericDao gDao = new GenericDao();
 		c = gDao.getConnection();
 	}
 	
+	
+	/**
+	 * <p> Insert Endereco into DB </p>
+	 * @param Endereco E
+	 * @return Void
+	 * @since 1.0
+	 */
 	public void insererEndereco(Endereco e) throws SQLException {
 		String sql = "INSERT INTO endereco VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		
@@ -36,6 +58,13 @@ public class EnderecoDao {
 		ps.close();
 	}
 	
+	
+	/**
+	 * <p> Search a User's endereco </p>
+	 * @param Usuario u
+	 * @return Endereco
+	 * @since 1.0
+	 */
 	public Endereco buscarEndereco(Usuario u) throws SQLException {
 		String sql = "SELECT * FROM endereco WHERE usuarioid = ?";
 		

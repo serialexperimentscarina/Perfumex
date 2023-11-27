@@ -9,8 +9,20 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 
+/**
+ * Perfumex
+ * @author Byanca Matos
+ * @author Carina Gonçalves Barroso
+ */
 
 public class Principal extends Application {
+	
+	/**
+	 * <p> Start method </p>
+	 * @param Stage primaryStage
+	 * @return Void
+	 * @since 1.0
+	 */
 	@Override
 	public void start(Stage primaryStage) throws IOException {
 		Parent root = FXMLLoader.load(this.getClass().getResource("Principal.FXML"));
@@ -24,6 +36,12 @@ public class Principal extends Application {
 		primaryStage.show();
 	}
 	
+	/**
+	 * <p> Main method </p>
+	 * @param String[] args
+	 * @return Void
+	 * @since 1.0
+	 */
 	public static void main(String[] args) {
 		launch(args);
 	}

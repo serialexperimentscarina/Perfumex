@@ -9,15 +9,37 @@ import application.model.Item;
 import application.model.Pedido;
 import application.model.Usuario;
 
+/**
+ * Persistence class for the Pedido entity
+ */
+
+
 public class PedidoDao {
 
+	/**
+	 * Connection variable
+	 */
 	private Connection c;
 	
+	
+	/**
+	 * <p> Constructor </p>
+	 * @param None
+	 * @return Void
+	 * @since 1.0
+	 */
 	public PedidoDao() throws ClassNotFoundException, SQLException {
 		GenericDao gDao = new GenericDao();
 		c = gDao.getConnection();
 	}
 	
+	
+	/**
+	 * <p> Insert Pedido into DB </p>
+	 * @param Pedido p
+	 * @return Void
+	 * @since 1.0
+	 */
 	public void inserirPedido(Pedido p) throws SQLException {
 		String sql = "INSERT INTO pedido VALUES (?, ?, ?, ?, ?)";
 		

@@ -2,14 +2,40 @@ package application.model;
 
 import java.time.LocalDate;
 
+/**
+ * Model class for the Item entity
+ */
+
 public class Item {
 	
+	/**
+	 * Produto this item refers to
+	 */
 	private Produto produto;
+	/**
+	 * Quantity of item copies
+	 */
 	private int quantidadeItens;
+	/**
+	 * Subtotal of itens
+	 */
 	private double subtotal;
+	/**
+	 * Creation date
+	 */
 	private LocalDate dataCriacao;
+	/**
+	 * Update date
+	 */
 	private LocalDate dataUltimaModificacao;
-	
+
+	/**
+	 * <p> Constructor </p>
+	 * @param Produto produto, int quantidadeItens, double subtotal, LocalDate dataCriacao,
+			LocalDate dataUltimaModificacao
+	 * @return Void
+	 * @since 1.0
+	 */
 	public Item(Produto produto, int quantidadeItens, double subtotal, LocalDate dataCriacao,
 			LocalDate dataUltimaModificacao) {
 		super();
@@ -20,42 +46,102 @@ public class Item {
 		this.dataUltimaModificacao = dataUltimaModificacao;
 	}
 
+	/**
+	 * <p> Produto Getter </p>
+	 * @param None
+	 * @return Produto
+	 * @since 1.0
+	 */
 	public Produto getProduto() {
 		return produto;
 	}
 
+	/**
+	 * <p> Produto Setter </p>
+	 * @param Produto produto
+	 * @return Void
+	 * @since 1.0
+	 */
 	public void setProduto(Produto produto) {
 		this.produto = produto;
 	}
 
+	/**
+	 * <p> quantidadeItens Getter </p>
+	 * @param None
+	 * @return int
+	 * @since 1.0
+	 */
 	public int getQuantidadeItens() {
 		return quantidadeItens;
 	}
 
+	/**
+	 * <p> quantidadeItens Setter </p>
+	 * @param int quantidadeItens
+	 * @return Void
+	 * @since 1.0
+	 */
 	public void setQuantidadeItens(int quantidadeItens) {
 		this.quantidadeItens = quantidadeItens;
 	}
 
+	/**
+	 * <p> subtotal Getter </p>
+	 * @param None
+	 * @return double
+	 * @since 1.0
+	 */
 	public double getSubtotal() {
 		return subtotal;
 	}
 
+	/**
+	 * <p> subtotal Setter </p>
+	 * @param double subtotal
+	 * @return Void
+	 * @since 1.0
+	 */
 	public void setSubtotal(double subtotal) {
 		this.subtotal = subtotal;
 	}
 
+	/**
+	 * <p> DataCriacao Getter </p>
+	 * @param None
+	 * @return LocalDate
+	 * @since 1.0
+	 */
 	public LocalDate getDataCriacao() {
 		return dataCriacao;
 	}
 
+	/**
+	 * <p> DataCriacao Setter </p>
+	 * @param LocalDate dataCriacao
+	 * @return Void
+	 * @since 1.0
+	 */
 	public void setDataCriacao(LocalDate dataCriacao) {
 		this.dataCriacao = dataCriacao;
 	}
 
+	/**
+	 * <p> DataUltimaModificacao Getter </p>
+	 * @param None
+	 * @return LocalDate
+	 * @since 1.0
+	 */
 	public LocalDate getDataUltimaModificacao() {
 		return dataUltimaModificacao;
 	}
 
+	/**
+	 * <p> DataUltimaModificacao Setter </p>
+	 * @param LocalDate dataUltimaModificacao
+	 * @return Void
+	 * @since 1.0
+	 */
 	public void setDataUltimaModificacao(LocalDate dataUltimaModificacao) {
 		this.dataUltimaModificacao = dataUltimaModificacao;
 	}

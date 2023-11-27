@@ -10,15 +10,34 @@ import application.model.Cliente;
 import application.model.Lojista;
 import application.model.Usuario;
 
+/**
+ * Persistence class for the Usuario entity and it's subclasses
+ */
+
 public class UsuarioDao {
 	
+	/**
+	 * Connection variable
+	 */
 	private Connection c;
 	
+	/**
+	 * <p> Constructor </p>
+	 * @param None
+	 * @return Void
+	 * @since 1.0
+	 */
 	public UsuarioDao() throws ClassNotFoundException, SQLException {
 		GenericDao gDao = new GenericDao();
 		c = gDao.getConnection();
 	}
 	
+	/**
+	 * <p> Insert Clientes into DB </p>
+	 * @param Cliente cli
+	 * @return Void
+	 * @since 1.0
+	 */
 	public void insereCliente(Cliente cli) throws SQLException {
 		insereUsuario(cli);
 		String sql = "INSERT INTO cliente VALUES (?, ?)";
@@ -31,6 +50,12 @@ public class UsuarioDao {
 		ps.close();
 	}
 	
+	/**
+	 * <p> Insert Lojistas into DB </p>
+	 * @param Lojista l
+	 * @return Void
+	 * @since 1.0
+	 */
 	public void insereLojista(Lojista l) throws SQLException {
 		insereUsuario(l);
 		String sql = "INSERT INTO lojista VALUES (?, ?)";
@@ -43,6 +68,12 @@ public class UsuarioDao {
 		ps.close();
 	}
 	
+	/**
+	 * <p> Search User by login info </p>
+	 * @param String email, String senha
+	 * @return Usuario
+	 * @since 1.0
+	 */
 	public Usuario buscaUsuarioLogin(String email, String senha) throws SQLException{
 		String sql = "SELECT * FROM usuario WHERE email = ? AND senha = ?";
 		
@@ -61,6 +92,12 @@ public class UsuarioDao {
 	
 	}
 	
+	/**
+	 * <p> Search the type of an user </p>
+	 * @param Usuario u
+	 * @return String
+	 * @since 1.0
+	 */
 	public String buscarTipoUsuario(Usuario u) throws SQLException{
 		String sql = "SELECT * FROM cliente WHERE usuarioid = ?";
 		
@@ -76,6 +113,12 @@ public class UsuarioDao {
 	
 	}
 	
+	/**
+	 * <p> Return a Cliente's CPF </p>
+	 * @param Usuario u
+	 * @return String
+	 * @since 1.0
+	 */
 	public String buscarCPF(Usuario u) throws SQLException{
 		String sql = "SELECT cpf FROM cliente WHERE usuarioid = ?";
 		
@@ -89,6 +132,12 @@ public class UsuarioDao {
 		return "";
 	}
 	
+	/**
+	 * <p> Check if email is avaliable </p>
+	 * @param String email
+	 * @return Boolean
+	 * @since 1.0
+	 */
 	public boolean checarDispEmail(String email) throws SQLException{
 		String sql = "SELECT id FROM usuario WHERE email = ?";
 		
@@ -102,6 +151,12 @@ public class UsuarioDao {
 		return true;
 	}
 	
+	/**
+	 * <p> Insert new Usuario into DB </p>
+	 * @param Usuario U
+	 * @return Void
+	 * @since 1.0
+	 */
 	private void insereUsuario(Usuario u) throws SQLException {
 		String sql = "INSERT INTO usuario VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		
@@ -120,6 +175,12 @@ public class UsuarioDao {
 		ps.close();
 	}
 
+	/**
+	 * <p> Count how many users are in the DB </p>
+	 * @param None
+	 * @return int
+	 * @since 1.0
+	 */
 	public int contarUsuario() throws SQLException{
 		String sql = "SELECT COUNT(id) AS contagem FROM usuario";
 		PreparedStatement ps = c.prepareStatement(sql);

@@ -27,6 +27,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 
+
+/**
+ * Control class for the Cliente registration page
+ */
+
+
 public class ClienteController {
 
 	@FXML
@@ -58,6 +64,12 @@ public class ClienteController {
 	@FXML
 	private Button btnVoltar;
 	
+	/**
+	 * <p> Initialize resources </p>
+	 * @param None
+	 * @return Void
+	 * @since 1.0
+	 */
 	public void initialize() {
 		cBoxEstado.getItems().clear();
 		cBoxEstado.getItems().addAll("AC", "AL", "AP", "AP", "BA", "CE", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI",
@@ -65,7 +77,12 @@ public class ClienteController {
 		cBoxEstado.getSelectionModel().select("SP");
 	}
 
-
+	/**
+	 * <p> Go to Login page </p>
+	 * @param ActionEvent event
+	 * @return Void
+	 * @since 1.0
+	 */
 	public void irParaLogin(ActionEvent event) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("/application/PrincipalCadastro.FXML"));
 		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -74,6 +91,12 @@ public class ClienteController {
 		stage.show();
 	}
 	
+	/**
+	 * <p> Register Cliente </p>
+	 * @param ActionEvent event
+	 * @return Void
+	 * @since 1.0
+	 */
 	public void cadastrarCliente(ActionEvent event) {
 		try {
 			if (!validarCampos()) {
@@ -106,6 +129,12 @@ public class ClienteController {
 		
 	}
 	
+	/**
+	 * <p> Validate fields </p>
+	 * @param None
+	 * @return boolean
+	 * @since 1.0
+	 */
 	private boolean validarCampos() throws ClassNotFoundException, SQLException {
 		if(tFieldNome.getText().length() == 0 || tFieldSobrenome.getText().length() == 0 || tFieldEmail.getText().length() == 0
 				|| tFieldSenha.getText().length() == 0 || tFieldTelefone.getText().length() == 0 || tFieldRua.getText().length() == 0
@@ -209,7 +238,12 @@ public class ClienteController {
 		return true;
 	}
 
-
+	/**
+	 * <p> Clean fields </p>
+	 * @param None
+	 * @return Void
+	 * @since 1.0
+	 */   
 	public void limparCampos() {
 		tFieldNome.setText("");
 		tFieldSobrenome.setText("");

@@ -39,6 +39,11 @@ import javafx.util.Callback;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TextInputControl;
 
+/**
+ * Control class for the marketplace product's listing page
+ */
+
+
 public class ProdutoListagemController implements Initializable{
 	
     @FXML
@@ -60,11 +65,25 @@ public class ProdutoListagemController implements Initializable{
 	@FXML
 	private TableColumn<Produto, Void> tColumnActions;
 	
+	/**
+	 * Current user's cart
+	 */
 	private Carrinho carrinhoAtual;	
-    
+	/**
+	 * List of products
+	 */
 	private ObservableList<Produto> lista = FXCollections.observableArrayList();
+	/**
+	 * Filtered list of products
+	 */
     private FilteredList<Produto> filteredLista;
 
+	/**
+	 * <p> Load in essential resources </p>
+	 * @param URL location, ResourceBundle resources
+	 * @return Void
+	 * @since 1.0
+	 */
 	public void initialize(URL location, ResourceBundle resources) {
         try {
         	inicializarCarrinho();
@@ -96,6 +115,12 @@ public class ProdutoListagemController implements Initializable{
         }
     }
 	
+	/**
+	 * <p> Trigger logout </p>
+	 * @param ActionEvent event
+	 * @return Void
+	 * @since 1.0
+	 */
 	public void deslogar(ActionEvent event) throws IOException {
 		SessaoController sessao = new SessaoController();
 		sessao.deslogar();
@@ -107,6 +132,12 @@ public class ProdutoListagemController implements Initializable{
 		stage.show();
 	}
 	
+	/**
+	 * <p> Go to Carrinho page </p>
+	 * @param ActionEvent event
+	 * @return Void
+	 * @since 1.0
+	 */
 	public void irParaCarrinho(ActionEvent event) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("/application/Carrinho.FXML"));
 		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -116,6 +147,12 @@ public class ProdutoListagemController implements Initializable{
 		stage.show();
 	}
 
+	/**
+	 * <p> Populate TableView </p>
+	 * @param 
+	 * @return Void
+	 * @since 1.0
+	 */
 	private void popularTabela() throws SQLException, ClassNotFoundException {
 		ProdutoDao produtoDao = new ProdutoDao();
 		ResultSet rs = produtoDao.buscarProdutosCliente();
@@ -138,12 +175,24 @@ public class ProdutoListagemController implements Initializable{
 		tViewProduto.setItems(lista);
 	}
 	
+	/**
+	 * <p> Load in current user's Carrinho </p>
+	 * @param None
+	 * @return Void
+	 * @since 1.0
+	 */
 	private void inicializarCarrinho() throws ClassNotFoundException, SQLException {
 		CarrinhoDao cDao = new CarrinhoDao();
 		carrinhoAtual = cDao.buscarCarrinhoAtual(SessaoController.usuario);
 		
 	}
 	
+	/**
+	 * <p> Include Button in TableView </p>
+	 * @param None
+	 * @return Void
+	 * @since 1.0
+	 */
 	private void addToCartButton() {
         Callback<TableColumn<Produto, Void>, TableCell<Produto, Void>> cellFactory = new Callback<TableColumn<Produto, Void>, TableCell<Produto, Void>>() {
             @Override

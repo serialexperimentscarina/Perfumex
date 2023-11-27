@@ -21,6 +21,11 @@ import application.persistence.EnderecoDao;
 import application.persistence.UsuarioDao;
 import javafx.event.ActionEvent;
 
+/**
+ * Control class for the initial page
+ */
+
+
 public class PrincipalController {
 	
 	private Stage stage;
@@ -32,6 +37,12 @@ public class PrincipalController {
 	@FXML
 	private PasswordField tFieldSenha;
 	
+	/**
+	 * <p> Go to Login page </p>
+	 * @param ActionEvent event
+	 * @return Void
+	 * @since 1.0
+	 */
 	@FXML
 	public void irParaLogin(ActionEvent event) throws IOException {
 		root = FXMLLoader.load(getClass().getResource("/application/Principal.FXML"));
@@ -41,6 +52,12 @@ public class PrincipalController {
 		stage.show();
 	}
 	
+	/**
+	 * <p> Go to Register page </p>
+	 * @param ActionEvent event
+	 * @return Void
+	 * @since 1.0
+	 */
 	@FXML
 	public void irParaCadastro(ActionEvent event) throws IOException {
 		System.out.println("TESTE");
@@ -50,6 +67,13 @@ public class PrincipalController {
 		stage.setScene(scene);
 		stage.show();
 	}
+	
+	/**
+	 * <p> Go to Register Cliente page </p>
+	 * @param ActionEvent event
+	 * @return Void
+	 * @since 1.0
+	 */
 	@FXML
 	public void irParaCliente(ActionEvent event) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("/application/Cliente.fxml"));
@@ -59,6 +83,12 @@ public class PrincipalController {
 		stage.show();
 	}
 	
+	/**
+	 * <p> Login user </p>
+	 * @param ActionEvent event
+	 * @return Void
+	 * @since 1.0
+	 */
 	@FXML
 	public void logar(ActionEvent event) {
 		String email = tFieldEmail.getText();
@@ -86,7 +116,12 @@ public class PrincipalController {
 		}
 	}
 	
-   
+	/**
+	 * <p> Go to Register Lojista page </p>
+	 * @param ActionEvent event
+	 * @return Void
+	 * @since 1.0
+	 */
 	@FXML
 	public void irParaCadastroLojista(ActionEvent event) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("/application/Lojista.fxml"));
@@ -96,28 +131,12 @@ public class PrincipalController {
 		stage.show();
 	}
 	
-	public void irParaLoja(ActionEvent event) throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("/application/Loja.fxml"));
-		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		scene = new Scene(root);
-		stage.setScene(scene);
-		stage.show();
-	}
-	
-	public void irParaProduto(ActionEvent event) throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("/application/Produto.fxml"));
-		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		scene = new Scene(root);
-		stage.setScene(scene);
-		stage.show();
-	}
-	public void irADM(ActionEvent event) throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("/application/DashbordADM.fxml"));
-		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		Scene scene = new Scene(root);
-		stage.setScene(scene);
-		stage.show();
-	}
+	/**
+	 * <p> Go to Dashboard after Lojista login </p>
+	 * @param ActionEvent event
+	 * @return Void
+	 * @since 1.0
+	 */
 	public void irparaDashboardLojista(ActionEvent event) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("/application/dashboard.fxml"));
 		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -126,6 +145,12 @@ public class PrincipalController {
 		stage.show();
 	}
 	
+	/**
+	 * <p> Go to Marketplace listing after Cliente login </p>
+	 * @param ActionEvent event
+	 * @return Void
+	 * @since 1.0
+	 */
 	public void irParaProdutoListagem(ActionEvent event) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("/application/ProdutoListagem.fxml"));
 		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();

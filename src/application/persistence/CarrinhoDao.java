@@ -10,15 +10,34 @@ import application.model.Cliente;
 import application.model.Produto;
 import application.model.Usuario;
 
+/**
+ * Persistence class for the Carrinho entity
+ */
+
 public class CarrinhoDao {
 	
+	/**
+	 * Connection variable
+	 */
 	private Connection c;
 	
+	/**
+	 * <p> Constructor </p>
+	 * @param None
+	 * @return Void
+	 * @since 1.0
+	 */
 	public CarrinhoDao() throws ClassNotFoundException, SQLException {
 		GenericDao gDao = new GenericDao();
 		c = gDao.getConnection();
 	}
 	
+	/**
+	 * <p> Insert Carrinho into DB </p>
+	 * @param Carrinho car, Usuario u
+	 * @return Void
+	 * @since 1.0
+	 */
 	public void criarNovoCarrinho(Carrinho car, Usuario u) throws SQLException {
 		String sql = "INSERT INTO carrinho VALUES (?, ?, ?, ?, ?, ?)";
 		
@@ -34,6 +53,13 @@ public class CarrinhoDao {
 		ps.close();
 	}
 
+	
+	/**
+	 * <p> Count Carrinhos in DB </p>
+	 * @param None
+	 * @return int
+	 * @since 1.0
+	 */
 	public int contarCarrinho() throws SQLException{
 		String sql = "SELECT COUNT(id) AS contagem FROM carrinho";
 		PreparedStatement ps = c.prepareStatement(sql);
@@ -45,6 +71,13 @@ public class CarrinhoDao {
 		return 0;
 	}
 	
+	
+	/**
+	 * <p> Search for a user's current cart </p>
+	 * @param Usuario usuario
+	 * @return Carrinho
+	 * @since 1.0
+	 */
 	public Carrinho buscarCarrinhoAtual(Usuario usuario) throws SQLException {
 		String sql = "SELECT c.*\r\n"
 				+ "FROM carrinho c\r\n"
@@ -63,6 +96,13 @@ public class CarrinhoDao {
 		return null;
 	}
 
+	
+	/**
+	 * <p> Update Carrinho </p>
+	 * @param Carrinho carrinhoAtual
+	 * @return Void
+	 * @since 1.0
+	 */
 	public void atualizarCarrinho(Carrinho carrinhoAtual) throws SQLException {
 		String sql = "SELECT COUNT(produtoid) AS contagem, SUM(subtotal) AS total FROM\r\n"
 				+ "item WHERE carrinhoid = ?";
@@ -87,6 +127,13 @@ public class CarrinhoDao {
 		ps2.executeQuery();
 	}
 	
+	
+	/**
+	 * <p> Search for the senders of the current card </p>
+	 * @param Carrinho car
+	 * @return String
+	 * @since 1.0
+	 */
 	public String buscarRemetentes(Carrinho car) throws SQLException {
 		String sql = "SELECT DISTINCT(u.nome + ' ' + u.sobrenome) AS remetente\r\n"
 				+ "FROM carrinho c, item i, produto p, lojista l, usuario u\r\n"

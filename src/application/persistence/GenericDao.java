@@ -4,10 +4,24 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/**
+ * Generic persistence class for database connection
+ */
+
+
 public class GenericDao {
 	
+	/**
+	 * Connection variable
+	 */
 	private Connection c;
 	
+	/**
+	 * <p> Get connection to DB </p>
+	 * @param None
+	 * @return Connection
+	 * @since 1.0
+	 */
 	public Connection getConnection() throws ClassNotFoundException, SQLException {
 		String hostName = "localhost";
 		String dbName = "perfumex";

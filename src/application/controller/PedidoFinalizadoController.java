@@ -9,8 +9,19 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * Control class for the card after an order is finalized
+ */
+
+
 public class PedidoFinalizadoController {
 	
+	/**
+	 * <p> Go back to Marketplace Listing </p>
+	 * @param ActionEvent event
+	 * @return Void
+	 * @since 1.0
+	 */
 	public void voltar(ActionEvent event) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("/application/ProdutoListagem.FXML"));
 		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
