@@ -123,6 +123,22 @@
 		
 	}
 	
+.btns{
+	-fx-cursor: hand;
+}
+
+
+.finish{
+	-fx-background-color: transparent;
+	-fx-cursor: hand;
+}
+.finish:hover{
+	-fx-background-color: #4CC68F;
+	
+}
+
+
+
 
 	
 	
