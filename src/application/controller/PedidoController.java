@@ -3,6 +3,7 @@ package application.controller;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.regex.Pattern;
 
 import application.model.Carrinho;
 import application.model.Cliente;
@@ -24,13 +25,16 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -68,6 +72,16 @@ public class PedidoController {
 	ToggleGroup pagamento;
 	@FXML
 	private Label lblRemet;
+	@FXML
+	private TextField tFieldNome;
+	@FXML
+	private TextField tFieldNum;
+	@FXML
+	private TextField tFieldMes;
+	@FXML
+	private TextField tFieldAno;
+	@FXML
+	private TextField tFieldCod;
 	
 	private Carrinho carrinhoAtual;
 	private ObservableList<Item> itens = FXCollections.observableArrayList();
@@ -79,7 +93,8 @@ public class PedidoController {
             popularTabela();
             popularCampos();
         } catch (Exception e) {
-            e.printStackTrace();
+        	Alert alert= new Alert(AlertType.ERROR, "Um problema ocorreu ao tentar finalizar o pedido");
+			alert.show();
       
         }
     }
@@ -145,6 +160,10 @@ public class PedidoController {
 	}
 	
 	public void finalizar(ActionEvent event) throws IOException, SQLException, ClassNotFoundException {
+		if (!validarCampos()) {
+			return;
+		}
+		
 		RadioButton selectedRadioButton = (RadioButton) pagamento.getSelectedToggle();
 		String pagto = selectedRadioButton.getText();
 		
@@ -161,6 +180,53 @@ public class PedidoController {
 		Scene scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
+	}
+
+
+	private boolean validarCampos() {
+		RadioButton selectedRadioButton = (RadioButton) pagamento.getSelectedToggle();
+		String pagto = selectedRadioButton.getText();
+		
+		if(pagto == "") {
+			Alert alert= new Alert(AlertType.ERROR, "Escolha um método de pagamento");
+			alert.show();
+			return false;
+		}
+		
+		if (pagto == "Cartão") {
+			if(tFieldNome.getText().isEmpty() || tFieldNum.getText().isEmpty() || tFieldMes.getText().isEmpty() || 
+					tFieldAno.getText().isEmpty() || tFieldCod.getText().isEmpty()) {
+				Alert alert= new Alert(AlertType.ERROR, "Um ou mais campos obrigatórios vazios");
+				alert.show();
+				return false;
+			}
+			
+			if(tFieldNum.getText().length() != 16 || Pattern.matches("[a-zA-Z]+", tFieldNum.getText())) {
+				Alert alert= new Alert(AlertType.ERROR, "Numero de cartão inválido");
+				alert.show();
+				return false;
+			}
+			
+			if(Integer.parseInt(tFieldMes.getText()) > 12 || Integer.parseInt(tFieldMes.getText()) < 1) {
+				Alert alert= new Alert(AlertType.ERROR, "Mês inválido");
+				alert.show();
+				return false;
+			}
+			
+			if(Integer.parseInt(tFieldAno.getText()) < 2023) {
+				Alert alert= new Alert(AlertType.ERROR, "Cartão expirado");
+				alert.show();
+				return false;
+			}
+			
+			if(tFieldCod.getText().length() != 3 || Pattern.matches("[a-zA-Z]+", tFieldCod.getText())) {
+				Alert alert= new Alert(AlertType.ERROR, "Código de segurança inválido");
+				alert.show();
+				return false;
+			}
+		}
+
+		return true;
 	}
 
 }

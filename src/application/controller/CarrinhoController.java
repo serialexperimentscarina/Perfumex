@@ -20,10 +20,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.Labeled;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -48,7 +50,8 @@ public class CarrinhoController {
         	inicializarCarrinho();
             popularTabela();
         } catch (Exception e) {
-            e.printStackTrace();
+        	Alert alert= new Alert(AlertType.ERROR, "Um problema ocorreu ao tentar finalizar o pedido");
+			alert.show();
       
         }
     }
@@ -69,6 +72,11 @@ public class CarrinhoController {
 	}
 	
 	public void finalizar(ActionEvent event) throws IOException {
+		if (itens.size() == 0) {
+			Alert alert= new Alert(AlertType.ERROR, "Não é possível finalizar um pedido sem itens");
+			alert.show();
+			return;
+		}
 		Parent root = FXMLLoader.load(getClass().getResource("/application/Pedido.FXML"));
 		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		Scene scene = new Scene(root);

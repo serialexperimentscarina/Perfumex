@@ -295,7 +295,7 @@ public class DashboardController implements Initializable{
                         || produto.getDescricao().toLowerCase().contains(lowerCaseFilter)
                         || produto.getMarca().toLowerCase().contains(lowerCaseFilter)
                         || produto.getFornecedor().toLowerCase().contains(lowerCaseFilter);
-                      
+                     
             });
         });
 
@@ -339,9 +339,7 @@ public class DashboardController implements Initializable{
 	            exibirAlerta("Produto adicionado com sucesso!", Alert.AlertType.INFORMATION);
 		        lista.add(produto);
 	            limparCampos();
-        	} else {
-	    	        exibirAlerta("Preencha todos os campos corretamente.", Alert.AlertType.WARNING);
-	    	}
+        	}
 	   } catch (Exception e) {
 	            e.printStackTrace();
 	            exibirAlerta("Erro ao adicionar produto. Verifique os dados e tente novamente.", Alert.AlertType.ERROR);
@@ -349,7 +347,55 @@ public class DashboardController implements Initializable{
 	}
 
     private boolean camposValidos() {
-        return !nome_produto.getText().isEmpty() && !valor_produto.getText().isEmpty();
+        if (nome_produto.getText().isEmpty() || valor_produto.getText().isEmpty() || spinerqtdMinima.getValue() == null || 
+        		spinerqtdMinima.getValue() == null || valor_produto.getText().isEmpty()) {
+        	exibirAlerta("Um ou mais campos obrigatórios estão vazios.", Alert.AlertType.ERROR);
+        	return false;
+        }
+        if(nome_produto.getText().length() > 50) {
+			Alert alert = new Alert(AlertType.ERROR, "Nome ultrapassa 50 caracteres");
+			alert.show();
+			return false;
+        }
+
+        if(descricao_produto.getText().length() > 255) {
+			Alert alert = new Alert(AlertType.ERROR, "Descrição ultrapassa 255 caracteres");
+			alert.show();
+			return false;
+        }
+        
+        if(marca_produto.getText().length() > 50) {
+			Alert alert = new Alert(AlertType.ERROR, "Marca ultrapassa 50 caracteres");
+			alert.show();
+			return false;
+        }
+        
+        if(fornecedor_produto.getText().length() > 50) {
+			Alert alert = new Alert(AlertType.ERROR, "Fornecedor ultrapassa 50 caracteres");
+			alert.show();
+			return false;
+        }
+
+        
+        if(Double.parseDouble(valor_produto.getText()) <= 0) {
+			Alert alert = new Alert(AlertType.ERROR, "Valor deve ser maior que zero");
+			alert.show();
+			return false;
+        }
+        
+        if(spinerqtdMinima.getValue() <= 0) {
+			Alert alert = new Alert(AlertType.ERROR, "Quantidade mínima não pode ser negativa");
+			alert.show();
+			return false;
+        }
+        
+        if(spinerqtdmaxima.getValue() <= 0) {
+			Alert alert = new Alert(AlertType.ERROR, "Quantidade atual não pode ser negativa");
+			alert.show();
+			return false;
+        }
+        
+        return true;
     }
 
     public void limparCampos() {
@@ -465,6 +511,10 @@ public class DashboardController implements Initializable{
     @FXML
     public void updateProduct(ActionEvent event) {
         try {
+        	if (!validarUpdate()) {
+        		
+        	}
+        	
             int productId = Integer.parseInt(ID_update.getText());
             Produto produto = produtoDao.buscarProdutoPorId(productId);
 
@@ -488,7 +538,40 @@ public class DashboardController implements Initializable{
         }
     }
     
-    public void limparCampos(ActionEvent event) {
+    private boolean validarUpdate() {
+		if (nome_update.getText().isEmpty() || valor_update.getText().isEmpty() || quant_update.getText().isEmpty()) {
+			exibirAlerta("Um ou mais campos obrigatórios estão vazios", Alert.AlertType.ERROR);
+		}
+		
+		if(nome_update.getText().length() > 50) {
+			Alert alert = new Alert(AlertType.ERROR, "Nome ultrapassa 50 caracteres");
+			alert.show();
+			return false;
+        }
+
+        if(desc_update.getText().length() > 255) {
+			Alert alert = new Alert(AlertType.ERROR, "Descrição ultrapassa 255 caracteres");
+			alert.show();
+			return false;
+        }
+        
+        if(Double.parseDouble(valor_update.getText()) <= 0) {
+			Alert alert = new Alert(AlertType.ERROR, "Valor deve ser maior que zero");
+			alert.show();
+			return false;
+        }
+		
+        if(Integer.parseInt(quant_update.getText()) <= 0) {
+			Alert alert = new Alert(AlertType.ERROR, "Quantidade atual não pode ser negativa");
+			alert.show();
+			return false;
+        }
+		
+        
+		return true;
+	}
+
+	public void limparCampos(ActionEvent event) {
         // Limpa os campos
         nome_ProdutoUpdate.setText("");
         marcaUpddate.setText("");

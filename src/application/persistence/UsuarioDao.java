@@ -87,7 +87,19 @@ public class UsuarioDao {
 			return rs.getString("cpf");
 		}
 		return "";
+	}
 	
+	public boolean checarDispEmail(String email) throws SQLException{
+		String sql = "SELECT id FROM usuario WHERE email = ?";
+		
+		PreparedStatement ps = c.prepareStatement(sql);
+		ps.setString(1, email);
+		ResultSet rs = ps.executeQuery();
+		
+		if (rs.next()) {
+			return false;
+		}
+		return true;
 	}
 	
 	private void insereUsuario(Usuario u) throws SQLException {

@@ -1,8 +1,10 @@
 package application.controller;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 import application.model.Carrinho;
 import application.model.Cliente;
@@ -74,7 +76,10 @@ public class ClienteController {
 	
 	public void cadastrarCliente(ActionEvent event) {
 		try {
-			//TBA: Validações, verificar campos vazios, ou campos que violam tamanho máximo em banco
+			if (!validarCampos()) {
+				return;
+			}
+			
 			Cliente cliente = new Cliente(Usuario.geraId(), tFieldNome.getText(), tFieldSobrenome.getText(), tFieldEmail.getText(),
 					tFieldSenha.getText(), tFieldTelefone.getText(), "Ativo", LocalDate.now(), LocalDate.now(), tFieldCpf.getText());
 			Endereco endereco = new Endereco(cliente, tFieldRua.getText(), Integer.parseInt(tFieldNum.getText()), tFieldCep.getText(),
@@ -95,11 +100,116 @@ public class ClienteController {
 			
 			limparCampos();
 		} catch (Exception e) {
-			System.err.println(e.getMessage());
+			Alert alert = new Alert(AlertType.ERROR, "Algum erro ocorreu ao tentar cadastrar o cliente");
+			alert.show();
 		}
 		
 	}
 	
+	private boolean validarCampos() throws ClassNotFoundException, SQLException {
+		if(tFieldNome.getText().length() == 0 || tFieldSobrenome.getText().length() == 0 || tFieldEmail.getText().length() == 0
+				|| tFieldSenha.getText().length() == 0 || tFieldTelefone.getText().length() == 0 || tFieldRua.getText().length() == 0
+				|| tFieldNum.getText().length() == 0 || tFieldCep.getText().length() == 0 || tFieldCidade.getText().length() == 0 ||
+				tFieldCpf.getText().length() == 0) {
+			Alert alert = new Alert(AlertType.ERROR, "Um ou mais campos vazios");
+			alert.show();
+			return false;
+		}
+		
+		if(tFieldNome.getText().length() > 50) {
+			Alert alert = new Alert(AlertType.ERROR, "Nome ultrapassa 50 caracteres");
+			alert.show();
+			return false;
+		}
+		if(tFieldSobrenome.getText().length() > 50) {
+			Alert alert = new Alert(AlertType.ERROR, "Sobrenome ultrapassa 50 caracteres");
+			alert.show();
+			return false;
+		}
+		
+		UsuarioDao uDao = new UsuarioDao();
+		if(!uDao.checarDispEmail(tFieldEmail.getText())) {
+			Alert alert = new Alert(AlertType.ERROR, "Email já cadastrado");
+			alert.show();
+			return false;
+		}
+		
+		if(tFieldEmail.getText().length() > 100) {
+			Alert alert = new Alert(AlertType.ERROR, "Email ultrapassa 100 caracteres");
+			alert.show();
+			return false;
+		}
+		
+		if(tFieldSenha.getText().length() > 50 || tFieldSenha.getText().length() < 5) {
+			Alert alert = new Alert(AlertType.ERROR, "Senha deve ter entre 5 e 50 caracteres");
+			alert.show();
+			return false;
+		}
+		
+		if(tFieldTelefone.getText().length() < 8) {
+			Alert alert = new Alert(AlertType.ERROR, "Telefone deve ter ao menos 8 caracteres");
+			alert.show();
+			return false;
+		}
+		
+		if (Pattern.matches("[a-zA-Z]+", tFieldTelefone.getText())) {
+			Alert alert = new Alert(AlertType.ERROR, "Telefone deve conter apenas caracteres numéricos");
+			alert.show();
+			return false;
+		}
+		
+		if(tFieldRua.getText().length() > 100) {
+			Alert alert = new Alert(AlertType.ERROR, "Rua ultrapassa 100 caracteres");
+			alert.show();
+			return false;
+		}
+		
+		if(Integer.parseInt(tFieldNum.getText()) <= 0) {
+			Alert alert = new Alert(AlertType.ERROR, "Número não pode ser 0 ou negativo");
+			alert.show();
+			return false;
+		}
+		
+		if (Pattern.matches("[a-zA-Z]+", tFieldNum.getText())) {
+			Alert alert = new Alert(AlertType.ERROR, "Número deve conter apenas caracteres numéricos");
+			alert.show();
+			return false;
+		}
+		
+		if(tFieldCep.getText().length() != 8) {
+			Alert alert = new Alert(AlertType.ERROR, "CEP deve conter 8 caracteres");
+			alert.show();
+			return false;
+		}
+		
+		if (Pattern.matches("[a-zA-Z]+", tFieldCep.getText())) {
+			Alert alert = new Alert(AlertType.ERROR, "CEP deve conter apenas caracteres numéricos");
+			alert.show();
+			return false;
+		}
+		
+		if(tFieldCidade.getText().length() > 50) {
+			Alert alert = new Alert(AlertType.ERROR, "Cidade ultrapassa 50 caracteres");
+			alert.show();
+			return false;
+		}
+		
+		if (Pattern.matches("[a-zA-Z]+", tFieldCpf.getText())) {
+			Alert alert = new Alert(AlertType.ERROR, "CPF deve conter apenas caracteres numéricos");
+			alert.show();
+			return false;
+		}
+		
+		if(tFieldCpf.getText().length() != 11) {
+			Alert alert = new Alert(AlertType.ERROR, "CPF deve conter 11 caracteres");
+			alert.show();
+			return false;
+		}
+		
+		return true;
+	}
+
+
 	public void limparCampos() {
 		tFieldNome.setText("");
 		tFieldSobrenome.setText("");
