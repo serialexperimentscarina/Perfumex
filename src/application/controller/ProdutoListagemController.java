@@ -28,11 +28,13 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.PieChart.Data;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextInputDialog;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.util.Callback;
@@ -205,10 +207,22 @@ public class ProdutoListagemController implements Initializable{
                         btn.setOnAction((ActionEvent event) -> {
                             Produto produto = getTableView().getItems().get(getIndex());
                             
-                            int quant;
+                            int quant = 0;
                             TextInputDialog td = new TextInputDialog("Digite a quantidade");
                             td.showAndWait(); 
-                            quant = Integer.parseInt(td.getEditor().getText()); 
+                            try {
+                            	quant = Integer.parseInt(td.getEditor().getText());
+                            } catch (Exception e) {
+                            	Alert alert= new Alert(AlertType.ERROR, "Por favor, digite um número");
+                    			alert.show();
+                    			return;
+                            }
+                            
+                            if (produto.getQuantidadeAtual() - quant < produto.getQuantidadeMinima()) {
+                            	Alert alert= new Alert(AlertType.ERROR, "Quantidade indisponível");
+                    			alert.show();
+                    			return;
+                            }
                             
                             Item item = new Item(produto, quant, ((produto.getPreco() - (produto.getPreco() * produto.getPercentualDesconto())) * quant), LocalDate.now(), LocalDate.now());
                             try {
@@ -223,7 +237,9 @@ public class ProdutoListagemController implements Initializable{
 								
 								carrinhoAtual = cDao.buscarCarrinhoAtual(SessaoController.usuario);
 							} catch (Exception e) {
-								e.printStackTrace();
+								Alert alert= new Alert(AlertType.ERROR, "Algo deu errado ao tentar adicionar o item ao carrinho");
+                    			alert.show();
+                    			return;
 							}
                             
                         });
