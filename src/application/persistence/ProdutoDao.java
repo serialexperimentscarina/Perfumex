@@ -267,11 +267,11 @@ public class ProdutoDao {
 	 * @since 1.0
 	 */
 	public void atualizarEstoque(Produto p, int quant) throws SQLException {
-		String sql = "UPDATE produto SET quantidade_atual ? WHERE id = ?";
+		String sql = "UPDATE produto SET quantidade_atual = ? WHERE id = ?";
 		PreparedStatement ps = c.prepareStatement(sql);
 		ps.setInt(1, quant);
 		ps.setInt(2, p.getId());
-		ResultSet rs = ps.executeQuery();
+		ps.executeUpdate();
 	}
 
 }

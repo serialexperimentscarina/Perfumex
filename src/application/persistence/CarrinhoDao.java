@@ -113,13 +113,13 @@ public class CarrinhoDao {
 			total = rs.getDouble("total");
 		}
 		
-		String sql2 = "UPDATE carrinho SET quantidade_itens = ?, total = ? WHERE id = ?";
+		String sql2 = "UPDATE carrinho SET quantidade_itens = (?), total = (?) WHERE id = (?)";
 		PreparedStatement ps2 = c.prepareStatement(sql2);
 		
 		ps2.setInt(1, quant);
 		ps2.setDouble(2, total);
 		ps2.setInt(3, carrinhoAtual.getId());
-		ps2.executeQuery();
+		ps2.executeUpdate();
 	}
 	
 	
