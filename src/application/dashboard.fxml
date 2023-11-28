@@ -302,7 +302,7 @@
                                           <TableColumn fx:id="idProduto_col_DataMOD" minWidth="0.0" prefWidth="73.0" text="Data_Mod" />
                                       </columns>
                                     </TableView>
-                                    <TextField fx:id="buscar_produto" layoutX="14.0" layoutY="32.0" prefHeight="30.0" prefWidth="277.0" promptText="Buscar" />
+                                    <TextField fx:id="buscar_produto" layoutX="14.0" layoutY="32.0" prefHeight="30.0" prefWidth="277.0" promptText="Buscar" styleClass="textfield" stylesheets="@dashboarddesing.css" />
                                  </children>
                               </AnchorPane>
                               <Label layoutX="13.0" layoutY="318.0" text="Nome:" />

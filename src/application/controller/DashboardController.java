@@ -304,24 +304,23 @@ public class DashboardController implements Initializable{
         
         buscar_produto.textProperty().addListener((observable, oldValue, newValue) -> {
             filteredLista.setPredicate(produto -> {
-                if (newValue == null || newValue.isEmpty()) {
+                if (newValue == null || newValue.trim().isEmpty()) {
                     return true;
                 }
 
-                String lowerCaseFilter = newValue.toLowerCase();
-                
+                String lowerCaseFilter = newValue.trim().toLowerCase();
+
                 return String.valueOf(produto.getId()).contains(lowerCaseFilter)
                         || produto.getNome().toLowerCase().contains(lowerCaseFilter)
                         || produto.getDescricao().toLowerCase().contains(lowerCaseFilter)
                         || produto.getMarca().toLowerCase().contains(lowerCaseFilter)
                         || produto.getFornecedor().toLowerCase().contains(lowerCaseFilter);
-                     
             });
         });
 
         tViewProduto.setItems(filteredLista);
-    }
-	
+	}
+
 	/**
 	 * <p> Generate statistics </p>
 	 * @param None

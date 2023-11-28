@@ -15,7 +15,7 @@
             <Font name="Berlin Sans FB" size="31.0" />
          </font>
       </Label>
-      <TextField fx:id="tFieldPesquisar" layoutX="564.0" layoutY="28.0" prefHeight="41.0" prefWidth="324.0" promptText="Buscar" />
+      <TextField fx:id="tFieldPesquisar" layoutX="564.0" layoutY="28.0" prefHeight="41.0" prefWidth="324.0" promptText="Buscar" styleClass="textfield" stylesheets="@dashboarddesing.css" />
       <Button fx:id="btnDeslogar" layoutX="1136.0" layoutY="28.0" mnemonicParsing="false" onAction="#deslogar" prefHeight="42.0" prefWidth="119.0" style="-fx-text-fill: black;" styleClass="close" stylesheets="@dashboarddesing.css" text="Deslogar">
          <font>
             <Font name="Berlin Sans FB" size="20.0" />
