@@ -1,5 +1,6 @@
 package application.persistence;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -21,6 +22,7 @@ public class PedidoDao {
 	
 	/**
 	 * <p> Constructor </p>
+	 * @throws SQLException, ClassNotFoundException
 	 * @since 1.0
 	 */
 	public PedidoDao() throws ClassNotFoundException, SQLException {
@@ -32,6 +34,7 @@ public class PedidoDao {
 	/**
 	 * <p> Insert Pedido into DB </p>
 	 * @param p
+	 * @throws SQLException
 	 * @since 1.0
 	 */
 	public void inserirPedido(Pedido p) throws SQLException {

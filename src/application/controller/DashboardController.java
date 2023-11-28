@@ -326,6 +326,7 @@ public class DashboardController implements Initializable{
 	 * <p> Generate statistics </p>
 	 * @param None
 	 * @return Void
+	 * @throws ClassNotFoundException, SQLException
 	 * @since 1.0
 	 */
 	private void gerarEstatisticas() throws ClassNotFoundException, SQLException {
@@ -343,6 +344,7 @@ public class DashboardController implements Initializable{
 		
 	/**
 	 * <p> Generate statistics related to price </p>
+	 * @throws ClassNotFoundException, SQLException
 	 * @since 1.0
 	 */
 	private void gerarEstatisticasValor() throws ClassNotFoundException, SQLException {
@@ -466,6 +468,7 @@ public class DashboardController implements Initializable{
     //-----------------Consultando as coisas na tabela-----------------------------------------------------------------------------------------------------------
 	/**
 	 * <p> Populate TableView </p>
+	 * @throws  SQLException
 	 * @since 1.0
 	 */
     private void popularTabela() throws SQLException {

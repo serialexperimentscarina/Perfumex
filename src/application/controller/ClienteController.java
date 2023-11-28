@@ -76,6 +76,7 @@ public class ClienteController {
 	/**
 	 * <p> Go to Login page </p>
 	 * @param event
+	 * @throws IOException
 	 * @since 1.0
 	 */
 	public void irParaLogin(ActionEvent event) throws IOException {
@@ -126,6 +127,7 @@ public class ClienteController {
 	/**
 	 * <p> Validate fields </p>
 	 * @return boolean
+	 * @throws ClassNotFoundException, SQLException
 	 * @since 1.0
 	 */
 	private boolean validarCampos() throws ClassNotFoundException, SQLException {

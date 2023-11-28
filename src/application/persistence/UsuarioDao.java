@@ -32,6 +32,7 @@ public class UsuarioDao {
 	/**
 	 * <p> Insert Clientes into DB </p>
 	 * @param cli
+	 * @throws SQLException
 	 * @since 1.0
 	 */
 	public void insereCliente(Cliente cli) throws SQLException {
@@ -49,6 +50,7 @@ public class UsuarioDao {
 	/**
 	 * <p> Insert Lojistas into DB </p>
 	 * @param l
+	 * @throws SQLException
 	 * @since 1.0
 	 */
 	public void insereLojista(Lojista l) throws SQLException {
@@ -67,6 +69,7 @@ public class UsuarioDao {
 	 * <p> Search User by login info </p>
 	 * @param email, senha
 	 * @return Usuario
+	 * @throws SQLException
 	 * @since 1.0
 	 */
 	public Usuario buscaUsuarioLogin(String email, String senha) throws SQLException{
@@ -91,6 +94,7 @@ public class UsuarioDao {
 	 * <p> Search the type of an user </p>
 	 * @param u
 	 * @return String
+	 * @throws SQLException
 	 * @since 1.0
 	 */
 	public String buscarTipoUsuario(Usuario u) throws SQLException{
@@ -112,6 +116,7 @@ public class UsuarioDao {
 	 * <p> Return a Cliente's CPF </p>
 	 * @param u
 	 * @return String
+	 * @throws SQLException
 	 * @since 1.0
 	 */
 	public String buscarCPF(Usuario u) throws SQLException{
@@ -131,6 +136,7 @@ public class UsuarioDao {
 	 * <p> Check if email is avaliable </p>
 	 * @param email
 	 * @return boolean
+	 * @throws SQLException
 	 * @since 1.0
 	 */
 	public boolean checarDispEmail(String email) throws SQLException{
@@ -149,6 +155,7 @@ public class UsuarioDao {
 	/**
 	 * <p> Insert new Usuario into DB </p>
 	 * @param u
+	 * @throws SQLException
 	 * @since 1.0
 	 */
 	private void insereUsuario(Usuario u) throws SQLException {
@@ -172,6 +179,7 @@ public class UsuarioDao {
 	/**
 	 * <p> Count how many users are in the DB </p>
 	 * @return int
+	 * @throws SQLException
 	 * @since 1.0
 	 */
 	public int contarUsuario() throws SQLException{

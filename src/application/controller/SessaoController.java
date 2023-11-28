@@ -1,5 +1,6 @@
 package application.controller;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 import application.model.Usuario;
@@ -24,6 +25,7 @@ public class SessaoController {
 	/**
 	 * <p> Log in user </p>
 	 * @param u the user to be logged on
+	 * @throws SQLException, ClassNotFoundException
 	 * @since 1.0
 	 */
 	public void logar(Usuario u) throws SQLException, ClassNotFoundException {

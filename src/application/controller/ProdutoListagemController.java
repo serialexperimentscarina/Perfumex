@@ -112,6 +112,7 @@ public class ProdutoListagemController implements Initializable{
 	/**
 	 * <p> Trigger logout </p>
 	 * @param event
+	 * @throws IOException
 	 * @since 1.0
 	 */
 	public void deslogar(ActionEvent event) throws IOException {
@@ -128,6 +129,7 @@ public class ProdutoListagemController implements Initializable{
 	/**
 	 * <p> Go to Carrinho page </p>
 	 * @param event
+	 * @throws IOException
 	 * @since 1.0
 	 */
 	public void irParaCarrinho(ActionEvent event) throws IOException {
@@ -141,6 +143,7 @@ public class ProdutoListagemController implements Initializable{
 
 	/**
 	 * <p> Populate TableView </p>
+	 * @throws SQLException, ClassNotFoundException
 	 * @since 1.0
 	 */
 	private void popularTabela() throws SQLException, ClassNotFoundException {
@@ -167,6 +170,7 @@ public class ProdutoListagemController implements Initializable{
 	
 	/**
 	 * <p> Load in current user's Carrinho </p>
+	 * @throws SQLException, ClassNotFoundException
 	 * @since 1.0
 	 */
 	private void inicializarCarrinho() throws ClassNotFoundException, SQLException {

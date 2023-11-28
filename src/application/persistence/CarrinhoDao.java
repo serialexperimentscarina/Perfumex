@@ -1,5 +1,6 @@
 package application.persistence;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -21,6 +22,7 @@ public class CarrinhoDao {
 	
 	/**
 	 * <p> Constructor </p>
+	 * @throws SQLException, ClassNotFoundException
 	 * @since 1.0
 	 */
 	public CarrinhoDao() throws ClassNotFoundException, SQLException {
@@ -31,6 +33,7 @@ public class CarrinhoDao {
 	/**
 	 * <p> Insert Carrinho into DB </p>
 	 * @param car, u
+	 * @throws SQLException
 	 * @since 1.0
 	 */
 	public void criarNovoCarrinho(Carrinho car, Usuario u) throws SQLException {
@@ -52,6 +55,7 @@ public class CarrinhoDao {
 	/**
 	 * <p> Count Carrinhos in DB </p>
 	 * @return int
+	 * @throws SQLException
 	 * @since 1.0
 	 */
 	public int contarCarrinho() throws SQLException{
@@ -70,6 +74,7 @@ public class CarrinhoDao {
 	 * <p> Search for a user's current cart </p>
 	 * @param usuario
 	 * @return Carrinho
+	 * @throws SQLException
 	 * @since 1.0
 	 */
 	public Carrinho buscarCarrinhoAtual(Usuario usuario) throws SQLException {
@@ -94,6 +99,7 @@ public class CarrinhoDao {
 	/**
 	 * <p> Update Carrinho </p>
 	 * @param carrinhoAtual
+	 * @throws SQLException
 	 * @since 1.0
 	 */
 	public void atualizarCarrinho(Carrinho carrinhoAtual) throws SQLException {
@@ -125,6 +131,7 @@ public class CarrinhoDao {
 	 * <p> Search for the senders of the current card </p>
 	 * @param car
 	 * @return String
+	 * @throws SQLException
 	 * @since 1.0
 	 */
 	public String buscarRemetentes(Carrinho car) throws SQLException {

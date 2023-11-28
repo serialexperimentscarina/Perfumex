@@ -1,5 +1,6 @@
 package application.persistence;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -18,6 +19,7 @@ public class GenericDao {
 	
 	/**
 	 * <p> Get connection to DB </p>
+	 * @throws SQLException, ClassNotFoundException
 	 * @since 1.0
 	 */
 	public Connection getConnection() throws ClassNotFoundException, SQLException {

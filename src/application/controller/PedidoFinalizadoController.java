@@ -19,6 +19,7 @@ public class PedidoFinalizadoController {
 	/**
 	 * <p> Go back to Marketplace Listing </p>
 	 * @param event
+	 * @throws IOException
 	 * @since 1.0
 	 */
 	public void voltar(ActionEvent event) throws IOException {

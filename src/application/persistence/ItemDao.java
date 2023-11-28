@@ -1,5 +1,6 @@
 package application.persistence;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -27,6 +28,7 @@ public class ItemDao {
 	
 	/**
 	 * <p> Constructor </p>
+	 * @throws SQLException, ClassNotFoundException
 	 * @since 1.0
 	 */
 	public ItemDao() throws ClassNotFoundException, SQLException {
@@ -38,6 +40,7 @@ public class ItemDao {
 	/**
 	 * <p> Insert Item into DB </p>
 	 * @param car, i, u, quant
+	 * @throws SQLException
 	 * @since 1.0
 	 */
 	public void inserirItem(Carrinho car, Item i, Usuario u, int quant) throws SQLException {
@@ -60,6 +63,7 @@ public class ItemDao {
 	 * <p> List items on current user's cart </p>
 	 * @param carrinhoAtual
 	 * @return ObservableList
+	 * @throws SQLException
 	 * @since 1.0
 	 */
 	public ObservableList<Item> listarItems(Carrinho carrinhoAtual) throws SQLException {

@@ -68,6 +68,7 @@ public class CarrinhoController {
 	/**
 	 * <p> Load user's current Carrinho </p>
 	 * @since 1.0
+	 * @throws ClassNotFoundException, SQLException 
 	 */
 	private void inicializarCarrinho() throws ClassNotFoundException, SQLException {
 		CarrinhoDao cDao = new CarrinhoDao();
@@ -80,6 +81,7 @@ public class CarrinhoController {
 	 * <p> Go to Marketplace listing page </p>
 	 * @param event
 	 * @since 1.0
+	 * @throws IOException
 	 */
 	public void voltar(ActionEvent event) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("/application/ProdutoListagem.FXML"));
@@ -93,6 +95,7 @@ public class CarrinhoController {
 	 * <p> Make an order </p>
 	 * @param event
 	 * @since 1.0
+	 * @throws IOException
 	 */
 	public void finalizar(ActionEvent event) throws IOException {
 		if (itens.size() == 0) {
@@ -111,6 +114,7 @@ public class CarrinhoController {
 	 * <p> Populate TableView </p>
 	 * @param None
 	 * @since 1.0
+	 * @throws SQLException, ClassNotFoundException
 	 */
 	private void popularTabela() throws SQLException, ClassNotFoundException {
 		ItemDao iDao = new ItemDao();

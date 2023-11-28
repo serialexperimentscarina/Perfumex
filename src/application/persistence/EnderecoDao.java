@@ -1,5 +1,6 @@
 package application.persistence;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -23,6 +24,7 @@ public class EnderecoDao {
 	
 	/**
 	 * <p> Constructor </p>
+	 * @throws SQLException, ClassNotFoundException
 	 * @since 1.0
 	 */
 	public EnderecoDao() throws ClassNotFoundException, SQLException {
@@ -34,6 +36,7 @@ public class EnderecoDao {
 	/**
 	 * <p> Insert Endereco into DB </p>
 	 * @param e
+	 * @throws SQLException
 	 * @since 1.0
 	 */
 	public void insererEndereco(Endereco e) throws SQLException {
@@ -59,6 +62,7 @@ public class EnderecoDao {
 	 * <p> Search a User's endereco </p>
 	 * @param u
 	 * @return Endereco
+	 * @throws SQLException
 	 * @since 1.0
 	 */
 	public Endereco buscarEndereco(Usuario u) throws SQLException {

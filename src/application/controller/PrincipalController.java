@@ -35,6 +35,7 @@ public class PrincipalController {
 	/**
 	 * <p> Go to Login page </p>
 	 * @param event
+	 * @throws IOException
 	 * @since 1.0
 	 */
 	@FXML
@@ -49,6 +50,7 @@ public class PrincipalController {
 	/**
 	 * <p> Go to Register page </p>
 	 * @param event
+	 * @throws IOException
 	 * @since 1.0
 	 */
 	@FXML
@@ -64,6 +66,7 @@ public class PrincipalController {
 	/**
 	 * <p> Go to Register Cliente page </p>
 	 * @param event
+	 * @throws IOException
 	 * @since 1.0
 	 */
 	@FXML
@@ -110,6 +113,7 @@ public class PrincipalController {
 	/**
 	 * <p> Go to Register Lojista page </p>
 	 * @param event
+	 * @throws IOException
 	 * @since 1.0
 	 */
 	@FXML
@@ -124,6 +128,7 @@ public class PrincipalController {
 	/**
 	 * <p> Go to Dashboard after Lojista login </p>
 	 * @param event
+	 * @throws IOException
 	 * @since 1.0
 	 */
 	public void irparaDashboardLojista(ActionEvent event) throws IOException {
@@ -137,6 +142,7 @@ public class PrincipalController {
 	/**
 	 * <p> Go to Marketplace listing after Cliente login </p>
 	 * @param event
+	 * @throws IOException
 	 * @since 1.0
 	 */
 	public void irParaProdutoListagem(ActionEvent event) throws IOException {

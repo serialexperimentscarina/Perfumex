@@ -1,5 +1,6 @@
 package application.model;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
@@ -290,6 +291,7 @@ public class Produto {
 	/**
 	 * <p> Generate new Produto ID </p>
 	 * @return int
+	 * @throws SQLException, ClassNotFoundException
 	 * @since 1.0
 	 */
 	public static int geraId() throws ClassNotFoundException, SQLException {

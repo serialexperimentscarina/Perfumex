@@ -1,4 +1,5 @@
 package application.persistence;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -31,6 +32,7 @@ public class ProdutoDao {
 	/**
 	 * <p> Insert product into DB </p>
 	 * @param p
+	 * @throws SQLException
 	 * @since 1.0
 	 */
 	public void inserirProduto(Produto p) throws SQLException {
@@ -57,6 +59,7 @@ public class ProdutoDao {
 	/**
 	 * <p> Search avaliable products </p>
 	 * @return ResultSet
+	 * @throws SQLException
 	 * @since 1.0
 	 */
 	public ResultSet buscarProdutosCliente() throws SQLException {
@@ -70,6 +73,7 @@ public class ProdutoDao {
 	/**
 	 * <p> Search current Lojista's products </p>
 	 * @return ResultSet
+	 * @throws SQLException
 	 * @since 1.0
 	 */
 	public ResultSet buscarProdutosLojista() throws SQLException {
@@ -85,6 +89,7 @@ public class ProdutoDao {
 	/**
 	 * <p> Count the number of Produtos in DB </p>
 	 * @return int
+	 * @throws SQLException
 	 * @since 1.0
 	 */
 	public int contarProduto() throws SQLException{
@@ -102,6 +107,7 @@ public class ProdutoDao {
 	/**
 	 * <p> Delete an specific product by ID </p>
 	 * @param id
+	 * @throws SQLException
 	 * @since 1.0
 	 */
 	public void deletarProduto(int id) throws SQLException {
@@ -123,6 +129,7 @@ public class ProdutoDao {
 	 * <p> Search a Produto by it's ID </p>
 	 * @param id
 	 * @return Produto
+	 * @throws SQLException
 	 * @since 1.0
 	 */
 	public Produto buscarProdutoPorId(int id) throws SQLException {
@@ -153,6 +160,7 @@ public class ProdutoDao {
 	/**
 	 * <p> Update a Produto's attributes </p>
 	 * @param produto
+	 * @throws SQLException
 	 * @since 1.0
 	 */
 	public void atualizarProduto(Produto produto) throws SQLException {
@@ -183,6 +191,7 @@ public class ProdutoDao {
 	 * <p> Generate statistics of a Lojista's Produtos </p>
 	 * @param u
 	 * @return ResultSet
+	 * @throws SQLException
 	 * @since 1.0
 	 */
 	public ResultSet estatisticasProduto(Usuario u) throws SQLException {
@@ -203,6 +212,7 @@ public class ProdutoDao {
 	 * <p> Generate statistics of a Lojista's Produto's values </p>
 	 * @param u
 	 * @return ResultSet
+	 * @throws SQLException
 	 * @since 1.0
 	 */
 	public ResultSet estatisticasValorProduto(Usuario u) throws SQLException {
@@ -221,6 +231,7 @@ public class ProdutoDao {
 	 * <p> Count quantities of sold Produtos </p>
 	 * @param u
 	 * @return int
+	 * @throws SQLException
 	 * @since 1.0
 	 */
 	public int quantVendidosPorLojista(Usuario u) throws SQLException {
@@ -242,6 +253,7 @@ public class ProdutoDao {
 	 * <p> Count quantities of Produtos not sold </p>
 	 * @param u
 	 * @return int
+	 * @throws SQLException
 	 * @since 1.0
 	 */
 	public int quantNaoVendidosPorLojista(Usuario u) throws SQLException {
@@ -263,6 +275,7 @@ public class ProdutoDao {
 	/**
 	 * <p> Update Produtos quantity </p>
 	 * @param p, quant
+	 * @throws SQLException
 	 * @since 1.0
 	 */
 	public void atualizarEstoque(Produto p, int quant) throws SQLException {

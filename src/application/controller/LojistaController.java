@@ -74,6 +74,7 @@ public class LojistaController {
 	/**
 	 * <p> Go back to Register main page </p>
 	 * @param event
+	 * @throws IOException
 	 * @since 1.0
 	 */
 	public void irParaCadastro(ActionEvent event) throws IOException {
@@ -137,6 +138,7 @@ public class LojistaController {
 	 * <p> Validate all fields </p>
 	 * @return boolean
 	 * @since 1.0
+	 * @throws ClassNotFoundException, SQLException
 	 */
 	private boolean validarCampos() throws ClassNotFoundException, SQLException {
 		if(tFieldNome.getText().length() == 0 || tFieldSobrenome.getText().length() == 0 || tFieldEmail.getText().length() == 0

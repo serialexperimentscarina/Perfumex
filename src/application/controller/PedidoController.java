@@ -125,6 +125,7 @@ public class PedidoController {
 
 	/**
 	 * <p> Populate Pedido's data </p>
+	 * @throws ClassNotFoundException, SQLException
 	 * @since 1.0
 	 */
 	private void popularCampos() throws ClassNotFoundException, SQLException {
@@ -151,6 +152,7 @@ public class PedidoController {
 
 	/**
 	 * <p> Load user's current Carrinho </p>
+	 * @throws ClassNotFoundException, SQLException
 	 * @since 1.0
 	 */
 	private void inicializarCarrinho() throws ClassNotFoundException, SQLException {
@@ -162,6 +164,7 @@ public class PedidoController {
 
 	/**
 	 * <p> Load in TableView </p>
+	 * @throws ClassNotFoundException, SQLException
 	 * @since 1.0
 	 */
 	private void popularTabela() throws ClassNotFoundException, SQLException {
@@ -179,6 +182,7 @@ public class PedidoController {
 	/**
 	 * <p> Go to Carrinho page </p>
 	 * @param event
+	 * @throws IOException
 	 * @since 1.0
 	 */
 	public void voltar(ActionEvent event) throws IOException {
@@ -192,6 +196,7 @@ public class PedidoController {
 	/**
 	 * <p> Finish Pedido </p>
 	 * @param event
+	 * @throws IOException, SQLException, ClassNotFoundException
 	 * @since 1.0
 	 */
 	public void finalizar(ActionEvent event) throws IOException, SQLException, ClassNotFoundException {
