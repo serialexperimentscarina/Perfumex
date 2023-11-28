@@ -55,7 +55,6 @@ public class PrincipalController {
 	 */
 	@FXML
 	public void irParaCadastro(ActionEvent event) throws IOException {
-		System.out.println("TESTE");
 		Parent root = FXMLLoader.load(getClass().getResource("/application/PrincipalCadastro.fxml"));
 		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		scene = new Scene(root);

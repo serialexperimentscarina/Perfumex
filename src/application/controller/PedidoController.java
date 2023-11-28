@@ -228,15 +228,15 @@ public class PedidoController {
 	 */
 	private boolean validarCampos() {
 		RadioButton selectedRadioButton = (RadioButton) pagamento.getSelectedToggle();
-		String pagto = selectedRadioButton.getText();
 		
-		if(pagto == "") {
+		if(selectedRadioButton == null) {
 			Alert alert= new Alert(AlertType.ERROR, "Escolha um método de pagamento");
 			alert.show();
 			return false;
 		}
 		
-		if (pagto == "Cartão") {
+		System.out.println(pagto);
+		if (pagto.equals("Cartao")) {
 			if(tFieldNome.getText().isEmpty() || tFieldNum.getText().isEmpty() || tFieldMes.getText().isEmpty() || 
 					tFieldAno.getText().isEmpty() || tFieldCod.getText().isEmpty()) {
 				Alert alert= new Alert(AlertType.ERROR, "Um ou mais campos obrigatórios vazios");

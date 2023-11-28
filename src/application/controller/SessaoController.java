@@ -1,6 +1,5 @@
 package application.controller;
 
-import java.io.IOException;
 import java.sql.SQLException;
 
 import application.model.Usuario;

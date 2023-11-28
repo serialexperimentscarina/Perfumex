@@ -1,6 +1,5 @@
 package application.model;
 
-import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
