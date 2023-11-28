@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.DashboardController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.DashboardController">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
@@ -90,7 +90,7 @@
                <center>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane id="telaHome" fx:id="telaHome" layoutX="113.0" layoutY="88.0" prefHeight="553.0" prefWidth="915.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane id="telaHome" fx:id="telaHome" layoutX="113.0" layoutY="88.0" prefHeight="553.0" prefWidth="915.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
                               <AnchorPane layoutX="9.0" layoutY="9.0" prefHeight="529.0" prefWidth="894.0" stylesheets="@dashboarddesing.css">
                                  <styleClass>
@@ -279,7 +279,7 @@
                               </AnchorPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="telacadProduto" layoutY="-1.0" prefHeight="555.0" prefWidth="923.0" stylesheets="@dashboarddesing.css" visible="false">
+                        <AnchorPane fx:id="telacadProduto" layoutY="-1.0" prefHeight="555.0" prefWidth="923.0" stylesheets="@dashboarddesing.css">
                            <children>
                               <AnchorPane layoutX="1.0" layoutY="14.0" prefHeight="293.0" prefWidth="921.0" stylesheets="@dashboarddesing.css">
                                  <styleClass>
@@ -317,9 +317,8 @@
                               <Label layoutX="348.0" layoutY="410.0" text="Valor: " />
                               <TextField id="produtoValor" fx:id="valor_produto" layoutX="401.0" layoutY="405.0" prefHeight="29.0" prefWidth="85.0" styleClass="textfield" stylesheets="@dashboarddesing.css" />
                               <TextField id="ProdutoDescricao" fx:id="descricao_produto" layoutX="80.0" layoutY="406.0" prefHeight="26.0" prefWidth="250.0" styleClass="textfield" stylesheets="@dashboarddesing.css" />
-                              <Button fx:id="btn_addProd" layoutX="806.0" layoutY="488.0" mnemonicParsing="false" onAction="#handleAddProduto" prefHeight="42.0" prefWidth="68.0" style="-fx-background-color: green;" styleClass="clean-btn" stylesheets="@dashboarddesing.css" text="ADD" />
-                              <Button fx:id="btn_clearProd" layoutX="613.0" layoutY="488.0" mnemonicParsing="false" onAction="#limparCampos" prefHeight="42.0" prefWidth="68.0" style="-fx-background-color: grey;" styleClass="clean-btn" stylesheets="@dashboarddesing.css" text="Clear" />
-                              <Button fx:id="btn_deleteProd" layoutX="711.0" layoutY="488.0" mnemonicParsing="false" onAction="#handleDeleteProduto" prefHeight="42.0" prefWidth="68.0" style="-fx-background-color: red;" styleClass="clean-btn" stylesheets="@dashboarddesing.css" text="Delete" />
+                              <Button fx:id="btn_addProd" layoutX="668.0" layoutY="488.0" mnemonicParsing="false" onAction="#handleAddProduto" prefHeight="42.0" prefWidth="68.0" style="-fx-background-color: green;" styleClass="clean-btn" stylesheets="@dashboarddesing.css" text="ADD" />
+                              <Button fx:id="btn_deleteProd" layoutX="539.0" layoutY="488.0" mnemonicParsing="false" onAction="#handleDeleteProduto" prefHeight="42.0" prefWidth="68.0" style="-fx-background-color: red;" styleClass="clean-btn" stylesheets="@dashboarddesing.css" text="Delete" />
                               <Label layoutX="513.0" layoutY="410.0" text="Desconto:" />
                               <Spinner fx:id="spinerqtdMinima" layoutX="395.0" layoutY="356.0" prefHeight="26.0" prefWidth="70.0" styleClass="textfield" stylesheets="@dashboarddesing.css" />
                               <Spinner fx:id="spinerqtdmaxima" layoutX="628.0" layoutY="356.0" prefHeight="30.0" prefWidth="81.0" styleClass="textfield" stylesheets="@dashboarddesing.css" />

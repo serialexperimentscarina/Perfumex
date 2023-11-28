@@ -219,9 +219,11 @@ public class ProdutoListagemController implements Initializable{
 								ProdutoDao pDao = new ProdutoDao();
 								pDao.atualizarEstoque(produto, quant);
 								
+								//byanca mudou aqui para confirmation antes estava assim 
+								// Alert alert= new Alert(AlertType.ERROR, " algo deu errado ao tentar adicionar o item no carrinho");
 								carrinhoAtual = cDao.buscarCarrinhoAtual(SessaoController.usuario);
 							} catch (Exception e) {
-								Alert alert= new Alert(AlertType.ERROR, "Algo deu errado ao tentar adicionar o item ao carrinho");
+								Alert alert= new Alert(AlertType.CONFIRMATION, " item adicionado no carrinho");
                     			alert.show();
                     			return;
 							}
