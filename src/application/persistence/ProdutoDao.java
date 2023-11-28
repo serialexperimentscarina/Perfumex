@@ -273,6 +273,27 @@ public class ProdutoDao {
 		ps.executeUpdate();
 	}
 
+	/**
+	 * <p> Checks if a Produto can be deleted </p>
+	 * @param id
+	 * @throws SQLException 
+	 * @since 1.0
+	 */
+	public boolean podeSerDeletado(int id) throws SQLException {
+		String sql = "SELECT i.carrinhoid\r\n"
+				+ "FROM item i, produto p\r\n"
+				+ "WHERE i.produtoid = p.id AND p.id = ?";
+		PreparedStatement ps = c.prepareStatement(sql);
+		ps.setInt(1, id);
+		ResultSet rs = ps.executeQuery();
+		
+		if (rs.next()) {
+			return false;
+		}
+		
+		return true;
+	}
+
 }
 		
 	

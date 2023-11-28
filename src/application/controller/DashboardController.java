@@ -526,7 +526,11 @@ public class DashboardController implements Initializable{
 	               try {
 	                   // Delete the selected products from the database
 	                   for (Produto selectedProduto : selectedProdutos) {
-	                       produtoDao.deletarProduto(selectedProduto.getId());
+	                	   if (produtoDao.podeSerDeletado(selectedProduto.getId())) {
+		                       produtoDao.deletarProduto(selectedProduto.getId());
+	                	   } else {
+	                		   exibirAlerta("Produto já possui vendas e não pode ser excluido.", Alert.AlertType.ERROR);
+	                	   }
 	                   }
 
 	                   // Remove the selected products from the TableView
