@@ -196,7 +196,6 @@ public class PedidoController {
 	/**
 	 * <p> Finish Pedido </p>
 	 * @param event
-	 * @throws IOException, SQLException, ClassNotFoundException
 	 * @since 1.0
 	 */
 	public void finalizar(ActionEvent event) throws IOException, SQLException, ClassNotFoundException {

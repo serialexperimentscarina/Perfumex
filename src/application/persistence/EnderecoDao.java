@@ -24,7 +24,7 @@ public class EnderecoDao {
 	
 	/**
 	 * <p> Constructor </p>
-	 * @throws SQLException, ClassNotFoundException
+	 * @throws SQLException ClassNotFoundException
 	 * @since 1.0
 	 */
 	public EnderecoDao() throws ClassNotFoundException, SQLException {

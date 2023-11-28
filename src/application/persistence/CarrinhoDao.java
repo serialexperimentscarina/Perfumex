@@ -22,7 +22,6 @@ public class CarrinhoDao {
 	
 	/**
 	 * <p> Constructor </p>
-	 * @throws SQLException, ClassNotFoundException
 	 * @since 1.0
 	 */
 	public CarrinhoDao() throws ClassNotFoundException, SQLException {

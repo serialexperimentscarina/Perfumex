@@ -236,7 +236,6 @@ public class Usuario {
 	/**
 	 * <p> Generate new Usuario ID </p>
 	 * @return int
-	 * @throws SQLException, ClassNotFoundException
 	 * @since 1.0
 	 */
 	public static int geraId() throws ClassNotFoundException, SQLException {

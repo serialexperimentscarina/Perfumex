@@ -28,7 +28,6 @@ public class ItemDao {
 	
 	/**
 	 * <p> Constructor </p>
-	 * @throws SQLException, ClassNotFoundException
 	 * @since 1.0
 	 */
 	public ItemDao() throws ClassNotFoundException, SQLException {
