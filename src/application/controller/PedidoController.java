@@ -235,7 +235,7 @@ public class PedidoController {
 			return false;
 		}
 		
-		System.out.println(pagto);
+		String pagto = selectedRadioButton.getText();
 		if (pagto.equals("Cartao")) {
 			if(tFieldNome.getText().isEmpty() || tFieldNum.getText().isEmpty() || tFieldMes.getText().isEmpty() || 
 					tFieldAno.getText().isEmpty() || tFieldCod.getText().isEmpty()) {
