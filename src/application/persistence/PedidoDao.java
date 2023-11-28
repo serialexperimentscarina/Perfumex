@@ -4,10 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import application.model.Carrinho;
-import application.model.Item;
 import application.model.Pedido;
-import application.model.Usuario;
 
 /**
  * Persistence class for the Pedido entity

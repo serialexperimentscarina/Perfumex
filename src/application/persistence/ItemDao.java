@@ -4,10 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 import application.model.Carrinho;
-import application.model.Cliente;
 import application.model.Item;
 import application.model.Produto;
 import application.model.Usuario;

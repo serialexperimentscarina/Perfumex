@@ -6,8 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import application.model.Carrinho;
-import application.model.Cliente;
-import application.model.Produto;
 import application.model.Usuario;
 
 /**

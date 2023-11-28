@@ -5,7 +5,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 import application.persistence.CarrinhoDao;
-import application.persistence.UsuarioDao;
 
 /**
  * Model class for the Carrinho entity

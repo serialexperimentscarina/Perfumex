@@ -8,16 +8,11 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.PasswordField;
-import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.time.LocalDate;
 
-import application.model.Endereco;
-import application.model.Lojista;
 import application.model.Usuario;
-import application.persistence.EnderecoDao;
 import application.persistence.UsuarioDao;
 import javafx.event.ActionEvent;
 

@@ -3,13 +3,11 @@ package application.controller;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.regex.Pattern;
 
 import application.model.Carrinho;
 import application.model.Cliente;
 import application.model.Endereco;
-import application.model.Lojista;
 import application.model.Usuario;
 import application.persistence.CarrinhoDao;
 import application.persistence.EnderecoDao;

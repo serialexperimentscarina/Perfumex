@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import application.controller.SessaoController;
 import application.model.Endereco;
 import application.model.Usuario;
 

@@ -4,11 +4,6 @@ import java.sql.SQLException;
 
 import application.model.Usuario;
 import application.persistence.UsuarioDao;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
 
 /**
  * Control class for keeping the user session

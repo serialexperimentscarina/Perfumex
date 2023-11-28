@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import application.controller.SessaoController;
 import application.model.Produto;
 import application.model.Usuario;
-import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
  * Persistence class for the Produto entity

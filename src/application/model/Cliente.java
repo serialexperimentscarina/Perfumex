@@ -1,7 +1,6 @@
 package application.model;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 
 /**
  * Model class for the Cliente entity

@@ -2,10 +2,8 @@ package application.model;
 
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.ArrayList;
 
 import application.persistence.ProdutoDao;
-import application.persistence.UsuarioDao;
 
 /**
  * Model class for the Produto entity
